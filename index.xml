@@ -7,28 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2016 Your name or company</copyright>
-    <lastBuildDate>Fri, 19 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>hello-world.Rmd</title>
-      <link>https://divadnojnarg.github.io/post/hello-world-rmd/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/post/hello-world-rmd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hello-world.Rmd</title>
-      <link>https://divadnojnarg.github.io/post/hello-world-rmd/</link>
-      <pubDate>Fri, 19 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/post/hello-world-rmd/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>A Plain Markdown Post</title>
