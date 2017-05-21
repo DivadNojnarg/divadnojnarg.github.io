@@ -6,10 +6,56 @@
     <description>Recent content on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <copyright>true</copyright>
+    <lastBuildDate>Sun, 21 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>https://divadnojnarg.github.io/2017/05/21/test/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/2017/05/21/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hello-world.Rmd</title>
+      <link>https://divadnojnarg.github.io/2017/05/21/hello-world-rmd/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/2017/05/21/hello-world-rmd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A model of Calcium Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A model of Calcium and Phosphate Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny App of the Lorenz Model</title>
+      <link>https://divadnojnarg.github.io/gallery/test/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/test/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Plain Markdown Post</title>
@@ -27,7 +73,8 @@
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>https://divadnojnarg.github.io/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
+$$ \begin{align} &amp;amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_iei, \sum{j=1}^n y_jej \right) = \sum{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = &amp;amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc} \phi(e_1, e_1) &amp;amp; \cdots &amp;amp; \phi(e_1, e_n) \vdots &amp;amp; \ddots &amp;amp; \vdots \phi(e_n, e_1) &amp;amp; \cdots &amp;amp; \phi(e_n, e_n) \end{array} \right) \left( \begin{array}{c} y_1 \vdots y_n \end{array} \right) \end{align} $$</description>
     </item>
     
     <item>

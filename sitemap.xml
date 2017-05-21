@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://divadnojnarg.github.io/2017/05/21/test/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://divadnojnarg.github.io/2017/05/21/hello-world-rmd/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://divadnojnarg.github.io/gallery/calcium-homeo/</loc>
+    <lastmod>2017-05-10T21:45:17-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</loc>
+    <lastmod>2017-05-10T21:45:17-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://divadnojnarg.github.io/gallery/test/</loc>
+    <lastmod>2017-05-10T21:35:17-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://divadnojnarg.github.io/2016/12/30/a-plain-markdown-post/</loc>
     <lastmod>2016-12-30T21:49:57-07:00</lastmod>
   </url>
@@ -27,8 +52,14 @@
   </url>
   
   <url>
+    <loc>https://divadnojnarg.github.io/gallery/</loc>
+    <lastmod>2017-05-10T21:45:17-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://divadnojnarg.github.io/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -40,7 +71,7 @@
   
   <url>
     <loc>https://divadnojnarg.github.io/post/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
