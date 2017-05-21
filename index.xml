@@ -74,9 +74,7 @@
       
       <guid>https://divadnojnarg.github.io/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
-$$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
-$$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \dot{y} &amp;amp; = \rho x - y - xz \dot{z} &amp;amp; = -\beta z + xy \end{align} $$
-$$ \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix} \mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \end{vmatrix} $$</description>
+MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; } }, tex2jax: { inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;] ], displayMath: [ [&#39;$$&#39;,&#39;$$&#39;] ], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], } });  MathJax.Hub.Queue(function(){ var all = MathJax.Hub.getAllJax(), i; for(i = 0; i  $$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$</description>
     </item>
     
     <item>
