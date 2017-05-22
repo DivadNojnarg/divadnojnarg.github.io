@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
-    <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Testbis</title>
-      <link>https://divadnojnarg.github.io/2017/05/22/test/</link>
-      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/2017/05/22/test/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Test</title>
@@ -36,6 +27,15 @@
       <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://divadnojnarg.github.io/2017/05/21/hello-world-rmd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo Site is Launched</title>
+      <link>https://divadnojnarg.github.io/2017/03/30/hugo-site-is-launched/</link>
+      <pubDate>Thu, 30 Mar 2017 02:28:01 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/2017/03/30/hugo-site-is-launched/</guid>
       <description></description>
     </item>
     
