@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hi, I am David</title>
-    <link>https://divadnojnarg.github.io/</link>
+    <link>/</link>
     <description>Recent content on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://divadnojnarg.github.io/blog/creating-a-new-theme/</link>
+      <link>/blog/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://divadnojnarg.github.io/blog/creating-a-new-theme/</guid>
+      <guid>/blog/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://divadnojnarg.github.io/blog/migrate-from-jekyll/</link>
+      <link>/blog/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://divadnojnarg.github.io/blog/migrate-from-jekyll/</guid>
+      <guid>/blog/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
@@ -35,55 +35,55 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     
     <item>
       <title>Hello</title>
-      <link>https://divadnojnarg.github.io/blog/hello/</link>
+      <link>/blog/hello/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://divadnojnarg.github.io/blog/hello/</guid>
+      <guid>/blog/hello/</guid>
       <description>Blablabla.</description>
     </item>
     
     <item>
       <title>A model of Calcium Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <link>/gallery/calcium-homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <guid>/gallery/calcium-homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A model of Calcium and Phosphate Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
+      <link>/gallery/calcium_phosphate_homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
+      <guid>/gallery/calcium_phosphate_homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny App of the Lorenz Model</title>
-      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
+      <link>/gallery/lorenz/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
+      <guid>/gallery/lorenz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny Apps Showcase</title>
-      <link>https://divadnojnarg.github.io/gallery/shiny-app/</link>
+      <link>/gallery/shiny-app/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
+      <guid>/gallery/shiny-app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://divadnojnarg.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
 $$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
 $$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \dot{y} &amp;amp; = \rho x - y - xz \dot{z} &amp;amp; = -\beta z + xy \end{align} $$

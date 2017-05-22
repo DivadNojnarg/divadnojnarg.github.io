@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/creating-a-new-theme/</loc>
+    <loc>/blog/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/migrate-from-jekyll/</loc>
+    <loc>/blog/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/hello/</loc>
+    <loc>/blog/hello/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium-homeo/</loc>
+    <loc>/gallery/calcium-homeo/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</loc>
+    <loc>/gallery/calcium_phosphate_homeo/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/lorenz/</loc>
+    <loc>/gallery/lorenz/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/shiny-app/</loc>
+    <loc>/gallery/shiny-app/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2016-05-05T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/</loc>
+    <loc>/gallery/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
