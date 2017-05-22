@@ -6,6 +6,7 @@
     <description>Recent content in Galleries on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>true</copyright>
     <lastBuildDate>Mon, 15 May 2017 22:25:16 -0700</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/gallery/index.xml" rel="self" type="application/rss+xml" />
