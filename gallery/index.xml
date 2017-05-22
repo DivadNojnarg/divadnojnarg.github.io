@@ -48,5 +48,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>A model of Calcium Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A model of Calcium and Phosphate Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny App of the Lorenz Model</title>
+      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

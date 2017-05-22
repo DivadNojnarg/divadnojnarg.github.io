@@ -79,6 +79,33 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     </item>
     
     <item>
+      <title>A model of Calcium Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A model of Calcium and Phosphate Homeostasis</title>
+      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
+      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny App of the Lorenz Model</title>
+      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://divadnojnarg.github.io/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
@@ -88,43 +115,6 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
 $$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
 $$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \dot{y} &amp;amp; = \rho x - y - xz \dot{z} &amp;amp; = -\beta z + xy \end{align} $$
 $$ \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix} \mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \end{vmatrix} $$</description>
-    </item>
-    
-    <item>
-      <title>About Hugo</title>
-      <link>https://divadnojnarg.github.io/blog/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/blog/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
-Setup Some fun facts about Hugo:
- Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://divadnojnarg.github.io/blog/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/blog/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://divadnojnarg.github.io/blog/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/blog/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
   </channel>
