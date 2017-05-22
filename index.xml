@@ -34,6 +34,15 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     </item>
     
     <item>
+      <title>Hello</title>
+      <link>https://divadnojnarg.github.io/blog/hello/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/blog/hello/</guid>
+      <description>Blablabla.</description>
+    </item>
+    
+    <item>
       <title>Toma Nistor</title>
       <link>https://divadnojnarg.github.io/gallery/toma-nistor/</link>
       <pubDate>Mon, 15 May 2017 22:25:16 -0700</pubDate>
