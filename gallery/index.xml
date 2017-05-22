@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Galleries on Hi, I am David</title>
-    <link>/gallery/</link>
+    <link>https://divadnojnarg.github.io/gallery/</link>
     <description>Recent content in Galleries on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Wed, 10 May 2017 21:45:17 -0700</lastBuildDate>
     
-	<atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://divadnojnarg.github.io/gallery/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A model of Calcium Homeostasis</title>
-      <link>/gallery/calcium-homeo/</link>
+      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>/gallery/calcium-homeo/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A model of Calcium and Phosphate Homeostasis</title>
-      <link>/gallery/calcium_phosphate_homeo/</link>
+      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>/gallery/calcium_phosphate_homeo/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny App of the Lorenz Model</title>
-      <link>/gallery/lorenz/</link>
+      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/lorenz/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny Apps Showcase</title>
-      <link>/gallery/shiny-app/</link>
+      <link>https://divadnojnarg.github.io/gallery/shiny-app/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/shiny-app/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
       <description></description>
     </item>
     
