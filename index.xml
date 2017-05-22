@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
-    <lastBuildDate>Sun, 21 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Testbis</title>
+      <link>https://divadnojnarg.github.io/2017/05/22/test/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/2017/05/22/test/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Test</title>
@@ -74,7 +83,8 @@
       
       <guid>https://divadnojnarg.github.io/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
- $$ \left( \sum_{k=1}^n a_k b_k \right)^{2} \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) $$  $$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \newline \dot{y} &amp;amp; = \rho x - y - xz \newline \dot{z} &amp;amp; = -\beta z + xy \end{align} $$
+$$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
+$$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \newline \dot{y} &amp;amp; = \rho x - y - xz \newline \dot{z} &amp;amp; = -\beta z + xy \end{align} $$
 $$ \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix} \mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \end{vmatrix} $$</description>
     </item>
     
