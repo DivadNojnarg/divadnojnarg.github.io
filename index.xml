@@ -31,6 +31,16 @@
     </item>
     
     <item>
+      <title>Setting MathJax with Hugo</title>
+      <link>/blog/mathjax/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/mathjax/</guid>
+      <description>The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog. However, its configuration can be quite complex for beginners. In my previous website powered by Jekyll, I easily managed to install MathJax, whereas I encountered some problems with Hugo.
+1. Installing MathJax via Hugo&amp;rsquo;s documentation Everything you need can be found here. You have to insert the code below in the /layout/partials folder of your website: it is even better to create a file named mathjax_support.</description>
+    </item>
+    
+    <item>
       <title>A model of Calcium Homeostasis</title>
       <link>/gallery/calcium-homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
@@ -81,9 +91,7 @@
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a test for Latex display by MathJax. $$ \left( \sum_{k=1}^n a_k b_k \right)^{2} \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) $$
-$$ \left\{ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \newline \dot{y} &amp;amp; = \rho x - y - xz \newline \dot{z} &amp;amp; = -\beta z + xy \end{align} \right. $$
-$$ \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix} \mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \newline \frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \newline \frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \newline \end{vmatrix} $$</description>
+      <description> How to include a video   Include an image   Some Trajectories   </description>
     </item>
     
   </channel>
