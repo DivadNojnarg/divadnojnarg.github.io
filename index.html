@@ -2,7 +2,7 @@
 <html lang="en-us">
     <head>
         
-
+        
         <title>
             
             
@@ -19,55 +19,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="https://divadnojnarg.github.io">
+        <base href="./">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
         
         <meta property="og:title" content="Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://divadnojnarg.github.io">
+        <meta property="og:url" content="/">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="https://divadnojnarg.github.io/">
-        <link href="https://divadnojnarg.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hi, I am David">
+        <link rel="canonical" href="./">
+        <link href="./index.xml" rel="alternate" type="application/rss+xml" title="Hi, I am David">
         <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/github.min.css">
         
         
         <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true,
-	  processEnvironments: true,
-	  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    }
-  });
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
 </script>
 
 <script type="text/x-mathjax-config">
-	MathJax.Hub.Queue(function(){
-		var all = MathJax.Hub.getAllJax(), i;
-		for(i = 0; i &lt; all.length; i += 1)
-		{
-			all[i].SourceElement().parentNode.className += ' has-jax';
-		}
-	});
+  MathJax.Hub.Queue(function() {
+    // Fix <code> tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
 </script>
 
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
         
     </head>
@@ -90,7 +89,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="https://divadnojnarg.github.io"><img src="./images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="./"><img src="./images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="./#work">Work</a></h3></div>
@@ -130,7 +129,7 @@
         
         
         
-        <div class='col-xs-12 col-md-6 col-lg-3' >
+        <div class='col-xs-12 col-md-6' >
             <img src="./images/shiny.png" alt="Showcase of my Shiny Apps, sandbox ">
             <div class="row middle-xs center-xs overlay">
                 <div class="col-xs-12">
@@ -146,11 +145,27 @@
         
         
         
-        <div class='col-xs-12 col-md-6 col-lg-3' >
+        <div class='col-xs-12 col-md-6' >
             <img src="./images/lorenz_attractor.png" alt="A simple app to simulate the Lorenz-model">
             <div class="row middle-xs center-xs overlay">
                 <div class="col-xs-12">
                     <h2>Shiny App of the Lorenz Model</h2>
+                    <div class="row middle-xs center-xs">
+                        <div class="col-xs-3 col-md-4"><a href="./about_Lorenz/about_Lorenz"><h3>View</h3></a></div>
+                        <div class="col-xs-3 col-md-4"><a href="./about"><h3>Code</h3></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div class='col-xs-12 col-md-6' >
+            <img src="./images/Rlogo.png" alt="My work around several R packages">
+            <div class="row middle-xs center-xs overlay">
+                <div class="col-xs-12">
+                    <h2>My Work with R</h2>
                     <div class="row middle-xs center-xs">
                         
                         
@@ -162,7 +177,7 @@
         
         
         
-        <div class='col-xs-12 col-md-6 col-lg-3' >
+        <div class='col-xs-12 col-md-6' >
             <img src="./images/calcium_phosphate.png" alt="This is a description of the image">
             <div class="row middle-xs center-xs overlay">
                 <div class="col-xs-12">
@@ -178,7 +193,7 @@
         
         
         
-        <div class='col-xs-12 col-md-6 col-lg-3' >
+        <div class='col-xs-12 col-md-6' >
             <img src="./images/calcium.png" alt="This is a description of the image">
             <div class="row middle-xs center-xs overlay">
                 <div class="col-xs-12">
@@ -190,6 +205,8 @@
                 </div>
             </div>
         </div>
+        
+        
         
         
         
@@ -207,12 +224,16 @@
             <div class="col-xs-12 posts-list">
                 
                 
+                
+                
                     <article>
-                        <h2><a href="https://divadnojnarg.github.io/blog/hello/">Hello</a></h2>
+                        <h2><a href="./blog/hello/">Hello</a></h2>
                         <div class=sub-header>
                           May 2017 · 1 minute read
                         </div>
                     </article>
+                
+                
                 
                 
                 

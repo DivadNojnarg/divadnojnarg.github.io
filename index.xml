@@ -2,69 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hi, I am David</title>
-    <link>https://divadnojnarg.github.io/</link>
+    <link>/</link>
     <description>Recent content on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello</title>
-      <link>https://divadnojnarg.github.io/blog/hello/</link>
+      <title>About the Lorenz Model</title>
+      <link>/about_lorenz/about_lorenz/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://divadnojnarg.github.io/blog/hello/</guid>
+      <guid>/about_lorenz/about_lorenz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>/blog/hello/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hello/</guid>
       <description>Initialization of the Blog.</description>
     </item>
     
     <item>
       <title>A model of Calcium Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <link>/gallery/calcium-homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <guid>/gallery/calcium-homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A model of Calcium and Phosphate Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
+      <link>/gallery/calcium_phosphate_homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
+      <guid>/gallery/calcium_phosphate_homeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My Work with R</title>
+      <link>/gallery/around_r/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>/gallery/around_r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny App of the Lorenz Model</title>
-      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
+      <link>/gallery/lorenz/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
+      <guid>/gallery/lorenz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny Apps Showcase</title>
-      <link>https://divadnojnarg.github.io/gallery/shiny-app/</link>
+      <link>/gallery/shiny-app/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
+      <guid>/gallery/shiny-app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://divadnojnarg.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
-$$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
+      <guid>/about/</guid>
+      <description>This is a test for Latex display by MathJax. $$ \left( \sum_{k=1}^n a_k bk \right)^{2} \leq \left( \sum{k=1}^n ak^2 \right) \left( \sum{k=1}^n b_k^2 \right) $$
 $$ \begin{align} \dot{x} &amp;amp; = \sigma(y-x) \dot{y} &amp;amp; = \rho x - y - xz \dot{z} &amp;amp; = -\beta z + xy \end{align} $$
 $$ \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix} \mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \frac{\partial X}{\partial u} &amp;amp; \frac{\partial Y}{\partial u} &amp;amp; 0 \frac{\partial X}{\partial v} &amp;amp; \frac{\partial Y}{\partial v} &amp;amp; 0 \end{vmatrix} $$</description>
     </item>

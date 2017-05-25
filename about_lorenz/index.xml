@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Hi, I am David</title>
-    <link>/blog/</link>
-    <description>Recent content in Blogs on Hi, I am David</description>
+    <title>About_Lorenzs on Hi, I am David</title>
+    <link>/about_lorenz/</link>
+    <description>Recent content in About_Lorenzs on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/about_lorenz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello</title>
-      <link>/blog/hello/</link>
+      <title>About the Lorenz Model</title>
+      <link>/about_lorenz/about_lorenz/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/hello/</guid>
-      <description>Initialization of the Blog.</description>
+      <guid>/about_lorenz/about_lorenz/</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -2,7 +2,7 @@
 <html lang="en-us">
     <head>
         
-
+        
         <title>
             
             
@@ -19,55 +19,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="https://divadnojnarg.github.io">
+        <base href="../../">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
         
         <meta property="og:title" content="Hello | Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://divadnojnarg.github.io">
+        <meta property="og:url" content="/">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="https://divadnojnarg.github.io/blog/hello/">
+        <link rel="canonical" href="../../blog/hello/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/github.min.css">
         
         
         <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true,
-	  processEnvironments: true,
-	  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    }
-  });
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
 </script>
 
 <script type="text/x-mathjax-config">
-	MathJax.Hub.Queue(function(){
-		var all = MathJax.Hub.getAllJax(), i;
-		for(i = 0; i &lt; all.length; i += 1)
-		{
-			all[i].SourceElement().parentNode.className += ' has-jax';
-		}
-	});
+  MathJax.Hub.Queue(function() {
+    // Fix <code> tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
 </script>
 
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
         
     </head>
@@ -79,7 +78,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="../../#work">Work</a></h3></div>
@@ -130,6 +129,23 @@
         
       </div>
     </section>
+    <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+      return;
+      
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'divadnojnarg';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
 
         </main>
