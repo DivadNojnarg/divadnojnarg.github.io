@@ -39,34 +39,33 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/github.min.css">
         
         
-        <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
+        <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
+    displayMath: [['$$','$$']],
     processEscapes: true,
     processEnvironments: true,
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
     TeX: { equationNumbers: { autoNumber: "AMS" },
          extensions: ["AMSmath.js", "AMSsymbols.js"] }
   }
-});
-</script>
-
-<script type="text/x-mathjax-config">
+  });
   MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
+    
+    
+    
     var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i &lt; all.length; i += 1) {
+    for(i = 0; i < all.length; i += 1) {
         all[i].SourceElement().parentNode.className += ' has-jax';
     }
-});
-</script>
+  });
 
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
 </script>
         
     </head>
@@ -125,8 +124,8 @@ MathJax.Hub.Config({
 <h3 id="this-is-a-test-for-latex-display-by-mathjax">This is a test for Latex display by MathJax.</h3>
 
 <p>$$
-\left( \sum_{k=1}^n a_k b<em>k \right)^{2} \leq
- \left( \sum</em>{k=1}^n a<em>k^2 \right) \left( \sum</em>{k=1}^n b_k^2 \right)
+\left( \sum_{k=1}^n a_k b_k \right)^{2} \leq
+ \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 $$</p>
 
 <p>$$
@@ -169,7 +168,7 @@ $$</p>
 
 <p>$$
 \begin{equation}
-x(t) = e^{\int_{t<em>0}^tp(s)ds}\Bigg(\int</em>{t<em>0}^t\Big(q(s)e^{-\int</em>{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
+x(t) = e^{\int_{t_0}^tp(s)ds}\Bigg(\int_{t_0}^t\Big(q(s)e^{-\int_{t_0}^sp(\tau)d\tau}\Big)ds + x_0\Bigg).
 \end{equation}
 $$</p>
 
