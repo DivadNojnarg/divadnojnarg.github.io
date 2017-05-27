@@ -59,6 +59,15 @@
     </item>
     
     <item>
+      <title>Modeling in Ecology</title>
+      <link>/gallery/ecology/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>/gallery/ecology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>My Work with R</title>
       <link>/gallery/around_r/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
@@ -86,12 +95,13 @@
     </item>
     
     <item>
-      <title>About</title>
+      <title>Some Shiny Apps</title>
       <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description> How to include a video   Include an image   Some Trajectories   </description>
+      <description>### Include an image  Some Trajectories   -- Introduction The purpose of this page is to show some Shiny Apps of the Lorenz model developed with R and the Shiny package as well as other very usefull packages such as shinydashboard, shinyJS, plotly, shinycssloaders. Some of these apps are still in development, to improve their design and features.
+Solve the Lorenz model for random initial conditions This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.</description>
     </item>
     
   </channel>
