@@ -102,7 +102,7 @@ upload the first shiny app in the Lorenz model section add all other shiny apps 
       
       <guid>https://divadnojnarg.github.io/about/</guid>
       <description>Introduction The purpose of this page is to show some Shiny Apps of the Lorenz model developed with R and the Shiny package as well as other very usefull packages such as shinydashboard, shinyJS, plotly, shinycssloaders. Some of these apps are still in development, to improve their design and features.
-Solve the Lorenz model for random initial conditions This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.</description>
+1. Solve the Lorenz model for random initial conditions This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.</description>
     </item>
     
   </channel>
