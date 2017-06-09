@@ -18,7 +18,7 @@
       <pubDate>Wed, 07 Jun 2017 21:48:51 -0700</pubDate>
       
       <guid>https://divadnojnarg.github.io/about-shiny/</guid>
-      <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depends on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
+      <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
  Last update: 08/06/17</description>
     </item>
     
