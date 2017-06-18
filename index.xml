@@ -19,7 +19,7 @@
       
       <guid>https://divadnojnarg.github.io/about-shiny/</guid>
       <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
- Last update: 18/06/17 -&amp;gt; Version 0.2 available: the user can add trajectories on the phase plane by a simple click</description>
+ Last update: 18/06/17 -&amp;gt; Version 0.2 available: the user can add trajectories on the phase plane by a simple click.</description>
     </item>
     
     <item>
@@ -88,15 +88,6 @@ upload the first shiny app in the Lorenz model section add all other shiny apps 
     </item>
     
     <item>
-      <title>My Work with R</title>
-      <link>https://divadnojnarg.github.io/gallery/around_r/</link>
-      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/gallery/around_r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Shiny App of the Lorenz Model</title>
       <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
@@ -111,6 +102,15 @@ upload the first shiny app in the Lorenz model section add all other shiny apps 
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
       <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teachin Area</title>
+      <link>https://divadnojnarg.github.io/gallery/around_r/</link>
+      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/gallery/around_r/</guid>
       <description></description>
     </item>
     
