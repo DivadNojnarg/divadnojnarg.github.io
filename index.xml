@@ -19,7 +19,7 @@
       
       <guid>https://divadnojnarg.github.io/about-shiny/</guid>
       <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
- Last update: 08/06/17</description>
+ Last update: 18/06/17 -&amp;gt; Version 0.2 available: the user can add trajectories on the phase plane by a simple click</description>
     </item>
     
     <item>
