@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Hi, I am David</title>
-    <link>/blog/</link>
+    <link>https://divadnojnarg.github.io/blog/</link>
     <description>Recent content in Blogs on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Sun, 28 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://divadnojnarg.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upcoming Updates</title>
-      <link>/blog/todolist/</link>
+      <link>https://divadnojnarg.github.io/blog/todolist/</link>
       <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/todolist/</guid>
+      <guid>https://divadnojnarg.github.io/blog/todolist/</guid>
       <description>Future updates:
-upload the first shiny app in the Lorenz model section add all other shiny apps related to the Lorenz model open the shiny showcase section new icons update the Lotka Volterra App publish Shiny App of Calcium Homeostasis add a description part to the Calcium Homeostasis gallery add tutorials/articles in the teaching section  Last update: 07-07-17</description>
+add a link to the second scientific article published upload the first shiny app in the Lorenz model section add all other shiny apps related to the Lorenz model open the shiny showcase section new icons update the Lotka Volterra App publish Shiny App of Calcium Homeostasis add a description part to the Calcium Homeostasis gallery add tutorials/articles in the teaching section  Last update: 04-08-17</description>
     </item>
     
     <item>
       <title>Setting MathJax with Hugo</title>
-      <link>/blog/mathjax/</link>
+      <link>https://divadnojnarg.github.io/blog/mathjax/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/mathjax/</guid>
+      <guid>https://divadnojnarg.github.io/blog/mathjax/</guid>
       <description>The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog. However, its configuration can be quite complex for beginners. In my previous website powered by Jekyll, I easily managed to install MathJax, whereas I encountered some problems with Hugo.
 1. Installing MathJax via Hugo&amp;rsquo;s documentation Everything you need can be found here. You have to insert the code below in the /layout/partials folder of your website: it is even better to create a file named mathjax_support.</description>
     </item>
     
     <item>
       <title>Welcome</title>
-      <link>/blog/hello/</link>
+      <link>https://divadnojnarg.github.io/blog/hello/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/hello/</guid>
+      <guid>https://divadnojnarg.github.io/blog/hello/</guid>
       <description>Welcome to my new website. I am David, PhD in mathematical physiology, especially in renal physiology and calcium/phosphate metabolism. I have a great interest for new technologies especially those dedicated to improve the learning process, as well as scientific collaboration. I often noticed that some scientific topics are really complex, thereby classical courses may not be sufficient to integrate all this complexity. During the past 5 years, I built several mathematical models from developmental biology (somitogenesis) to calcium and phosphate homeostasis.</description>
     </item>
     
