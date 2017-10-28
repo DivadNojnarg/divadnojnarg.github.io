@@ -18,8 +18,8 @@
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://divadnojnarg.github.io/blog/bestofshiny/</guid>
-      <description>After several months of silence (I am very busy :)), I would like to share with you a &amp;ldquo;best of&amp;rdquo; of all Shiny packages you need to build beautiful and powerful applications.
-Enhance your apps with Javascript (still updated) The shinyjs package was written by Dean Attali, https://deanattali.com/shinyjs/, a very famous shiny user. In summary, it allows you to add interactivity inside your app for example:
+      <description>After several months of silence (I am very busy :)), I would like to share with you a &amp;ldquo;best of&amp;rdquo; of all Shiny packages you might need to build beautiful and powerful applications.
+Enhance your apps with Javascript (still updated) The shinyjs package was designed by Dean Attali, https://deanattali.com/shinyjs/, a very famous shiny user. In summary, it allows you to add interactivity inside your app for example:
  hide/show/toggle widgets, graphs, tables reset inputs to their initial value enable/disable elements  These are the most outstanding properties of this package and require just a few lines of code to work.</description>
     </item>
     

@@ -122,12 +122,12 @@
         
 
 <p>After several months of silence (I am very busy :)), I would like to share with
-you a &ldquo;<strong>best of</strong>&rdquo; of all Shiny packages you need to build beautiful and powerful
+you a &ldquo;<strong>best of</strong>&rdquo; of all Shiny packages you might need to build beautiful and powerful
 applications.</p>
 
 <h2 id="enhance-your-apps-with-javascript-still-updated">Enhance your apps with Javascript (still updated)</h2>
 
-<p>The <strong>shinyjs</strong> package was written by Dean Attali, <a href="https://deanattali.com/shinyjs/">https://deanattali.com/shinyjs/</a>,
+<p>The <strong>shinyjs</strong> package was designed by Dean Attali, <a href="https://deanattali.com/shinyjs/">https://deanattali.com/shinyjs/</a>,
 a very famous shiny user.
 In summary, it allows you to add interactivity inside your app for example:</p>
 
@@ -175,8 +175,7 @@ giving the opportunity of reseting all inputs independently of each other is cru
 <h2 id="extend-shinybs-bsplus-not-updated-anymore">Extend shinyBS: <strong>bsplus</strong> (not updated anymore?)</h2>
 
 <p>In addition to providing extra bootstrap components, such as accordions and carousel,
-a very interesting function allows the user to include help text/popover inside
-shiny inputs, as follows:</p>
+a function allows the user to include help text/popover inside shiny inputs, as follows:</p>
 
 <pre><code class="language-R">numericInput(inputId = &quot;foo&quot;, label = &quot;Enter a number&quot;, value = 0) %&gt;%
   shinyInput_label_embed(
@@ -185,14 +184,14 @@ shiny inputs, as follows:</p>
   )
 </code></pre>
 
-<p>This could be very useful if you want to include a reset button just next to a slider input!</p>
+<p>This could be useful if you want to include a reset button just next to a slider input!</p>
 
 <h2 id="make-your-interface-customizable-by-the-user-shinyjqui">Make your interface customizable by the user: shinyjqui</h2>
 
 <p><strong>shinyjqui</strong>, developped by Yang Tang <a href="https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html">https://cran.r-project.org/web/packages/shinyjqui/vignettes/introduction.html</a> (<a href="https://github.com/Yang-Tang/shinyjqui">github</a>),
 is an amazing package to allow mouse interactions such as
 dragging/resizing/sorting elements inside your UI. There are also up to 15 animations
-effects that can be applied to UI elements (slide, bounce, &hellip;). For instance,
+effects that can be applied to each UI elements (slide, bounce, &hellip;). For instance,
 this might be useful to combine help text with these animations. Since I am using custom
 dashboard templates, I prefer:</p>
 
@@ -201,7 +200,7 @@ dashboard templates, I prefer:</p>
 </code></pre>
 
 <p>which allows the user to display each panel as desired, giving a more flexible design.
-However, be careful when adding these functions: your design has to remain functional!</p>
+However your design has to remain functional!</p>
 
 <h2 id="extend-shiny-input-elements-shinywidgets">Extend shiny input elements: <strong>shinyWidgets</strong></h2>
 
@@ -231,7 +230,7 @@ shiny apps with a lot of options, menus. It will save a lot of space in addition
 pretty nice. More informations <a href="https://github.com/ebailey78/shinyMenus">here</a>.
 Notice that adding a sliderInput in the menubar (<code>smNavBar(...)</code>) does not work perfectly and will
 add an ugly extra vertical space. Using the <code>sliderTextInput()</code> of <strong>shinyWidget</strong>
-renders slightly better. To summarise, there is no garanty that each widget can be fully
+renders slightly better. To summarise, there is no warranty that each widget will be fully
 integrated without display issues. However, it is likely that you can fix these problems
 by adding some custom CSS or playing with options.</p>
 
@@ -240,8 +239,7 @@ by adding some custom CSS or playing with options.</p>
 <h3 id="use-material-template">Use material template</h3>
 
 <p><strong>shinymaterial</strong> is a package provided by Eric Anderson (<a href="https://github.com/ericrayanderson/shinymaterial">Github</a>).
-I personally enjoy this custom template taken from the <a href="https://material.io/guidelines/"><strong>material</strong></a> design. However,
-it has not been updated since several months. Consequently, some features are still missing.
+I personally enjoy this custom template taken from the <a href="https://material.io/guidelines/"><strong>material</strong></a> design.
 By the way, a showcase is available <a href="https://ericrayanderson.github.io/shinymaterial/">here</a>.
 A major drawback is that the navbarmenu cannot be customized very easily, unless after some manipulations.</p>
 
@@ -250,15 +248,15 @@ A major drawback is that the navbarmenu cannot be customized very easily, unless
 <p><strong>shiny.semantic</strong> developped by <a href="https://github.com/Appsilon/shiny.semantic">Appsilon</a> is mainly
 dedicated to build dashboards, using the semantic <a href="https://semantic-ui.com">design</a>.
 The showcase is accessible <a href="http://demo.appsilondatascience.com/shiny.semantic/components/">here</a>.
-It is important to notice that this template is not compatible with bootstrap3 and thus requires to desactivate it:</p>
+Notice that this template is not compatible with bootstrap3 and thus requires to desactivate it before:</p>
 
 <pre><code class="language-R">suppressDependencies(&quot;bootstrap&quot;)
 </code></pre>
 
 <p>I tried once to mix bootstrap and semantic UI, resulting in a lot of issues. A feature I really appreciate is the
-card widget as well as rating but I will have to report that input such as sliders are not part of
+card widget as well as rating but I will have to report that inputs such as sliders are not part of
 this package, which implies to use input widgets from the shiny base package. I did not spend
-so much time working with this UI but I think it could be really promising as well as a serious
+so much time working with this UI but I think it could be really promising and serious
 alternative to bootstrap!</p>
 
 <h2 id="make-your-app-more-professional">Make your app more professional</h2>
@@ -268,7 +266,7 @@ alternative to bootstrap!</p>
 <p>It is convenient for the user to be notified when a shiny is processing data, especially
 when a task lasts more than 2 seconds. In this case, displaying a css-loader will indicate
 your users that your app is still working and did not crash. <strong>shinycssloader</strong> includes
-8 different spinners, whom size can be customized. Thus package is available
+8 different spinners, whom size can be customized. This package is available
 <a href="https://github.com/andrewsali/shinycssloaders">here</a></p>
 
 <h3 id="improve-alert-messages-sweetalertr">Improve alert messages: <strong>sweetalertR</strong></h3>
@@ -290,6 +288,9 @@ time considering these previous packages. Be careful about the compatibility pro
 before going too far. Indeed, it is better to make some tests before to avoid nasty surprises!</p>
 
 <p>I will update this article as soon as I have more free time.</p>
+
+<p>Update: 28/10/17
+<strong>shinymaterial</strong> has been updated yesterday (V0.4.0 on CRAN).</p>
 
       </div>
 
