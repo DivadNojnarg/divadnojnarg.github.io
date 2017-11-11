@@ -19,21 +19,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="../../">
+        <base href="https://divadnojnarg.github.io">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
         
         <meta property="og:title" content="How to customize shiny sliderInput | Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="/">
+        <meta property="og:url" content="https://divadnojnarg.github.io">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="../../blog/customsliderinput/">
+        <link rel="canonical" href="https://divadnojnarg.github.io/blog/customsliderinput/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css">
@@ -77,7 +77,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="../../#work">Work</a></h3></div>
@@ -119,35 +119,35 @@
       </div>
 
       <div class="entry-content">
-        <p>Sometimes, you might get bored by the design of the sliders in Shiny. This input widget
+        <p>Sometimes, you might get bored by the design of the <strong>sliders</strong> in Shiny. This input widget
 uses the <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion.Rangeslider</a> js library.
 In the advanced <a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html">section</a>,
 you can notice that 5 themes are actually available. I really like the flat ui skin.
 In this tutorial, I will describe one way to install new themes for your shiny
 sliders.</p>
 
-<ol>
-<li>First of all, you have to download shiny from source in order to access some
-files required for this customization. In Rstudio console type:</li>
-</ol>
+<ul>
+<li>First of all, you have to download shiny from <strong>source</strong> in order to access some
+files required for this customization. In <strong>Rstudio</strong> console type:</li>
+</ul>
 
 <pre><code class="language-R">install.packages(&quot;shiny&quot;, type = &quot;source&quot;)
 </code></pre>
 
-<ol>
-<li><p>A link to the downloaded folder will be given. Then open a terminal and go to:</p>
+<ul>
+<li><p>A link to the downloaded folder will be given. Then open a <strong>terminal</strong> and go to:</p>
 
 <pre><code class="language-R">$ cd/folder_where_sources_are_downloaded
 </code></pre>
 
-<p>The corresponding folder contains a tar.gz file that you will have to extract.
-Name the extracted file shiny_custom.
+<p>The corresponding folder contains a <strong>tar.gz</strong> file that you will have to extract.
+Name the extracted file <em>shiny_custom</em>.
 Besides, you can make a copy of the original shiny folder on your desktop.
 Anyway, if things are going wrong, you can always reinstall shiny: <code>install.packages(&quot;shiny&quot;)</code>.</p></li>
 
-<li><p>Open the shiny folder containing sources. In the R subfolder, open input-slider.R.
-Notice lines 220-231:</p></li>
-</ol>
+<li><p>Open the <em>shiny</em> folder containing sources. In the <em>R</em> subfolder, open <em>input-slider.R</em>.
+Notice lines <strong>220-231</strong>:</p></li>
+</ul>
 
 <pre><code class="language-R">dep &lt;- list(
     htmlDependency(&quot;ionrangeslider&quot;, &quot;2.1.6&quot;, c(href=&quot;shared/ionrangeslider&quot;),
@@ -165,44 +165,44 @@ Notice lines 220-231:</p></li>
 
 <p>You will have to change this part <code>css/ion.rangeSlider.skinShiny.css</code>.</p>
 
-<ol>
+<ul>
 <li><p>To choose a Ion.Rangeslider theme, you may download the full js library from the
 official [website](<a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">http://ionden.com/a/plugins/ion.rangeSlider/en.html</a>.
-Extract the corresponding archive and open it. In the css folder, you should see 5 different css
+Extract the corresponding archive and open it. In the <em>css</em> folder, you should see 5 different css
 skins.</p></li>
 
-<li><p>Go back to the input-slider.R file of your shiny source, and replace <code>css/ion.rangeSlider.skinShiny.css</code>
+<li><p>Go back to the <em>input-slider.R</em> file of your shiny source, and replace <code>css/ion.rangeSlider.skinShiny.css</code>
 by <code>ion.rangeSlider.skinFlat.css</code> (You are free to select another one)</p></li>
 
 <li><p>You need now to make an archive of the modified shiny folder (containing the custom
-slider skin). Open a terminal and go to the directory of your new shiny folder:</p>
+slider skin). Open a <strong>terminal</strong> and go to the directory of your new shiny folder:</p>
 
 <pre><code class="language-R">$ tar -zcvf shiny_1.0.5.tar.gz shiny_custom
 </code></pre></li>
 
 <li><p>Delete the official shiny package folder (it is stored in the library folder of R).
 On Mac, it is in:</p></li>
-</ol>
+</ul>
 
 <pre><code class="language-R">$ cd /Library/Frameworks/R.framework/Versions/3.3/Resources/library/
 </code></pre>
 
-<ol>
+<ul>
 <li>Open a terminal and go back in the directory containing your own modified shiny package. Then run:</li>
-</ol>
+</ul>
 
 <pre><code class="language-R">$ R CMD INSTALL shiny_1.0.5.tar.gz
 </code></pre>
 
-<p>This will install your update. If everything is fine, your sliders should
+<p>This will install your updates. If everything is fine, your sliders should
 be different from that used by default in shiny. Be careful that each future update of shiny
-will erase your mofifications. Up to you to save this work.</p>
+will <strong>erase</strong> your modifications. Up to you to <strong>save</strong> this work.</p>
 
       </div>
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="../../blog/bestofshiny/">Essential Shiny packages</a>
+          &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/bestofshiny/">Essential Shiny packages</a>
         
         
       </div>
