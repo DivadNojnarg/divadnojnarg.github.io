@@ -6,11 +6,11 @@
         <title>
             
             
-                A model of Calcium and Phosphate Homeostasis | Hi, I am David
+                How to customize shiny sliderInput | Hi, I am David
             
         </title>
 
-        <meta name="title" content="A model of Calcium and Phosphate Homeostasis | Hi, I am David">
+        <meta name="title" content="How to customize shiny sliderInput | Hi, I am David">
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -24,7 +24,7 @@
         
         <meta name="author" content="David Granjon">
         
-        <meta property="og:title" content="A model of Calcium and Phosphate Homeostasis | Hi, I am David">
+        <meta property="og:title" content="How to customize shiny sliderInput | Hi, I am David">
         <meta property="og:type" content="website">
         <meta property="og:url" content="/">
         
@@ -33,7 +33,7 @@
 
         
 
-        <link rel="canonical" href="../../gallery/calcium_phosphate_homeo/">
+        <link rel="canonical" href="../../blog/customsliderinput/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css">
@@ -112,22 +112,98 @@
 
 <section class="container">
     <section class="content">
-      <h1> A model of Calcium and Phosphate Homeostasis </h1>
+      <h1> How to customize shiny sliderInput </h1>
 
       <div class="sub-header">
-        May 2017 · 0 minute read
+        November 2017 · 2 minute read
       </div>
 
       <div class="entry-content">
-        
+        <p>Sometimes, you might get bored by the design of the sliders in Shiny. This input widget
+uses the <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion.Rangeslider</a> js library.
+In the advanced <a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html">section</a>,
+you can notice that 5 themes are actually available. I really like the flat ui skin.
+In this tutorial, I will describe one way to install new themes for your shiny
+sliders.</p>
+
+<ol>
+<li>First of all, you have to download shiny from source in order to access some
+files required for this customization. In Rstudio console type:</li>
+</ol>
+
+<pre><code class="language-R">install.packages(&quot;shiny&quot;, type = &quot;source&quot;)
+</code></pre>
+
+<ol>
+<li><p>A link to the downloaded folder will be given. Then open a terminal and go to:</p>
+
+<pre><code class="language-R">$ cd/folder_where_sources_are_downloaded
+</code></pre>
+
+<p>The corresponding folder contains a tar.gz file that you will have to extract.
+Name the extracted file shiny_custom.
+Besides, you can make a copy of the original shiny folder on your desktop.
+Anyway, if things are going wrong, you can always reinstall shiny: <code>install.packages(&quot;shiny&quot;)</code>.</p></li>
+
+<li><p>Open the shiny folder containing sources. In the R subfolder, open input-slider.R.
+Notice lines 220-231:</p></li>
+</ol>
+
+<pre><code class="language-R">dep &lt;- list(
+    htmlDependency(&quot;ionrangeslider&quot;, &quot;2.1.6&quot;, c(href=&quot;shared/ionrangeslider&quot;),
+      script = &quot;js/ion.rangeSlider.min.js&quot;,
+      # ion.rangeSlider also needs normalize.css, which is already included in
+      # Bootstrap.
+      stylesheet = c(&quot;css/ion.rangeSlider.css&quot;,
+                     &quot;css/ion.rangeSlider.skinShiny.css&quot;)
+    ),
+    htmlDependency(&quot;strftime&quot;, &quot;0.9.2&quot;, c(href=&quot;shared/strftime&quot;),
+      script = &quot;strftime-min.js&quot;
+    )
+  )
+</code></pre>
+
+<p>You will have to change this part <code>css/ion.rangeSlider.skinShiny.css</code>.</p>
+
+<ol>
+<li><p>To choose a Ion.Rangeslider theme, you may download the full js library from the
+official [website](<a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">http://ionden.com/a/plugins/ion.rangeSlider/en.html</a>.
+Extract the corresponding archive and open it. In the css folder, you should see 5 different css
+skins.</p></li>
+
+<li><p>Go back to the input-slider.R file of your shiny source, and replace <code>css/ion.rangeSlider.skinShiny.css</code>
+by <code>ion.rangeSlider.skinFlat.css</code> (You are free to select another one)</p></li>
+
+<li><p>You need now to make an archive of the modified shiny folder (containing the custom
+slider skin). Open a terminal and go to the directory of your new shiny folder:</p>
+
+<pre><code class="language-R">$ tar -zcvf shiny_1.0.5.tar.gz shiny_custom
+</code></pre></li>
+
+<li><p>Delete the official shiny package folder (it is stored in the library folder of R).
+On Mac, it is in:</p></li>
+</ol>
+
+<pre><code class="language-R">$ cd /Library/Frameworks/R.framework/Versions/3.3/Resources/library/
+</code></pre>
+
+<ol>
+<li>Open a terminal and go back in the directory containing your own modified shiny package. Then run:</li>
+</ol>
+
+<pre><code class="language-R">$ R CMD INSTALL shiny_1.0.5.tar.gz
+</code></pre>
+
+<p>This will install your update. If everything is fine, your sliders should
+be different from that used by default in shiny. Be careful that each future update of shiny
+will erase your mofifications. Up to you to save this work.</p>
+
       </div>
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="../../gallery/ecology/">Modeling in Ecology</a>
+          &laquo; <a class="basic-alignment left" href="../../blog/bestofshiny/">Essential Shiny packages</a>
         
-        
-          <a class="basic-alignment left" href="../../gallery/calcium-homeo/">A model of Calcium Homeostasis</a> &raquo;
         
       </div>
     </section>
