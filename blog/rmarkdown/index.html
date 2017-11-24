@@ -6,11 +6,11 @@
         <title>
             
             
-                How to customize shiny sliderInput | Hi, I am David
+                Rmarkdown test | Hi, I am David
             
         </title>
 
-        <meta name="title" content="How to customize shiny sliderInput | Hi, I am David">
+        <meta name="title" content="Rmarkdown test | Hi, I am David">
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -24,7 +24,7 @@
         
         <meta name="author" content="David Granjon">
         
-        <meta property="og:title" content="How to customize shiny sliderInput | Hi, I am David">
+        <meta property="og:title" content="Rmarkdown test | Hi, I am David">
         <meta property="og:type" content="website">
         <meta property="og:url" content="/">
         
@@ -33,7 +33,7 @@
 
         
 
-        <link rel="canonical" href="../../blog/customsliderinput/">
+        <link rel="canonical" href="../../blog/rmarkdown/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
@@ -112,100 +112,39 @@
 
 <section class="container">
     <section class="content">
-      <h1> How to customize shiny sliderInput </h1>
+      <h1> Rmarkdown test </h1>
 
       <div class="sub-header">
-        November 2017 · 2 minute read
+        January 0001 · 1 minute read
       </div>
 
       <div class="entry-content">
-        <p>Sometimes, you might get bored by the design of the <strong>sliders</strong> in Shiny. This input widget
-uses the <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion.Rangeslider</a> js library.
-In the advanced <a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html">section</a>,
-you can notice that 5 themes are actually available. I really like the flat ui skin.
-In this tutorial, I will describe one way to install new themes for your shiny
-sliders.</p>
-
-<ul>
-<li>First of all, you have to download shiny from <strong>source</strong> in order to access some
-files required for this customization. In <strong>Rstudio</strong> console type:</li>
-</ul>
-
-<pre><code>install.packages(&quot;shiny&quot;, type = &quot;source&quot;)
-</code></pre>
-
-<ul>
-<li><p>A link to the downloaded folder will be given. Then open a <strong>terminal</strong> and go to:</p>
-
-<pre><code class="language-sh">$ cd/folder_where_sources_are_downloaded
-</code></pre>
-
-<p>The corresponding folder contains a <strong>tar.gz</strong> file that you will have to extract.
-Name the extracted file <em>shiny_custom</em>.
-Besides, you can make a copy of the original shiny folder on your desktop.
-Anyway, if things are going wrong, you can always reinstall shiny: <code>install.packages(&quot;shiny&quot;)</code>.</p></li>
-
-<li><p>Open the <em>shiny</em> folder containing sources. In the <em>R</em> subfolder, open <em>input-slider.R</em>.
-Notice lines <strong>220-231</strong>:</p></li>
-</ul>
-
-<pre><code>dep &lt;- list(
-    htmlDependency(&quot;ionrangeslider&quot;, &quot;2.1.6&quot;, c(href=&quot;shared/ionrangeslider&quot;),
-      script = &quot;js/ion.rangeSlider.min.js&quot;,
-      # ion.rangeSlider also needs normalize.css, which is already included in
-      # Bootstrap.
-      stylesheet = c(&quot;css/ion.rangeSlider.css&quot;,
-                     &quot;css/ion.rangeSlider.skinShiny.css&quot;)
-    ),
-    htmlDependency(&quot;strftime&quot;, &quot;0.9.2&quot;, c(href=&quot;shared/strftime&quot;),
-      script = &quot;strftime-min.js&quot;
-    )
-  )
-</code></pre>
-
-<p>You will have to change this part <code>css/ion.rangeSlider.skinShiny.css</code>.</p>
-
-<ul>
-<li><p>To choose a Ion.Rangeslider theme, you may download the full js library from the
-official <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">website</a>.
-Extract the corresponding archive and open it. In the <em>css</em> folder, you should see 5 different css
-skins.</p></li>
-
-<li><p>Go back to the <em>input-slider.R</em> file of your shiny source, and replace <code>css/ion.rangeSlider.skinShiny.css</code>
-by <code>ion.rangeSlider.skinFlat.css</code> (You are free to select another one)</p></li>
-
-<li><p>You need now to make an archive of the modified shiny folder (containing the custom
-slider skin). Open a <strong>terminal</strong> and go to the directory of your new shiny folder:</p>
-
-<pre><code class="language-sh">$ tar -zcvf shiny_1.0.5.tar.gz shiny_custom
-</code></pre></li>
-
-<li><p>Delete the official shiny package folder (it is stored in the library folder of R).
-On Mac, it is in:</p></li>
-</ul>
-
-<pre><code class="language-sh">$ cd /Library/Frameworks/R.framework/Versions/3.3/Resources/library/
-</code></pre>
-
-<ul>
-<li>Open a terminal and go back in the directory containing your own modified shiny package. Then run:</li>
-</ul>
-
-<pre><code class="language-sh">$ R CMD INSTALL shiny_1.0.5.tar.gz
-</code></pre>
-
-<p>This will install your updates. If everything is fine, your sliders should
-be different from that used by default in shiny. Be careful that each future update of shiny
-will <strong>erase</strong> your modifications. Up to you to <strong>save</strong> this work.</p>
+        <div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="../../blog/Rmarkdown_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
 
       </div>
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="../../blog/bestofshiny/">Essential Shiny packages</a>
         
-        
-          <a class="basic-alignment left" href="../../blog/knobinput/">Extend shinyWidgets: knobInput</a> &raquo;
+          <a class="basic-alignment left" href="../../blog/hello/">Welcome</a> &raquo;
         
       </div>
     </section>

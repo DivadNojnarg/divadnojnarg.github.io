@@ -72,5 +72,16 @@ add a link to the second scientific article published upload the first shiny app
       <description>Welcome to my new website. I am David, PhD in mathematical physiology, especially in renal physiology and calcium/phosphate metabolism. I have a great interest for new technologies especially those dedicated to improve the learning process, as well as scientific collaboration. I often noticed that some scientific topics are really complex, thereby classical courses may not be sufficient to integrate all this complexity. During the past 5 years, I built several mathematical models from developmental biology (somitogenesis) to calcium and phosphate homeostasis.</description>
     </item>
     
+    <item>
+      <title>Rmarkdown test</title>
+      <link>/blog/rmarkdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min.</description>
+    </item>
+    
   </channel>
 </rss>
