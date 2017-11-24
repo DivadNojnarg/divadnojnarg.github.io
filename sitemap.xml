@@ -2,100 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/customsliderinput/</loc>
+    <loc>/blog/knobinput/</loc>
+    <lastmod>2017-11-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/customsliderinput/</loc>
     <lastmod>2017-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/bestofshiny/</loc>
+    <loc>/blog/bestofshiny/</loc>
     <lastmod>2017-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about-shiny/</loc>
+    <loc>/about-shiny/</loc>
     <lastmod>2017-06-07T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about-ecology/</loc>
+    <loc>/about-ecology/</loc>
     <lastmod>2017-06-07T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/todolist/</loc>
+    <loc>/blog/todolist/</loc>
     <lastmod>2017-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/mathjax/</loc>
+    <loc>/blog/mathjax/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/hello/</loc>
+    <loc>/blog/hello/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium-homeo/</loc>
+    <loc>/gallery/calcium-homeo/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</loc>
+    <loc>/gallery/calcium_phosphate_homeo/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/ecology/</loc>
+    <loc>/gallery/ecology/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/lorenz/</loc>
+    <loc>/gallery/lorenz/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/shiny-app/</loc>
+    <loc>/gallery/shiny-app/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/around_r/</loc>
+    <loc>/gallery/around_r/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about-lorenz/</loc>
+    <loc>/about-lorenz/</loc>
     <lastmod>2017-05-05T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/blog/</loc>
-    <lastmod>2017-11-11T00:00:00+00:00</lastmod>
+    <loc>/blog/</loc>
+    <lastmod>2017-11-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/</loc>
+    <loc>/gallery/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/</loc>
-    <lastmod>2017-11-11T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2017-11-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   

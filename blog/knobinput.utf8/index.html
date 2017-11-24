@@ -6,11 +6,11 @@
         <title>
             
             
-                Upcoming Updates | Hi, I am David
+                Extend shinyWidgets: knobInput | Hi, I am David
             
         </title>
 
-        <meta name="title" content="Upcoming Updates | Hi, I am David">
+        <meta name="title" content="Extend shinyWidgets: knobInput | Hi, I am David">
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -24,7 +24,7 @@
         
         <meta name="author" content="David Granjon">
         
-        <meta property="og:title" content="Upcoming Updates | Hi, I am David">
+        <meta property="og:title" content="Extend shinyWidgets: knobInput | Hi, I am David">
         <meta property="og:type" content="website">
         <meta property="og:url" content="/">
         
@@ -33,10 +33,10 @@
 
         
 
-        <link rel="canonical" href="../../blog/todolist/">
+        <link rel="canonical" href="../../blog/knobinput.utf8/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
-         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css">
         
         
         <script type="text/javascript" async
@@ -112,37 +112,94 @@
 
 <section class="container">
     <section class="content">
-      <h1> Upcoming Updates </h1>
+      <h1> Extend shinyWidgets: knobInput </h1>
 
       <div class="sub-header">
-        May 2017 · 1 minute read
+        November 2017 · 2 minute read
       </div>
 
       <div class="entry-content">
-        <p>Future updates:</p>
+        <p><a href="https://shiny.rstudio.com">shiny</a> basic package contains several widgets, available
+<a href="https://shiny.rstudio.com/gallery/widget-gallery.html">here</a>. This database is
+continously extended through the <a href="https://github.com/dreamRs/shinyWidgets">shinyWidget</a>
+package developed by the <a href="https://www.dreamrs.fr">dreamRs</a> team. Here I present how we
+add a new knobInput widget to shinyWidget, with Victor Perrier from dreamRs team.</p>
 
-<ul class="task-list">
-<li><input type="checkbox" checked disabled class="task-list-item"> add a link to the second scientific article published</li>
-<li><input type="checkbox" checked disabled class="task-list-item"> upload the first shiny app in the Lorenz model section</li>
-<li><input type="checkbox" checked disabled class="task-list-item"> add all other shiny apps related to the Lorenz model</li>
-<li><input type="checkbox" checked disabled class="task-list-item"> open the shiny showcase section</li>
-<li><input type="checkbox" checked disabled class="task-list-item"> new icons</li>
-<li><input type="checkbox" disabled class="task-list-item"> update the Lotka Volterra App</li>
-<li><input type="checkbox" disabled class="task-list-item"> publish Shiny App of Calcium Homeostasis</li>
-<li><input type="checkbox" disabled class="task-list-item"> add a description part to the Calcium Homeostasis gallery</li>
-<li><input type="checkbox" disabled class="task-list-item"> add tutorials/articles in the teaching section</li>
-</ul>
+<p>I always wanted to play with some knobs in shiny, similarly as what we do with sliders.
+However, in spite of some research, I found nothing already implemented. Later, I discovered
+this js library <a href="https://github.com/aterrien">jQuery knob</a>. In parallel, I started to read some tutorials
+on <em>&ldquo;how to extend shiny&rdquo;</em> and decided to create a new RStudio project to include this
+new widget. The idea is simple:</p>
 
-<p>Last update: 22-10-17</p>
+<ol>
+<li>First, you create the file containing the new widget: <em>input-knob.R</em>. It is widely inspired
+on what you can find on the shiny github R <a href="https://github.com/rstudio/shiny/tree/master/R">folder</a>.
+Below, I quickly describe its content:</li>
+</ol>
+
+<pre><code class="language-r">knobInput &lt;- function(inputId, label, value, min = 0, max = 100, step = 1,
+                      angleOffset = 0, angleArc = 360, cursor = FALSE,
+                      thickness = NULL, lineCap = c(&quot;default&quot;, &quot;round&quot;), displayInput = TRUE,
+                      displayPrevious = FALSE, rotation = c(&quot;clockwise&quot;, &quot;anticlockwise&quot;),
+                      fgColor = NULL, inputColor = NULL, bgColor = NULL,
+                      readOnly = FALSE, skin = NULL, width = NULL, height = NULL) {
+  value &lt;- shiny::restoreInput(id = inputId, default = value)
+  lineCap &lt;- match.arg(lineCap)
+  rotation &lt;- match.arg(rotation)
+  knobParams &lt;- dropNulls(list(
+    id = inputId, type = &quot;text&quot;, class = &quot;knob-input&quot;, 
+    value = value, `data-value` = value, `data-skin` = skin,
+    `data-min` = min, `data-max` = max, `data-step` = step, 
+    `data-angleoffset` = angleOffset, `data-anglearc` = angleArc,
+    `data-displayprevious` = displayPrevious, `data-thickness` = thickness,
+    `data-displayinput` = displayInput, `data-linecap` = lineCap,
+    `data-fgcolor` = fgColor, `data-inputcolor` = inputColor,
+    `data-bgcolor` = bgColor, `data-cursor` = cursor,
+    `data-rotation` = rotation, `data-readonly` = readOnly,
+    `data-width` = width, `data-height` = height
+  ))
+  knobParams &lt;- lapply(knobParams, function(x) {
+    if (identical(x, TRUE))
+      &quot;true&quot;
+    else if (identical(x, FALSE))
+      &quot;false&quot;
+    else x
+  })
+  inputTag &lt;- do.call(htmltools::tags$input, knobParams)
+  knobInputTag &lt;- htmltools::tags$div(
+    class = &quot;form-group shiny-input-container&quot;,
+    style = if (!is.null(width)) paste0(&quot;width: &quot;, htmltools::validateCssUnit(width), &quot;;&quot;),
+    if (!is.null(label)) htmltools::tags$label(`for` = inputId, label),
+    if (!is.null(label)) htmltools::tags$br(),
+    inputTag
+  )
+  dep &lt;- htmltools::htmlDependency(
+    name = &quot;jquery-knob&quot;, version = &quot;1.2.13&quot;,
+    src = c(href = &quot;jquery-knob&quot;),
+    script = c(&quot;jquery.knob.min.js&quot;,
+               &quot;knob-input-binding.js&quot;)
+  )
+  htmltools::attachDependencies(knobInputTag, dep)
+}
+</code></pre>
+
+<ol>
+<li>Then, you need to create the related input-binding.</li>
+</ol>
+
+<pre><code class="language-r">
+</code></pre>
+
+<p><a href="https://stackoverflow.com/questions/47261702/create-a-knobinput-widget-in-shiny-app">https://stackoverflow.com/questions/47261702/create-a-knobinput-widget-in-shiny-app</a></p>
 
       </div>
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="../../blog/mathjax/">Setting MathJax with Hugo</a>
+          &laquo; <a class="basic-alignment left" href="../../blog/customsliderinput/">How to customize shiny sliderInput</a>
         
         
-          <a class="basic-alignment left" href="../../blog/bestofshiny/">Essential Shiny packages</a> &raquo;
+          <a class="basic-alignment left" href="../../blog/knobinput/">Extend shinyWidgets: knobInput</a> &raquo;
         
       </div>
     </section>
