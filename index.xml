@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hi, I am David</title>
-    <link>/</link>
+    <link>https://divadnojnarg.github.io/</link>
     <description>Recent content on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
     <lastBuildDate>Tue, 21 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Extend shinyWidgets: knobInput</title>
-      <link>/blog/knobinput/</link>
+      <link>https://divadnojnarg.github.io/blog/knobinput/</link>
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/knobinput/</guid>
+      <guid>https://divadnojnarg.github.io/blog/knobinput/</guid>
       <description>Introduction shiny basic package contains several widgets, available here. This database is continuously extended through the shinyWidget package developed by the dreamRs team. Here I present how we add a new knobInput widget to shinyWidget, with Victor Perrier from the dreamRs team.
 I always wanted to play with some knobs in shiny, similarly as what we do with sliders. However, in spite of some research, I found nothing already implemented.</description>
     </item>
     
     <item>
       <title>How to customize shiny sliderInput</title>
-      <link>/blog/customsliderinput/</link>
+      <link>https://divadnojnarg.github.io/blog/customsliderinput/</link>
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/customsliderinput/</guid>
+      <guid>https://divadnojnarg.github.io/blog/customsliderinput/</guid>
       <description>Sometimes, you might get bored by the design of the sliders in Shiny. This input widget uses the Ion.Rangeslider js library. In the advanced section, you can notice that 5 themes are actually available. I really like the flat ui skin. In this tutorial, I will describe one way to install new themes for your shiny sliders.
  First of all, you have to download shiny from source in order to access some files required for this customization.</description>
     </item>
     
     <item>
       <title>Essential Shiny packages</title>
-      <link>/blog/bestofshiny/</link>
+      <link>https://divadnojnarg.github.io/blog/bestofshiny/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/bestofshiny/</guid>
+      <guid>https://divadnojnarg.github.io/blog/bestofshiny/</guid>
       <description>After several months of silence (I am very busy :)), I would like to share with you a &amp;ldquo;best of&amp;rdquo; of all Shiny packages you might need to build beautiful and powerful applications.
 Enhance your apps with Javascript (still updated) The shinyjs package was designed by Dean Attali, https://deanattali.com/shinyjs/, a very famous shiny user. In summary, it allows you to add interactivity inside your app for example:
  hide/show/toggle widgets, graphs, tables reset inputs to their initial value enable/disable elements  These are the most outstanding properties of this package and require just a few lines of code to work.</description>
@@ -45,113 +45,113 @@ Enhance your apps with Javascript (still updated) The shinyjs package was design
     
     <item>
       <title>A model Reader</title>
-      <link>/about-shiny/</link>
+      <link>https://divadnojnarg.github.io/about-shiny/</link>
       <pubDate>Wed, 07 Jun 2017 21:48:51 -0700</pubDate>
       
-      <guid>/about-shiny/</guid>
+      <guid>https://divadnojnarg.github.io/about-shiny/</guid>
       <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one.
  Last update: 18/06/17 -&amp;gt; Version 0.2 available: the user can add trajectories on the phase plane by a simple click.</description>
     </item>
     
     <item>
       <title>Shiny Apps of Lotka Volterra Models</title>
-      <link>/about-ecology/</link>
+      <link>https://divadnojnarg.github.io/about-ecology/</link>
       <pubDate>Wed, 07 Jun 2017 21:48:51 -0700</pubDate>
       
-      <guid>/about-ecology/</guid>
+      <guid>https://divadnojnarg.github.io/about-ecology/</guid>
       <description>Introduction The study of prey-predators interactions is a very exciting field, where a wide variety of models is available. The most famous is obviously that of Lotka-Volterra created in parallel by Vito Volterra and James Lotka (V. Volterra, Nature, 118: 1926). This model contains shortcomings such as the infinite growth of prey, which is not realistic (Malthus growth rate). It is indeed more accurate to use a Verhulst growth function, which takes into consideration competition between preys.</description>
     </item>
     
     <item>
       <title>Upcoming Updates</title>
-      <link>/blog/todolist/</link>
+      <link>https://divadnojnarg.github.io/blog/todolist/</link>
       <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/todolist/</guid>
+      <guid>https://divadnojnarg.github.io/blog/todolist/</guid>
       <description>Future updates:
 add a link to the second scientific article published upload the first shiny app in the Lorenz model section add all other shiny apps related to the Lorenz model open the shiny showcase section new icons update the Lotka Volterra App publish Shiny App of Calcium Homeostasis add a description part to the Calcium Homeostasis gallery add tutorials/articles in the teaching section  Last update: 22-10-17</description>
     </item>
     
     <item>
       <title>Setting MathJax with Hugo</title>
-      <link>/blog/mathjax/</link>
+      <link>https://divadnojnarg.github.io/blog/mathjax/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/mathjax/</guid>
+      <guid>https://divadnojnarg.github.io/blog/mathjax/</guid>
       <description>The classical approach MathJax is a javascript library which allows the user to integrate math expressions in a website or a blog. However, its configuration can be quite complex for beginners. In my previous website powered by Jekyll, I easily managed to install MathJax, whereas I encountered some problems with Hugo.
 1. Installing MathJax via Hugo&amp;rsquo;s documentation Everything you need can be found here. You have to insert the code below in the /layout/partials folder of your website: it is even better to create a file named mathjax_support.</description>
     </item>
     
     <item>
       <title>Welcome</title>
-      <link>/blog/hello/</link>
+      <link>https://divadnojnarg.github.io/blog/hello/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/hello/</guid>
+      <guid>https://divadnojnarg.github.io/blog/hello/</guid>
       <description>Welcome to my new website. I am David, PhD in mathematical physiology, especially in renal physiology and calcium/phosphate metabolism. I have a great interest for new technologies especially those dedicated to improve the learning process, as well as scientific collaboration. I often noticed that some scientific topics are really complex, thereby classical courses may not be sufficient to integrate all this complexity. During the past 5 years, I built several mathematical models from developmental biology (somitogenesis) to calcium and phosphate homeostasis.</description>
     </item>
     
     <item>
       <title>A model of Calcium Homeostasis</title>
-      <link>/gallery/calcium-homeo/</link>
+      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>/gallery/calcium-homeo/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A model of Calcium and Phosphate Homeostasis</title>
-      <link>/gallery/calcium_phosphate_homeo/</link>
+      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>/gallery/calcium_phosphate_homeo/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modeling in Ecology</title>
-      <link>/gallery/ecology/</link>
+      <link>https://divadnojnarg.github.io/gallery/ecology/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/ecology/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/ecology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny App of the Lorenz Model</title>
-      <link>/gallery/lorenz/</link>
+      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/lorenz/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny Apps Showcase</title>
-      <link>/gallery/shiny-app/</link>
+      <link>https://divadnojnarg.github.io/gallery/shiny-app/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/shiny-app/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching Area</title>
-      <link>/gallery/around_r/</link>
+      <link>https://divadnojnarg.github.io/gallery/around_r/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>/gallery/around_r/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/around_r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Some Shiny Apps</title>
-      <link>/about-lorenz/</link>
+      <link>https://divadnojnarg.github.io/about-lorenz/</link>
       <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
       
-      <guid>/about-lorenz/</guid>
-      <description>Introduction The purpose of this page is to show some Shiny Apps of the Lorenz model developed with R and the Shiny package as well as other very usefull packages such as shinydashboard, shinyJS, plotly, shinycssloaders. Some of these apps are still in development, to improve their design and features.
+      <guid>https://divadnojnarg.github.io/about-lorenz/</guid>
+      <description>Introduction The purpose of this page is to show some Shiny Apps of the Lorenz model developed with R and the Shiny package as well as other very usefull packages such as shinydashboard, shinyJS, plotly, shinyWidgets, shinycssloaders. Some of these apps are still in development, to improve their design and features.
 1. Solve the Lorenz model for random initial conditions This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.</description>
     </item>
     
