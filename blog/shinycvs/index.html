@@ -24,6 +24,10 @@
         
         <meta name="author" content="David Granjon">
         
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@divadnojnarg">
+        <meta name="twitter:creator" content="@divadnojnarg">
+        
         <meta property="og:title" content="Make beautiful CVs with shiny and AdminLTE2 | Hi, I am David">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://divadnojnarg.github.io">
@@ -197,7 +201,7 @@ view_shinyCV(cv_mode = &quot;basic&quot;, data_source = &quot;manual&quot;, data
 Below is an example of the datas given by generate_datas_shinyCV():</p>
 
 <pre><code class="language-r"># datas for the profile example
-  temp_profile &lt;&lt;- list(
+  temp_profile &lt;- list(
     my_name = &quot;Jean Bob&quot;,
     my_position = &quot;Looking for a Job&quot;,
     my_age = 35,
@@ -212,11 +216,16 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
     voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.&quot;,
-    my_image = NULL
+    my_image = list(
+      src = system.file(&quot;App/cv_viewer/www/man.png&quot;, package = &quot;shinyCV&quot;),
+      # very important to keep the adminLTE image border
+      class = &quot;profile-user-img img-responsive img-circle&quot;,
+      alt = &quot;User profile picture&quot;
+    )
   )
 
   # datas for about example
-  temp_about &lt;&lt;- data.frame(
+  temp_about &lt;- data.frame(
     my_phone = &quot;+44 650 36 47&quot;,
     my_mail = &quot;bobatgmail.com&quot;,
     my_location = &quot;Los Angeles&quot;,
@@ -227,19 +236,19 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for skills example
-  temp_skills &lt;&lt;- data.frame(
+  temp_skills &lt;- data.frame(
     variable = c(&quot;R&quot;, &quot;Javascript&quot;, &quot;HTML&quot;),
     value = c(80, 50, 60)
   )
 
   # datas for language example
-  temp_languages &lt;&lt;- data.frame(
+  temp_languages &lt;- data.frame(
     variable = c(&quot;french&quot;, &quot;english&quot;),
     value = c(10, 90)
   )
 
   # datas for network example
-  temp_network &lt;&lt;- data.frame(
+  temp_network &lt;- data.frame(
     title = c(&quot;Dr.&quot;, &quot;Pr.&quot;, &quot;&quot;),
     sex = c(&quot;male&quot;, &quot;female&quot;, &quot;female&quot;),
     name = c(&quot;Janine&quot;, &quot;Huguette&quot;, &quot;Jean Raymond&quot;),
@@ -249,7 +258,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for formation example
-  temp_formations &lt;&lt;- data.frame(
+  temp_formations &lt;- data.frame(
     title = c(&quot;Bachelor Degree&quot;, &quot;Master Degree&quot;, &quot;PhD in Biostatistics&quot;),
     topic = rep(&quot;database&quot;, 3),
     from = rep(&quot;1900-01-01&quot;, 3),
@@ -262,7 +271,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for task example
-  temp_tasks &lt;&lt;- list(
+  temp_tasks &lt;- list(
     # one task dataframe per project
     project1 = data.frame(
       name = c(&quot;task 1&quot;, &quot;task 2&quot;),
@@ -283,7 +292,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for project example
-  temp_projects &lt;&lt;- data.frame(
+  temp_projects &lt;- data.frame(
     title = c(&quot;My project 1&quot;, &quot;My_project 2&quot;,
               &quot;My project 3&quot;, &quot;My project 4&quot;),
     position = c(&quot;Big Boss&quot;, &quot;Slave&quot;, &quot;Big Boss&quot;, &quot;Slave&quot;),
@@ -292,8 +301,17 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
     place = rep(&quot;Somewhere&quot;, 4)
   )
 
+  # datas for publications screenshots
+  demo_list &lt;- list(
+    class = &quot;img-responsive pad&quot;,
+    src = system.file(&quot;App/cv_viewer/www/text-lines.svg&quot;, package = &quot;shinyCV&quot;),
+    style = &quot;height: 100px; display: block;
+    margin-left: auto; margin-right: auto;&quot;
+  )
+  temp_publications_screenshots &lt;- list(demo_list, demo_list, demo_list)
+
  # data for publication example
-  temp_publications &lt;&lt;- data.frame(
+  temp_publications &lt;- data.frame(
     reference = rep(&quot;Your name et al., Journal Title, 2018&quot;, 3),
     abstract = rep(&quot;Lorem ipsum dolor sit amet, consectetur
                    adipiscing elit, sed do eiusmod tempor
@@ -309,7 +327,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
 
 
   # datas for talk example
-  temp_talks &lt;&lt;- data.frame(
+  temp_talks &lt;- data.frame(
     title = rep(&quot;My Talk&quot;, 5),
     from = rep(&quot;1900-01-01&quot;, 5),
     to = rep(&quot;1900-01-01&quot;, 5),
@@ -328,7 +346,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for course example
-  temp_courses &lt;&lt;- data.frame(
+  temp_courses &lt;- data.frame(
     title = rep(&quot;My course&quot;, 4),
     topic = rep(&quot;my topic&quot;, 4),
     nb_students = c(10, 100, 4, 250),
@@ -341,7 +359,7 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
   )
 
   # datas for internship example
-  temp_internships &lt;&lt;- data.frame(
+  temp_internships &lt;- data.frame(
     title = c(&quot;My Internship 1&quot;, &quot;My Internship 2&quot;,
               &quot;My Internship 3&quot;, &quot;My Internship 4&quot;),
     topic = rep(&quot;some topic&quot;, 4),
@@ -424,6 +442,8 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
             
             <div class="col-xs-3 col-md-2"><a href="https://linkedin.com/in/david-granjon-88625968">LinkedIn</a></div>
             
+            
+            <div class="col-xs-3 col-md-2"><a href="https://twitter.com/divadnojnarg">Twitter</a></div>
             
             
             <div class="col-xs-12">
