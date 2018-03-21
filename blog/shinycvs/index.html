@@ -133,9 +133,12 @@
 
 <ul>
 <li><a href="https://adminlte.io/themes/AdminLTE">https://adminlte.io/themes/AdminLTE</a> ( main theme)</li>
-<li>The repository is still private in Github! (Will be opened soon)</li>
 <li>Will be released to CRAN as soon as possible</li>
 </ul>
+
+<pre><code class="language-r">library(devtools)
+install_github(&quot;DivadNojnarg/shinyCV&quot;)
+</code></pre>
 
 <h2 id="introduction-build-your-cv-from-the-shiny-interface">Introduction: build your cv from the shiny interface</h2>
 
@@ -401,7 +404,8 @@ Below is an example of the datas given by generate_datas_shinyCV():</p>
 <h2 id="upcoming-features">Upcoming features</h2>
 
 <ul>
-<li>manually add pictures via feed_shinyCV()</li>
+<li>manually reorder panels using shinyjqui</li>
+<li>implement the right sidebar in R</li>
 <li>new timeline boxes</li>
 <li><a href="http://ionicabizau.github.io/github-calendar/example/">http://ionicabizau.github.io/github-calendar/example/</a> (integrate Github activity to the CV)</li>
 </ul>
