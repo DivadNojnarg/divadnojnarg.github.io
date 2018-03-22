@@ -19,8 +19,8 @@
       
       <guid>https://divadnojnarg.github.io/blog/shinycvs/</guid>
       <description>shinyCV  Amazing HTML CVs based upon adminLTE2 template
-  https://adminlte.io/themes/AdminLTE ( main theme) Will be released to CRAN as soon as possible  library(devtools) install_github(&amp;quot;DivadNojnarg/shinyCV&amp;quot;)  Introduction: build your cv from the shiny interface This package uses 2 shiny apps to build awesome CVs based on the AdminLTE2 template. Launch the builder by using:
-library(shinyCV) build_shinyCV()  Fill the form to build your cv step by step and save the current state at any time.</description>
+  https://adminlte.io/themes/AdminLTE ( main theme) Will be released to CRAN as soon as possible  Package Installation library(devtools) install_github(&amp;quot;DivadNojnarg/shinyCV&amp;quot;) library(shinyCV)  Introduction: Basic Workflow This package offers you two ways of creating nice CVs based on the AdminLTE2 template.
+With the build_shinyCV function  Launch the builder by using:  build_shinyCV()  Fill the form to build your cv step by step and save the current state at any time.</description>
     </item>
     
     <item>
