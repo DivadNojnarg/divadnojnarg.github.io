@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>true</copyright>
-    <lastBuildDate>Mon, 26 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://divadnojnarg.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Track a website usage with hotjar</title>
+      <link>https://divadnojnarg.github.io/blog/shinyapp_hotjar/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://divadnojnarg.github.io/blog/shinyapp_hotjar/</guid>
+      <description>A web tracking tool I often use is hotjar. Below is a heatmap showing all the users click in the past week in my personal website. I am keen on this kind of feedback since it summarizes everything at a glance. The screenshot you can see only takes into account click events. However, you can also see users moves or how they scroll on your website.
+
+The table below shows where your visitors are from, how much time they spend on a given page, with which web browser and when.</description>
+    </item>
     
     <item>
       <title>Build awesome dashboards with shiny</title>

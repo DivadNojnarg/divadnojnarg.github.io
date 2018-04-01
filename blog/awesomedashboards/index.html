@@ -150,7 +150,7 @@ Indeed, if you look a the shinydashboard github repository, there is a folder in
 shiny will generate the corresponding HTML code, to be integrate into an html page.
 Let&rsquo;s have a look at what happens:</p>
 
-<pre><code class="language-r">library(shiny)
+<pre><code>library(shiny)
 sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
     min = 0, max = 1000, value = 500
   )
@@ -166,7 +166,7 @@ sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
 
 <p>Basically, all what you write in R will be translated into HTML:</p>
 
-<pre><code class="language-r">library(shiny)
+<pre><code>library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -214,7 +214,7 @@ I find easier to create inputs (slider, checkboxes) writing them in R and copy t
 to get the corresponding HTML, and include this HTML snippet in your full template, than
 directly writing it in HTML, especially if you are not an HTML nerd. An example below:</p>
 
-<pre><code class="language-r">library(shinyWidgets)
+<pre><code>library(shinyWidgets)
 prettyCheckboxGroup(
   inputId = &quot;checkgroup2&quot;,
   label = &quot;Click me!&quot;, thick = TRUE,
@@ -270,7 +270,7 @@ that you want to integrate in your shiny app?</p>
 
 <p>Let&rsquo;s start with this very preliminary shinydashboard template:</p>
 
-<pre><code class="language-r">library(shiny)
+<pre><code>library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -394,7 +394,7 @@ to the timeline object:</p>
 
 <p>To include raw HTML code in shiny, simple write:</p>
 
-<pre><code class="language-r">HTML(
+<pre><code>HTML(
   paste0('
   Your HTML code here
   ')
@@ -403,7 +403,7 @@ to the timeline object:</p>
 
 <p>Let&rsquo;s go back to our shinydashboard and include this HTML code in the body part:</p>
 
-<pre><code class="language-r">library(shiny)
+<pre><code>library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -588,7 +588,7 @@ no idea of the total number).</p>
 
 <p>The converted code will look like that:</p>
 
-<pre><code class="language-r"># col
+<pre><code># col
 tags$div(
   class = &quot;col-md-4&quot;,
   # Widget: user widget style 1
@@ -646,7 +646,7 @@ tags$div(
 
 <p>Having a try with our own basic shinydashboard template:</p>
 
-<pre><code class="language-r">library(shiny)
+<pre><code>library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -719,7 +719,7 @@ shinyApp(
 your own image that should by in the <strong>/www</strong> directory of your application.
 Of course, it would be better if you wrap this custom R code in your own function like that:</p>
 
-<pre><code class="language-r">my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
+<pre><code>my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
                               sales = NULL, followers = NULL, products = NULL) {
                               
   # check some inputs
@@ -790,7 +790,7 @@ Of course, it would be better if you wrap this custom R code in your own functio
 <p>where you would have some fields such as username, userposition, sales, followers and products.
 Notice that I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code>.</p>
 
-<pre><code class="language-r"># create your custom box
+<pre><code># create your custom box
 my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
                               sales = NULL, followers = NULL, products = NULL) {
                               
@@ -931,6 +931,8 @@ bootstrap 4 elements to shiny.</p>
         
           &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/shinycvs/">Make beautiful CVs with shiny and AdminLTE2</a>
         
+        
+          <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/shinyapp_hotjar/">Track a website usage with hotjar</a> &raquo;
         
       </div>
     </section>
