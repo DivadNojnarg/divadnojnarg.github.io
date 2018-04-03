@@ -60,8 +60,8 @@ I always wanted to play with some knobs in shiny, similarly as what we do with s
       <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://divadnojnarg.github.io/blog/customsliderinput/</guid>
-      <description>Sometimes, you might get bored by the design of the sliders in Shiny. This input widget uses the Ion.Rangeslider js library. In the advanced section, you can notice that 5 themes are actually available. I really like the flat ui skin. In this tutorial, I will describe one way to install new themes for your shiny sliders.
- First of all, you have to download shiny from source in order to access some files required for this customization.</description>
+      <description>Sometimes, you might get bored by the design of the sliders in Shiny. This input widget uses the Ion.Rangeslider js library. In the advanced section, you can notice that 5 themes are actually available. I really like the flat ui skin. In this tutorial, I will describe two ways to install new themes for your shiny sliders (a third way is in development)
+Create your own input-slider.R function At the moment, this is my favorite option since it does not alter the shiny package code directly.</description>
     </item>
     
     <item>
