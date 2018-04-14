@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="https://divadnojnarg.github.io">
+        <base href="../../">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
@@ -30,14 +30,14 @@
         
         <meta property="og:title" content="How to customize shiny sliderInput | Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://divadnojnarg.github.io">
+        <meta property="og:url" content="/">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="https://divadnojnarg.github.io/blog/customsliderinput/">
+        <link rel="canonical" href="../../blog/customsliderinput/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
@@ -93,7 +93,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="../../#work">Work</a></h3></div>
@@ -131,7 +131,7 @@
       <h1> How to customize shiny sliderInput </h1>
 
       <div class="sub-header">
-        November 2017 · 10 minute read
+        November 2017 · 12 minute read
       </div>
 
       <div class="entry-content">
@@ -142,7 +142,279 @@ uses the <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion.Range
 In the advanced <a href="http://ionden.com/a/plugins/ion.rangeSlider/demo_advanced.html">section</a>,
 you can notice that 5 themes are actually available. I really like the flat ui skin.
 In this tutorial, I will describe two ways to install new themes for your shiny
-sliders (a third way is in development)</p>
+sliders.</p>
+
+<h2 id="use-shinywidgets">Use shinyWidgets</h2>
+
+<p>Recently, I added 2 functions to the shinyWidgets package of Victor Perrier:
+- chooseSliderSkin that enables you to choose the global skin of all your sliders.
+Unfortunately, you cannot have one different skin for each slider.</p>
+
+<pre><code>library(shiny)
+library(shinyWidgets)
+
+ui &lt;- fluidPage(
+
+  # use the Modern design
+  chooseSliderSkin(&quot;Modern&quot;),
+  sliderInput(&quot;obs&quot;, &quot;Customized slider1:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  sliderInput(&quot;obs2&quot;, &quot;Customized slider1:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  sliderInput(&quot;obs3&quot;, &quot;Customized slider1:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  plotOutput(&quot;distPlot&quot;)
+)
+
+server &lt;- function(input, output) {
+
+  output$distPlot &lt;- renderPlot({
+    hist(rnorm(input$obs))
+  })
+}
+
+shinyApp(ui, server)
+
+</code></pre>
+
+<ul>
+<li>setSliderColor that enables you to pass a custom color for each slider. The color code
+can either be HEX code or the name of <a href="https://www.w3schools.com/colors/colors_names.asp">CSS color</a> to have an overview of all colors.</li>
+</ul>
+
+<pre><code>library(shiny)
+library(shinyWidgets)
+
+ui &lt;- fluidPage(
+
+  # only customize the 2 first sliders and the last one
+  # the color of the third one is empty
+  setSliderColor(c(&quot;DeepPink &quot;, &quot;#FF4500&quot;, &quot;&quot;, &quot;Teal&quot;), c(1, 2, 4)),
+  sliderInput(&quot;obs&quot;, &quot;My pink slider:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  sliderInput(&quot;obs2&quot;, &quot;My orange slider:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  sliderInput(&quot;obs3&quot;, &quot;My basic slider:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  sliderInput(&quot;obs3&quot;, &quot;My teal slider:&quot;,
+              min = 0, max = 100, value = 50
+  ),
+  plotOutput(&quot;distPlot&quot;)
+)
+
+server &lt;- function(input, output) {
+
+  output$distPlot &lt;- renderPlot({
+    hist(rnorm(input$obs))
+  })
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p>Hope you will enjoy this customization!</p>
+
+<pre><code>library(shiny)
+library(shinyWidgets)
+
+slider_colors &lt;- c(&quot;AliceBlue&quot;,
+&quot;AntiqueWhite&quot;, 	
+&quot;Aqua&quot;,
+&quot;Aquamarine&quot;,
+&quot;Azure&quot;,
+&quot;Beige&quot;,
+&quot;Bisque&quot;,
+&quot;Black&quot;,
+&quot;BlanchedAlmond&quot;, 	
+&quot;Blue&quot;,
+&quot;BlueViolet&quot;,	
+&quot;Brown&quot;,
+&quot;BurlyWood&quot;,
+&quot;CadetBlue&quot;,
+&quot;Chartreuse&quot;,	
+&quot;Chocolate&quot;,	
+&quot;Coral&quot;,
+&quot;CornflowerBlue&quot;,	
+&quot;Cornsilk&quot;,
+&quot;Crimson&quot;,
+&quot;Cyan&quot;,
+&quot;DarkBlue&quot;,
+&quot;DarkCyan&quot;,
+&quot;DarkGoldenRod&quot;,	
+&quot;DarkGray&quot;,
+&quot;DarkGrey&quot;,
+&quot;DarkGreen&quot;,	
+&quot;DarkKhaki&quot;,
+&quot;DarkMagenta&quot;, 	
+&quot;DarkOliveGreen&quot;,	
+&quot;DarkOrange&quot;,	
+&quot;DarkOrchid&quot;,	
+&quot;DarkRed&quot;,
+&quot;DarkSalmon&quot;,	
+&quot;DarkSeaGreen&quot;, 	
+&quot;DarkSlateBlue&quot;, 	
+&quot;DarkSlateGray&quot;, 
+&quot;DarkSlateGrey&quot;,
+&quot;DarkTurquoise&quot;, 	
+&quot;DarkViolet&quot;,	
+&quot;DeepPink&quot;,
+&quot;DeepSkyBlue&quot;, 	
+&quot;DimGray&quot;,
+&quot;DimGrey&quot;,
+&quot;DodgerBlue&quot;,	
+&quot;FireBrick&quot;,
+&quot;FloralWhite&quot;, 
+&quot;ForestGreen&quot;, 	
+&quot;Fuchsia&quot;,
+&quot;Gainsboro&quot;,
+&quot;GhostWhite&quot;,	
+&quot;Gold&quot;,
+&quot;GoldenRod&quot;,	
+&quot;Gray&quot;,
+&quot;Grey&quot;,
+&quot;Green&quot;,
+&quot;GreenYellow&quot;, 	
+&quot;HoneyDew&quot;,
+&quot;HotPink&quot;,
+&quot;IndianRed&quot;,	
+&quot;Indigo&quot;,
+&quot;Ivory&quot;,
+&quot;Khaki&quot;,
+&quot;Lavender&quot;,
+&quot;LavenderBlush&quot;, 	
+&quot;LawnGreen&quot;,	
+&quot;LemonChiffon&quot;, 	
+&quot;LightBlue&quot;,
+&quot;LightCoral&quot;,	
+&quot;LightCyan&quot;,
+&quot;LightGoldenRodYellow&quot;, 	
+&quot;LightGray&quot;,	
+&quot;LightGrey&quot;,
+&quot;LightGreen&quot;,	
+&quot;LightPink&quot;,
+&quot;LightSalmon&quot;, 	
+&quot;LightSeaGreen&quot;, 	
+&quot;LightSkyBlue&quot;, 	
+&quot;LightSlateGray&quot;, 	
+&quot;LightSlateGrey&quot;, 	
+&quot;LightSteelBlue&quot;, 	
+&quot;LightYellow&quot;, 	
+&quot;Lime&quot;,
+&quot;LimeGreen&quot;,	
+&quot;Linen&quot;,
+&quot;Magenta&quot;,
+&quot;Maroon&quot;,
+&quot;MediumAquaMarine&quot;, 
+&quot;MediumBlue&quot;,	
+&quot;MediumOrchid&quot;, 	
+&quot;MediumPurple&quot;,	
+&quot;MediumSeaGreen&quot;, 	
+&quot;MediumSlateBlue&quot;, 	
+&quot;MediumSpringGreen&quot;, 	
+&quot;MediumTurquoise&quot;, 	
+&quot;MediumVioletRed&quot;, 	
+&quot;MidnightBlue&quot;, 	
+&quot;MintCream&quot;,
+&quot;MistyRose&quot;,	
+&quot;Moccasin&quot;,
+&quot;NavajoWhite&quot;, 	
+&quot;Navy&quot;,
+&quot;OldLace&quot;,
+&quot;Olive&quot;,
+&quot;OliveDrab&quot;,	
+&quot;Orange&quot;,
+&quot;OrangeRed&quot;,	
+&quot;Orchid&quot;,
+&quot;PaleGoldenRod&quot;, 	
+&quot;PaleGreen&quot;,	
+&quot;PaleTurquoise&quot;, 
+&quot;PaleVioletRed&quot;, 	
+&quot;PapayaWhip&quot;,	
+&quot;PeachPuff&quot;,	
+&quot;Peru&quot;,
+&quot;Pink&quot;,
+&quot;Plum&quot;,
+&quot;PowderBlue&quot;,	
+&quot;Purple&quot;,
+&quot;RebeccaPurple&quot;, 	
+&quot;Red&quot;,
+&quot;RosyBrown&quot;,
+&quot;RoyalBlue&quot;,	
+&quot;SaddleBrown&quot;, 	
+&quot;Salmon&quot;,
+&quot;SandyBrown&quot;,	
+&quot;SeaGreen&quot;,
+&quot;SeaShell&quot;,
+&quot;Sienna&quot;,
+&quot;Silver&quot;,
+&quot;SkyBlue&quot;,
+&quot;SlateBlue&quot;,	
+&quot;SlateGray&quot;,	
+&quot;SlateGrey&quot;,	
+&quot;Snow&quot;,
+&quot;SpringGreen&quot;, 	
+&quot;SteelBlue&quot;,
+&quot;Tan&quot;,
+&quot;Teal&quot;,
+&quot;Thistle&quot;,
+&quot;Tomato&quot;,
+&quot;Turquoise&quot;,	
+&quot;Violet&quot;,
+&quot;Wheat&quot;,
+&quot;White&quot;,
+&quot;WhiteSmoke&quot;,
+&quot;Yellow&quot;,
+&quot;YellowGreen&quot;)
+
+ui &lt;- fluidPage(
+  
+  title = &quot;setSliderColor/chooseSliderSkin demo&quot;,
+  
+  titlePanel(&quot;Pimp your shiny sliders!&quot;),
+  
+  setSliderColor(slider_colors, 1:length(slider_colors)),
+  
+  chooseSliderSkin(&quot;Flat&quot;),
+  
+  br(), hr(),
+  
+  # create a set of 148 sliders
+  # to test the 148 css colors
+  fluidRow(
+    lapply(0:3, FUN = function(j) {
+      column(
+        width = 3,
+        lapply((1:37) + 37 * j, FUN = function(i) {
+          tagList(
+            sliderInput(
+              inputId = paste0(&quot;slider&quot;, i), 
+              label = paste(&quot;Slider&quot;, slider_colors[i], &quot;Flat design:&quot;),
+              min = 0, max = 1, value = 0.5
+            )
+          )
+        })
+      )
+    })
+  )
+)
+
+server &lt;- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+
+</code></pre>
+
+<p>The code above will give the image below</p>
+
+<p><a href="images/custom_colorsliders.png"><img src="images/custom_colorsliders.png" width="400px" height="500px" alt="blank"></a></p>
 
 <h2 id="create-your-own-input-slider-r-function">Create your own input-slider.R function</h2>
 
@@ -581,10 +853,10 @@ will <strong>erase</strong> your modifications. Up to you to <strong>save</stron
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/bestofshiny/">Essential Shiny packages</a>
+          &laquo; <a class="basic-alignment left" href="../../blog/bestofshiny/">Essential Shiny packages</a>
         
         
-          <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/knobinput/">Extend shinyWidgets: knobInput</a> &raquo;
+          <a class="basic-alignment left" href="../../blog/knobinput/">Extend shinyWidgets: knobInput</a> &raquo;
         
       </div>
     </section>
