@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="https://divadnojnarg.github.io">
+        <base href="../../">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
@@ -30,14 +30,14 @@
         
         <meta property="og:title" content="Save your R packages when updating R version | Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://divadnojnarg.github.io">
+        <meta property="og:url" content="/">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="https://divadnojnarg.github.io/blog/rpackages_save/">
+        <link rel="canonical" href="../../blog/rpackages_save/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
@@ -93,7 +93,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="../../#work">Work</a></h3></div>
@@ -140,20 +140,20 @@
 <p>However, it is <strong>so useful</strong> that I keep it here to remember about the process to
 save and restore all R packages when updating to a newer version of R.</p>
 
-<ol>
+<ul>
 <li>Before you upgrade, build a temp file with all of your old packages.</li>
-</ol>
+</ul>
 
 <pre><code>tmp &lt;- installed.packages()
 installedpkgs &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
 save(installedpkgs, file=&quot;installed_old.rda&quot;)
 </code></pre>
 
-<ol>
+<ul>
 <li><p>Install the new version of R and let it do it’s thing.</p></li>
 
 <li><p>Once you’ve got the new version up and running, reload the saved packages and re-install them from CRAN.</p></li>
-</ol>
+</ul>
 
 <pre><code>tmp &lt;- installed.packages()
 installedpkgs.new &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
@@ -168,7 +168,7 @@ update.packages()
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/shinyapp_hotjar/">Track a website usage with hotjar</a>
+          &laquo; <a class="basic-alignment left" href="../../blog/shinyapp_hotjar/">Track a website usage with hotjar</a>
         
         
       </div>
