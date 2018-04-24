@@ -6,11 +6,11 @@
         <title>
             
             
-                404 Page not found | Hi, I am David
+                Save your R packages when updating R version | Hi, I am David
             
         </title>
 
-        <meta name="title" content="404 Page not found | Hi, I am David">
+        <meta name="title" content="Save your R packages when updating R version | Hi, I am David">
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -28,7 +28,7 @@
         <meta name="twitter:site" content="@divadnojnarg">
         <meta name="twitter:creator" content="@divadnojnarg">
         
-        <meta property="og:title" content="404 Page not found | Hi, I am David">
+        <meta property="og:title" content="Save your R packages when updating R version | Hi, I am David">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://divadnojnarg.github.io">
         
@@ -37,8 +37,8 @@
 
         
 
-        <link rel="canonical" href="">
-        <link href="https://divadnojnarg.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hi, I am David">
+        <link rel="canonical" href="https://divadnojnarg.github.io/blog/rpackages_save/">
+        
         <link rel="stylesheet" href="styles/main.css" type="text/css">
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
         
@@ -93,32 +93,32 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="https://divadnojnarg.github.io"><img src="./images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
-            <div class="col-xs-3 col-md-2"><h3><a href="./#work">Work</a></h3></div>
+            <div class="col-xs-3 col-md-2"><h3><a href="../../#work">Work</a></h3></div>
             
-            <div class="col-xs-3 col-md-2"><h3><a href="./#blog">Blog</a></h3></div>
+            <div class="col-xs-3 col-md-2"><h3><a href="../../#blog">Blog</a></h3></div>
             
-            <div class="col-xs-3 col-md-2"><h3><a href="./#contact">Contact</a></h3></div>
+            <div class="col-xs-3 col-md-2"><h3><a href="../../#contact">Contact</a></h3></div>
             
-            <div class="col-xs-3 col-md-2"><h3><a href="./cv.pdf">About</a></h3></div>
+            <div class="col-xs-3 col-md-2"><h3><a href="../../cv.pdf">About</a></h3></div>
             
             <div class="col-xs-6 col-sm-1 nav-toggle">
-                <a href="" class="nav-icon" onclick="return false"><img src="./images/icon-menu.png" alt="Open Menu"><img src="./images/icon-x.png" alt="Close Menu" style="display: none;"></a>
+                <a href="" class="nav-icon" onclick="return false"><img src="../../images/icon-menu.png" alt="Open Menu"><img src="../../images/icon-x.png" alt="Close Menu" style="display: none;"></a>
             </div>
         </nav>
         <section class="nav-full row middle-xs center-xs">
             <div class="col-xs-12">
                 <div class="row middle-xs center-xs">
                     
-                    <div class="col-xs-12"><h1><a href="./#work">Work</a></h1></div>
+                    <div class="col-xs-12"><h1><a href="../../#work">Work</a></h1></div>
                     
-                    <div class="col-xs-12"><h1><a href="./#blog">Blog</a></h1></div>
+                    <div class="col-xs-12"><h1><a href="../../#blog">Blog</a></h1></div>
                     
-                    <div class="col-xs-12"><h1><a href="./#contact">Contact</a></h1></div>
+                    <div class="col-xs-12"><h1><a href="../../#contact">Contact</a></h1></div>
                     
-                    <div class="col-xs-12"><h1><a href="./cv.pdf">About</a></h1></div>
+                    <div class="col-xs-12"><h1><a href="../../cv.pdf">About</a></h1></div>
                     
                 </div>
             </div>
@@ -126,12 +126,71 @@
         <main>
 
 
-    <div class="row full center-xs middle-xs">
-        <div class="col-xs-12">
-            <h1>404!</h1>
-            <p>WHAT DID YOU DO?!</p>
-        </div>
-    </div>
+<section class="container">
+    <section class="content">
+      <h1> Save your R packages when updating R version </h1>
+
+      <div class="sub-header">
+        April 2018 · 1 minute read
+      </div>
+
+      <div class="entry-content">
+        <p>This post is <strong>a copy and paste</strong> of an <a href="https://www.r-bloggers.com/upgrade-r-without-losing-your-packages/">r-blogger article</a>.</p>
+
+<p>However, it is <strong>so useful</strong> that I keep it here to remember about the process to
+save and restore all R packages when updating to a newer version of R.</p>
+
+<ol>
+<li>Before you upgrade, build a temp file with all of your old packages.</li>
+</ol>
+
+<pre><code>tmp &lt;- installed.packages()
+installedpkgs &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
+save(installedpkgs, file=&quot;installed_old.rda&quot;)
+</code></pre>
+
+<ol>
+<li><p>Install the new version of R and let it do it’s thing.</p></li>
+
+<li><p>Once you’ve got the new version up and running, reload the saved packages and re-install them from CRAN.</p></li>
+</ol>
+
+<pre><code>tmp &lt;- installed.packages()
+installedpkgs.new &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
+missing &lt;- setdiff(installedpkgs, installedpkgs.new)
+install.packages(missing)
+update.packages()
+</code></pre>
+
+<p>Enjoy!</p>
+
+      </div>
+
+      <div class="links">
+        
+          &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/shinyapp_hotjar/">Track a website usage with hotjar</a>
+        
+        
+      </div>
+    </section>
+    <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+      return;
+      
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'divadnojnarg';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
 
         </main>
         <footer class="row middle-xs center-xs">
@@ -155,7 +214,7 @@
             
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
             
-            <script src="./scripts/main.js" type="text/javascript"></script>
+            <script src="../../scripts/main.js" type="text/javascript"></script>
             
             <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
         </footer>
