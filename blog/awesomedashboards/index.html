@@ -173,7 +173,7 @@ sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
 &lt;/div&gt;
 </code></pre>
 
-<p>Basically, all what you write in R will be translated in HTML:</p>
+<p>Basically, all that you write in R will be translated in HTML:</p>
 
 <pre><code>library(shiny)
 library(shinydashboard)
@@ -218,8 +218,8 @@ shinyApp(
 
 <p>In pratice, this is not enough to build beautiful dashboard but it is still a good start.
 With this very simple technic, you will be able to generate any <strong>custom HTML</strong>.
-Moreover, if you are creating a shiny app with an <a href="https://shiny.rstudio.com/articles/templates.html"><strong>HTML template</strong></a>. I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
-code is writtent, copy the code to the R console to get the corresponding HTML,
+Moreover, if you are creating a shiny app with an <a href="https://shiny.rstudio.com/articles/templates.html"><strong>HTML template</strong></a>, I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
+code is written, copy it in the R console to get the corresponding HTML,
 and include this HTML snippet in your full template. I personnaly, prefer seeing the
 code below that the corresponding HTML:</p>
 
@@ -295,7 +295,7 @@ shinyApp(
 )
 </code></pre>
 
-<p>You noticed a timeline element that you really want to include in your shinydashboard:</p>
+<p>You noticed a timeline element that you really want to include in your shinydashboard.</p>
 
 <p>According to the following screenshot, open the profile.html page with your
 favorite editor (notepad ++, Rstudio, Xcode, &hellip;).</p>
@@ -589,7 +589,7 @@ from adminLTE2.</p>
         &lt;!-- /.col --&gt;
 </code></pre>
 
-<p>To convert it into R we will use the <strong>tags</strong> function from the htmltools package.
+<p>To convert it into R, we will use the <strong>tags</strong> function from the htmltools package (shiny also includes it).
 Each HTML5 tag will be preceded by tags such as <code>tags$h5(&quot;an example&quot;)</code> or
 <code>tags$div(class = &quot;col-sm-4&quot;)</code>. Anyway,
 if you enter <code>tags$</code> in the console, a list of all valid tags will appear (and I have
@@ -723,10 +723,10 @@ shinyApp(
 )
 </code></pre>
 
-<p>Notice that the image is not display because I did not provide any source
-<code>tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)</code>. Up to you to provide
+<p>The profile image is not displayed because I did not provide any source
+<code>tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)</code>. Up to you to pass
 your own image that should by in the <strong>/www</strong> directory of your application.
-Of course, it would be better if you wrap this custom R code in your own function like that:</p>
+It would be better if you wrapped this custom R code in your own function like that:</p>
 
 <pre><code>my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
                               sales = NULL, followers = NULL, products = NULL) {
@@ -797,7 +797,7 @@ Of course, it would be better if you wrap this custom R code in your own functio
 </code></pre>
 
 <p>where you would have some fields such as username, userposition, sales, followers and products.
-Notice that I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code>.</p>
+I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code> (lazyness :)).</p>
 
 <pre><code># create your custom box
 my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
@@ -959,8 +959,8 @@ other parameters such as the collapsible state, the background color, &hellip;</
 <p>When I started shiny app development, I noticed that the boxes were not possible to
 close, which can be useful sometimes. From now, let&rsquo;s make it closable!
 Everything you need is already in adminLTE2, we just have to
-reorder things properly. The box tool box which contains the collapse and close button
-as well as other elements such as badges is implemented as follow in HTML</p>
+reorder things properly. The box toolbox, which contains the collapse and close button
+as well as other elements such as badges, is implemented as follow in HTML:</p>
 
 <pre><code class="language-html">&lt;div class=&quot;box-tools pull-right&quot;&gt;
                 &lt;span data-toggle=&quot;tooltip&quot; title=&quot;3 New Messages&quot; class=&quot;badge bg-light-blue&quot;&gt;3&lt;/span&gt;
@@ -971,7 +971,7 @@ as well as other elements such as badges is implemented as follow in HTML</p>
 
 </code></pre>
 
-<p>Everything is embeded in a &ldquo;box-tools pull-right&rdquo; class. What we actually need is this part</p>
+<p>Everything is embeded in a &ldquo;box-tools pull-right&rdquo; class. What we actually need is this part:</p>
 
 <pre><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;remove&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 </code></pre>
@@ -1015,9 +1015,9 @@ code just after the collapseTag):</p>
 </code></pre>
 
 <p>Notice that I used <code>tagAppendChild(collapseTag, closableTag)</code> to update the collapseTag
-by adding it the closableTag. It would even be better if you created a boxToolTag
-for which you would add collapseTag and closableTag such as (it could be confusing to add
-the closable tag to the collapsivle tag):</p>
+by adding it the closableTag. Since it could be confusing to add
+the closable tag to the collapsible one, it would even be better if you created a boxToolTag
+for which you would add collapseTag and closableTag such as:</p>
 
 <pre><code>boxToolTag &lt;- NULL
 if (collapsible || closable) {
@@ -1087,7 +1087,10 @@ boxToolTag &lt;- tagAppendChildren(boxToolTag, labelTag, collapseTag, closableTa
 
 <p>The final code is here:</p>
 
-<pre><code>##########
+<pre><code>library(shiny)
+library(shinydashboard)
+
+##########
 #
 # useful functions
 #
@@ -1235,7 +1238,7 @@ shinyApp(
 
 <h2 id="some-improved-version-of-shinydashboard">Some improved version of shinydashboard</h2>
 
-<p>To finish this tutorial, I have some suggestions to improve your dashboard design.</p>
+<p>To finish this tutorial, I have some suggestions to radically pimp your dashboard design.</p>
 
 <h3 id="ygdashboard">ygdashboard</h3>
 
@@ -1363,12 +1366,12 @@ need but it is functional as it is now.</p>
 
 <p><a href="images/dashboard_rightsidebar.png"><img src="images/dashboard_rightsidebar.png" width="auto" height="auto" alt="blank"></a></p>
 
-<p>I will let you explore this surprising ygdashboard package!</p>
+<p>I let you now explore this surprising ygdashboard package!</p>
 
 <h3 id="gentelella-dashboard">gentelella dashboard</h3>
 
 <p>A version very similar to adminLTE2. By chance, a shiny implementation is available
-<a href="http://code.markedmondson.me/gentelellaShiny/">here</a>, developed by <a href="https://github.com/MarkEdmondson1234">Mark Edmonson</a></p>
+<a href="http://code.markedmondson.me/gentelellaShiny/">here</a>, developed by <a href="https://github.com/MarkEdmondson1234">Mark Edmonson</a>.</p>
 
 <p><a href="images/shiny_gentelella.png"><img src="images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a></p>
 
