@@ -40,7 +40,10 @@ The table below shows where your visitors are from, how much time they spend on 
       <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://divadnojnarg.github.io/blog/awesomedashboards/</guid>
-      <description>Introduction shinydashboard is without any doubt a great package. Even though built upon the famous free adminLTE2 dashboard template (boostrap 3), most of the dashboard I see almost look the same. In the shinydashboard package, some adminLTE2 components are not implemented such as the right sidebar, which can be extremely useful: contains input, parameters, &amp;hellip; But everything you need is hidden under the hood, in the inst/AdminLTE folder (shinydashboard github).</description>
+      <description>Important Note I recently released shinydashboardPlus on CRAN.
+ 
+Therefore, some of the functions below are now included in the package.
+Introduction shinydashboard is without any doubt a great package. Even though built upon the famous free adminLTE2 dashboard template (boostrap 3), most of the dashboard I see almost look the same. In the shinydashboard package, some adminLTE2 components are not implemented such as the right sidebar, which can be extremely useful: contains input, parameters, &amp;hellip; But everything you need is hidden under the hood, in the inst/AdminLTE folder (shinydashboard github).</description>
     </item>
     
     <item>
