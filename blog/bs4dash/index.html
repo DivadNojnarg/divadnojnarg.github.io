@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        
+        <title>
+            
+            
+                Build Bootstrap 4 dashboards with bs4Dash | Hi, I am David
+            
+        </title>
+
+        <meta name="title" content="Build Bootstrap 4 dashboards with bs4Dash | Hi, I am David">
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="generator" content="">
+        <base href="../../">
+        <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
+        
+        <meta name="author" content="David Granjon">
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@divadnojnarg">
+        <meta name="twitter:creator" content="@divadnojnarg">
+        
+        <meta property="og:title" content="Build Bootstrap 4 dashboards with bs4Dash | Hi, I am David">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        
+        <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
+        
+
+        
+
+        <link rel="canonical" href="../../blog/bs4dash/">
+        
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
+        
+        
+        <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+        
+        
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:827666,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+        
+    </head>
+
+    <body>
+        
+
+        
+
+        <nav class="row middle-xs center-xs">
+            <div class="col-xs-6 col-sm-1 logo">
+                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+            </div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="../../#blog">Blog</a></h3></div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="../../#contact">Contact</a></h3></div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="../../cv.pdf">About</a></h3></div>
+            
+            <div class="col-xs-3 col-md-2"><h3><a href="http://130.60.24.205/server_folder">Shiny.Server</a></h3></div>
+            
+            <div class="col-xs-6 col-sm-1 nav-toggle">
+                <a href="" class="nav-icon" onclick="return false"><img src="../../images/icon-menu.png" alt="Open Menu"><img src="../../images/icon-x.png" alt="Close Menu" style="display: none;"></a>
+            </div>
+        </nav>
+        <section class="nav-full row middle-xs center-xs">
+            <div class="col-xs-12">
+                <div class="row middle-xs center-xs">
+                    
+                    <div class="col-xs-12"><h1><a href="../../#blog">Blog</a></h1></div>
+                    
+                    <div class="col-xs-12"><h1><a href="../../#contact">Contact</a></h1></div>
+                    
+                    <div class="col-xs-12"><h1><a href="../../cv.pdf">About</a></h1></div>
+                    
+                    <div class="col-xs-12"><h1><a href="http://130.60.24.205/server_folder">Shiny.Server</a></h1></div>
+                    
+                </div>
+            </div>
+        </section>
+        <main>
+
+
+<section class="container">
+    <section class="content">
+      <h1> Build Bootstrap 4 dashboards with bs4Dash </h1>
+
+      <div class="sub-header">
+        July 2018 · 12 minute read
+      </div>
+
+      <div class="entry-content">
+        
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://travis-ci.org/DivadNojnarg/bs4Dash"><img src="https://travis-ci.org/DivadNojnarg/bs4Dash.svg?branch=master" alt="Build Status" /></a>
+<a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg" alt="lifecycle" /></a>
+<a href="http://www.repostatus.org/#wip"><img src="http://www.repostatus.org/badges/latest/wip.svg" alt="Project Status" /></a></p>
+
+<blockquote>
+<p><strong>shinydashboard</strong> is currently build on top of <a href="https://adminlte.io/themes/AdminLTE/index2.html">AdminLT2</a> and uses bootstrap 3.
+Yet, bootstrap 4 is already released and nothing was available for shiny, regarding
+dashboards. bs4Dash is built on top of <a href="https://github.com/almasaeed2010/AdminLTE/tree/v3-dev">AdminLTE3</a> and
+bring also extra components from boostrap 4.
+The syntax is very close to that of shinydashboard so that users are not lost.</p>
+</blockquote>
+
+<h2 id="installation">Installation</h2>
+
+<p>This package is not on CRAN (release soon)</p>
+
+<pre><code class="language-r">devtools::install_github(&quot;DivadNojnarg/bs4Dash&quot;)
+</code></pre>
+
+<h2 id="issues">Issues</h2>
+
+<p>Issues are listed <a href="https://github.com/DivadNojnarg/bs4Dash/issues">here</a>.</p>
+
+<h2 id="getting-started-create-a-basic-page">Getting started: create a basic page</h2>
+
+<p>This is the template to start with bs4Dash:</p>
+
+<pre><code class="language-r">library(shiny)
+library(bs4Dash)
+
+ shiny::shinyApp(
+   ui = bs4DashPage(
+    navbar = bs4DashNavbar(),
+    sidebar = bs4DashSidebar(),
+    controlbar = bs4DashControlbar(),
+    footer = bs4DashFooter(),
+    title = &quot;Basic Dashboard&quot;,
+    body = bs4DashBody()
+   ),
+   server = function(input, output) {}
+ )
+</code></pre>
+
+<p>Feed it according to your needs!</p>
+
+<h2 id="bs4dash-themes">bs4Dash themes</h2>
+
+<p>There are currently two supported themes for bs4Dash: the classic one and an old
+school theme from <a href="https://bootswatch.com/sketchy/">bootswatch</a>. To trigger it,
+just set <code>old_school = TRUE</code> in the <code>bs4DashPage()</code> function.</p>
+
+<h3 id="default-theme">Default theme</h3>
+
+<pre><code class="language-r">library(shiny)
+library(bs4Dash)
+
+ shiny::shinyApp(
+   ui = bs4DashPage(
+     navbar = bs4DashNavbar(),
+     sidebar = bs4DashSidebar(
+      skin = &quot;light&quot;,
+      bs4SidebarMenu(
+       bs4SidebarHeader(&quot;Main content&quot;),
+       bs4SidebarMenuItem(
+         &quot;Classic theme&quot;,
+         tabName = &quot;classic&quot;,
+         icon = &quot;desktop&quot;
+       )
+      )
+     ),
+     controlbar = bs4DashControlbar(
+      skin = &quot;light&quot;
+     ),
+     footer = bs4DashFooter(),
+     title = &quot;Classic theme&quot;,
+     body = bs4DashBody(
+      bs4TabItems(
+       bs4TabItem(
+         tabName = &quot;classic&quot;,
+         fluidRow(
+          bs4Box(
+           height = &quot;600px&quot;,
+           title = &quot;Box 1&quot;
+          ),
+          bs4Box(
+           height = &quot;600px&quot;,
+           title = &quot;Box 2&quot;
+          )
+         )
+       )
+      )
+     )
+   ),
+   server = function(input, output) {}
+ )
+</code></pre>
+
+<p><iframe src="http://130.60.24.205/bs4Dash/classic" width="100%" height="720px" frameBorder="0" scrolling= "no"></p>
+
+<h3 id="old-school-theme">Old school theme</h3>
+
+<pre><code class="language-r">library(shiny)
+library(bs4Dash)
+
+ shiny::shinyApp(
+   ui = bs4DashPage(
+     old_school = TRUE,
+     navbar = bs4DashNavbar(),
+     sidebar = bs4DashSidebar(
+      skin = &quot;light&quot;,
+      bs4SidebarMenu(
+       bs4SidebarHeader(&quot;Main content&quot;),
+       bs4SidebarMenuItem(
+         &quot;Old-school theme&quot;,
+         tabName = &quot;old-school&quot;,
+         icon = &quot;desktop&quot;
+       )
+      )
+     ),
+     controlbar = bs4DashControlbar(
+      skin = &quot;light&quot;
+     ),
+     footer = bs4DashFooter(),
+     title = &quot;Old-school theme&quot;,
+     body = bs4DashBody(
+      bs4TabItems(
+       bs4TabItem(
+         tabName = &quot;old-school&quot;,
+         fluidRow(
+          bs4Box(
+           height = &quot;600px&quot;,
+           title = &quot;Box 1&quot;
+          ),
+          bs4Box(
+           height = &quot;600px&quot;,
+           title = &quot;Box 2&quot;
+          )
+         )
+       )
+      )
+     )
+   ),
+   server = function(input, output) {}
+ )
+</code></pre>
+
+<p><iframe src="http://130.60.24.205/bs4Dash/old-school" width="100%" height="720px" frameBorder="0" scrolling= "no"></p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>Currently, the right and left siderbars are not handled by the old school design,
+but elements inside are correctly converted, as they are treated as proper elements.
+This is due to the fact that the original boostwatch <em>sketchy</em> theme does not have any sidebar.</p>
+
+<h2 id="dashboard-demo">Dashboard Demo</h2>
+
+<p>The demo is hosted <a href="http://130.60.24.205/bs4Dash/showcase">here</a>.
+From RStudio, you can also launch the gallery as follows:</p>
+
+<pre><code class="language-r">library(shiny)
+library(shinyWidgets)
+library(bs4Dash)
+library(plotly)
+
+bs4DashGallery()
+</code></pre>
+
+<p><iframe src="http://130.60.24.205/bs4Dash/showcase" width="100%" height="720px" frameBorder="0"></p>
+
+<h3 id="demo-code">Demo code</h3>
+
+<p>Below is the code of the showcase:</p>
+
+<pre><code class="language-r">library(shiny)
+library(fontawesome)
+library(shinyWidgets)
+library(bs4Dash)
+library(plotly)
+
+# plot 2
+x &lt;- seq(-2 * pi, 2 * pi, length.out = 1000)
+df &lt;- data.frame(x, y1 = sin(x), y2 = cos(x))
+
+# plot 3
+x &lt;- rnorm(200)
+y &lt;- rnorm(200)
+
+shiny::shinyApp(
+  ui = bs4DashPage(
+    old_school = TRUE,
+    navbar = bs4DashNavbar(
+      status = &quot;white&quot;,
+      &quot;I can write text in the navbar!&quot;,
+      rightUi = bs4DropdownMenu(
+        show = TRUE,
+        labelText = &quot;!&quot;,
+        status = &quot;danger&quot;,
+        src = &quot;http://www.google.fr&quot;,
+        bs4DropdownMenuItem(
+          text = &quot;message 1&quot;,
+          date = &quot;today&quot;
+        ),
+        bs4DropdownMenuItem(
+          text = &quot;message 2&quot;,
+          date = &quot;yesterday&quot;
+        )
+      )
+    ),
+    sidebar = bs4DashSidebar(
+      skin = &quot;light&quot;,
+      status = &quot;primary&quot;,
+      title = &quot;bs4Dash&quot;,
+      brandColor = &quot;primary&quot;,
+      url = &quot;http://www.google.fr&quot;,
+      src = &quot;https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg&quot;,
+      elevation = 3,
+      opacity = 0.8,
+      bs4SidebarMenu(
+        bs4SidebarHeader(&quot;Cards&quot;),
+        bs4SidebarMenuItem(
+          &quot;Basic cards&quot;,
+          tabName = &quot;cards&quot;,
+          icon = &quot;sliders&quot;
+        ),
+        bs4SidebarMenuItem(
+          &quot;User cards&quot;,
+          tabName = &quot;usercards&quot;,
+          icon = &quot;object-ungroup&quot;
+        ),
+        bs4SidebarMenuItem(
+          &quot;Tab cards&quot;,
+          tabName = &quot;tabcards&quot;,
+          icon = &quot;picture-o&quot;
+        ),
+        bs4SidebarHeader(&quot;Boxes&quot;),
+        bs4SidebarMenuItem(
+          &quot;Basic boxes&quot;,
+          tabName = &quot;boxes&quot;,
+          icon = &quot;desktop&quot;
+        ),
+        bs4SidebarMenuItem(
+          &quot;Value/Info boxes&quot;,
+          tabName = &quot;valueboxes&quot;,
+          icon = &quot;suitcase&quot;
+        ),
+        bs4SidebarHeader(&quot;BS4 gallery&quot;),
+        bs4SidebarMenuItem(
+          HTML(
+            paste(
+              &quot;Gallery 1&quot;, 
+              bs4Badge(
+                &quot;new&quot;, 
+                position = &quot;right&quot;, 
+                status = &quot;danger&quot;
+              )
+            )
+          ),
+          tabName = &quot;gallery1&quot;,
+          icon = &quot;paint-brush&quot;
+        ),
+        bs4SidebarMenuItem(
+          HTML(
+            paste(
+              &quot;Gallery 2&quot;, 
+              bs4Badge(
+                &quot;!&quot;, 
+                position = &quot;right&quot;, 
+                status = &quot;success&quot;
+              )
+            )
+          ),
+          tabName = &quot;gallery2&quot;,
+          icon = &quot;map&quot;
+        )
+      )
+    ),
+    body = bs4DashBody(
+      bs4TabItems(
+        bs4TabItem(
+          tabName = &quot;cards&quot;,
+          fluidRow(
+            bs4Card(
+              title = &quot;Closable card with dropdown&quot;, 
+              closable = TRUE, 
+              width = 6,
+              status = &quot;warning&quot;, 
+              solidHeader = FALSE, 
+              collapsible = TRUE,
+              labelText = 1,
+              labelStatus = &quot;danger&quot;,
+              labelTooltip = &quot;Hi Bro!&quot;,
+              dropdownIcon = &quot;wrench&quot;,
+              dropdownMenu = dropdownItemList(
+                dropdownItem(url = &quot;http://www.google.com&quot;, name = &quot;Link to google&quot;),
+                dropdownItem(url = &quot;#&quot;, name = &quot;item 2&quot;),
+                dropdownDivider(),
+                dropdownItem(url = &quot;#&quot;, name = &quot;item 3&quot;)
+              ),
+              plotOutput(&quot;plot&quot;)
+            ),
+            bs4Card(
+              title = &quot;Closable card with gradient&quot;, 
+              closable = TRUE, 
+              width = 6,
+              status = &quot;warning&quot;, 
+              solidHeader = FALSE, 
+              gradientColor = &quot;success&quot;,
+              collapsible = TRUE,
+              plotOutput(&quot;distPlot&quot;)
+            ),
+            bs4Card(
+              title = &quot;Card with solidHeader and elevation&quot;, 
+              elevation = 4,
+              closable = TRUE, 
+              width = 6,
+              solidHeader = TRUE, 
+              status = &quot;primary&quot;,
+              collapsible = TRUE,
+              plot_ly(z = ~volcano) %&gt;% add_surface()
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;usercards&quot;,
+          fluidRow(
+            bs4UserCard(
+              src = &quot;https://adminlte.io/themes/AdminLTE/dist/img/user1-128x128.jpg&quot;,
+              status = &quot;info&quot;,
+              title = &quot;User card type 1&quot;,
+              subtitle = &quot;a subtitle here&quot;,
+              elevation = 4,
+              &quot;Any content here&quot;
+            ),
+            bs4UserCard(
+              type = 2,
+              src = &quot;https://adminlte.io/themes/AdminLTE/dist/img/user7-128x128.jpg&quot;,
+              status = &quot;success&quot;,
+              imageElevation = 4,
+              title = &quot;User card type 2&quot;,
+              subtitle = &quot;a subtitle here&quot;,
+              bs4ProgressBar(
+                value = 5,
+                striped = FALSE,
+                status = &quot;info&quot;
+              ),
+              bs4ProgressBar(
+                value = 5,
+                striped = TRUE,
+                status = &quot;warning&quot;,
+                width = &quot;20%&quot;
+              )
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;tabcards&quot;,
+          bs4TabCard(
+            title = &quot;A card with tabs&quot;,
+            elevation = 2,
+            width = 8,
+            bs4TabPanel(
+              tabName = &quot;Tab1&quot;,
+              active = FALSE,
+              &quot;A wonderful serenity has taken possession of my entire soul,
+              like these sweet mornings of spring which I enjoy with my
+              whole heart. I am alone, and feel the charm of existence in
+              this spot, which was created for the bliss of souls like mine.
+              I am so happy, my dear friend, so absorbed in the exquisite sense
+              of mere tranquil existence, that I neglect my talents. I should be
+              incapable of drawing a single stroke at the present moment; and yet
+              I feel that I never was a greater artist than now&quot;
+            ),
+            bs4TabPanel(
+              tabName = &quot;Tab2&quot;,
+              active = TRUE,
+              &quot;The European languages are members of the same family.
+              Their separate existence is a myth. For science, music,
+              sport, etc, Europe uses the same vocabulary. The languages
+              only differ in their grammar, their pronunciation and their
+              most common words. Everyone realizes why a new common
+              language would be desirable: one could refuse to pay expensive
+              translators. To achieve this, it would be necessary to have
+              uniform grammar, pronunciation and more common words. If several
+              languages coalesce, the grammar of the resulting language is
+              more simple and regular than that of the individual languages.&quot;
+            ),
+            bs4TabPanel(
+              tabName = &quot;Tab3&quot;,
+              active = FALSE,
+              &quot;Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown
+              printer took a galley of type and scrambled it to make a
+              type specimen book. It has survived not only five centuries,
+              but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with
+              the release of Letraset sheets containing Lorem Ipsum passages,
+              and more recently with desktop publishing software like Aldus
+              PageMaker including versions of Lorem Ipsum.&quot;
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;valueboxes&quot;,
+          h4(&quot;Value Boxes&quot;),
+          fluidRow(
+            bs4ValueBox(
+              value = 150,
+              subtitle = &quot;New orders&quot;,
+              status = &quot;primary&quot;,
+              icon = &quot;shopping-cart&quot;,
+              href = &quot;#&quot;
+            ),
+            bs4ValueBox(
+              elevation = 4,
+              value = &quot;53%&quot;,
+              subtitle = &quot;New orders&quot;,
+              status = &quot;danger&quot;,
+              icon = &quot;cogs&quot;
+            ),
+            bs4ValueBox(
+              value = &quot;44&quot;,
+              subtitle = &quot;User Registrations&quot;,
+              status = &quot;warning&quot;,
+              icon = &quot;sliders&quot;
+            ),
+            bs4ValueBox(
+              value = &quot;53%&quot;,
+              subtitle = &quot;Bounce rate&quot;,
+              status = &quot;success&quot;,
+              icon = &quot;database&quot;
+            )
+          ),
+          h4(&quot;Info Boxes&quot;),
+          fluidRow(
+            bs4InfoBox(
+              title = &quot;Messages&quot;,
+              value = 1410,
+              icon = &quot;envelope&quot;
+            ),
+            bs4InfoBox(
+              title = &quot;Bookmarks&quot;,
+              status = &quot;info&quot;,
+              value = 240,
+              icon = &quot;bookmark&quot;
+            ),
+            bs4InfoBox(
+              title = &quot;Comments&quot;,
+              gradientColor = &quot;danger&quot;,
+              value = 41410,
+              icon = &quot;comments&quot;
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;boxes&quot;,
+          fluidRow(
+            bs4Box(
+              height = &quot;600px&quot;,
+              title = &quot;Box 1&quot;,
+              plotlyOutput(&quot;plot2&quot;)
+            ),
+            bs4Box(
+              height = &quot;600px&quot;,
+              title = &quot;Box 2&quot;,
+              plotlyOutput(&quot;plot3&quot;)
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;gallery1&quot;,
+          fluidRow(
+            bs4Card(
+              title = &quot;Accordions&quot;,
+              footer = tagList(
+                h4(&quot;There is an accordion in the footer!&quot;),
+                bs4Accordion(
+                  bs4AccordionItem(
+                    id = &quot;item1&quot;,
+                    title = &quot;Item 1&quot;, 
+                    status = &quot;danger&quot;,
+                    &quot;Anim pariatur cliche reprehenderit, enim 
+                    eiusmod high life accusamus terry richardson ad 
+                    squid. 3 wolf moon officia aute, non cupidatat 
+                    skateboard dolor brunch. Food truck quinoa nesciunt 
+                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt 
+                    aliqua put a bird on it squid single-origin coffee 
+                    nulla assumenda shoreditch et. Nihil anim keffiyeh 
+                    helvetica, craft beer labore wes anderson cred 
+                    nesciunt sapiente ea proident. Ad vegan excepteur 
+                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't 
+                    heard of them accusamus labore sustainable VHS&quot;
+                  ),
+                  bs4AccordionItem(
+                    id = &quot;item2&quot;,
+                    title = &quot;Item 2&quot;, 
+                    status = &quot;warning&quot;,
+                    &quot;Anim pariatur cliche reprehenderit, enim 
+                    eiusmod high life accusamus terry richardson ad 
+                    squid. 3 wolf moon officia aute, non cupidatat 
+                    skateboard dolor brunch. Food truck quinoa nesciunt 
+                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt 
+                    aliqua put a bird on it squid single-origin coffee 
+                    nulla assumenda shoreditch et. Nihil anim keffiyeh 
+                    helvetica, craft beer labore wes anderson cred 
+                    nesciunt sapiente ea proident. Ad vegan excepteur 
+                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, 
+                    raw denim aesthetic synth nesciunt you probably haven't 
+                    heard of them accusamus labore sustainable VHS&quot;
+                  )
+                )
+              )
+            ),
+            bs4Card(
+              title = &quot;Carousel&quot;,
+              bs4Carousel(
+                id = &quot;mycarousel&quot;,
+                width = 12,
+                bs4CarouselItem(
+                  active = TRUE,
+                  src = &quot;http://placehold.it/900x500/39CCCC/ffffff&amp;text=I+Love+Bootstrap&quot;
+                ),
+                bs4CarouselItem(
+                  active = FALSE,
+                  src = &quot;http://placehold.it/900x500/3c8dbc/ffffff&amp;text=I+Love+Bootstrap&quot;
+                ),
+                bs4CarouselItem(
+                  active = FALSE,
+                  src = &quot;http://placehold.it/900x500/f39c12/ffffff&amp;text=I+Love+Bootstrap&quot;
+                )
+              )
+            )
+          ),
+          fluidRow(
+            bs4Card(
+              title = &quot;Progress bars&quot;,
+              footer = tagList(
+                bs4ProgressBar(
+                  value = 5,
+                  striped = FALSE,
+                  status = &quot;info&quot;
+                ),
+                bs4ProgressBar(
+                  value = 5,
+                  striped = TRUE,
+                  status = &quot;warning&quot;,
+                  width = &quot;20%&quot;
+                )
+              ),
+              bs4ProgressBar(
+                value = 80,
+                vertical = TRUE,
+                status = &quot;success&quot;
+              ),
+              bs4ProgressBar(
+                value = 100,
+                vertical = TRUE,
+                striped = TRUE,
+                status = &quot;danger&quot;,
+                height = &quot;80%&quot;
+              )
+            ),
+            bs4Card(
+              title = &quot;Alerts&quot;,
+              elevation = 4,
+              bs4Alert(
+                title = &quot;Be Careful!&quot;,
+                status = &quot;danger&quot;,
+                closable = TRUE,
+                width = 12,
+                &quot;Danger alert preview. This alert is dismissable. 
+                A wonderful serenity has taken possession of my entire soul, 
+                like these sweet mornings of spring which 
+                I enjoy with my whole heart.&quot;
+              )
+            )
+          ),
+          fluidRow(
+            bs4Card(
+              title = &quot;Callouts&quot;,
+              bs4Callout(
+                title = &quot;I am a danger callout!&quot;,
+                elevation = 4,
+                status = &quot;danger&quot;,
+                width = 12,
+                &quot;There is a problem that we need to fix. 
+                A wonderful serenity has taken possession of 
+                my entire soul, like these sweet mornings of 
+                spring which I enjoy with my whole heart.&quot;
+              )
+            ),
+            bs4Card(
+              title = &quot;Loading State&quot;,
+              bs4Loading()
+            )
+          ),
+          fluidRow(
+            bs4Card(
+              title = &quot;Timeline&quot;,
+              bs4Timeline(
+                width = 12,
+                reversed = TRUE,
+                bs4TimelineEnd(status = &quot;danger&quot;),
+                bs4TimelineLabel(&quot;10 Feb. 2014&quot;, status = &quot;info&quot;),
+                bs4TimelineItem(
+                  elevation = 4, 
+                  title = &quot;Item 1&quot;,
+                  icon = &quot;gears&quot;,
+                  status = &quot;success&quot;,
+                  time = &quot;now&quot;,
+                  footer = &quot;Here is the footer&quot;,
+                  &quot;This is the body&quot;
+                ),
+                bs4TimelineItem(
+                  title = &quot;Item 2&quot;,
+                  border = FALSE
+                ),
+                bs4TimelineLabel(&quot;3 Jan. 2014&quot;, status = &quot;primary&quot;),
+                bs4TimelineItem(
+                  elevation = 2,
+                  title = &quot;Item 3&quot;,
+                  icon = &quot;paint-brush&quot;,
+                  status = &quot;warning&quot;,
+                  bs4TimelineItemMedia(src = &quot;http://placehold.it/150x100&quot;),
+                  bs4TimelineItemMedia(src = &quot;http://placehold.it/150x100&quot;)
+                ),
+                bs4TimelineStart(status = &quot;danger&quot;)
+              )
+            ),
+            bs4Timeline(
+              width = 6,
+              bs4TimelineEnd(status = &quot;danger&quot;),
+              bs4TimelineLabel(&quot;10 Feb. 2014&quot;, status = &quot;info&quot;),
+              bs4TimelineItem(
+                elevation = 4, 
+                title = &quot;Item 1&quot;,
+                icon = &quot;gears&quot;,
+                status = &quot;success&quot;,
+                time = &quot;now&quot;,
+                footer = &quot;Here is the footer&quot;,
+                &quot;This is the body&quot;
+              ),
+              bs4TimelineItem(
+                title = &quot;Item 2&quot;,
+                border = FALSE
+              ),
+              bs4TimelineLabel(&quot;3 Jan. 2014&quot;, status = &quot;primary&quot;),
+              bs4TimelineItem(
+                elevation = 2,
+                title = &quot;Item 3&quot;,
+                icon = &quot;paint-brush&quot;,
+                status = &quot;warning&quot;,
+                bs4TimelineItemMedia(src = &quot;http://placehold.it/150x100&quot;),
+                bs4TimelineItemMedia(src = &quot;http://placehold.it/150x100&quot;)
+              ),
+              bs4TimelineStart(status = &quot;danger&quot;)
+            )
+          ),
+          fluidRow(
+            bs4Card(
+              title = &quot;Stars&quot;,
+              bs4Stars(grade = 5),
+              bs4Stars(grade = 5, status = &quot;success&quot;),
+              bs4Stars(grade = 1, status = &quot;danger&quot;),
+              bs4Stars(grade = 3, status = &quot;info&quot;)
+            )
+          )
+        ),
+        bs4TabItem(
+          tabName = &quot;gallery2&quot;,
+          bs4Jumbotron(
+            title = &quot;I am a Jumbotron!&quot;,
+            lead = &quot;This is a simple hero unit, a simple jumbotron-style 
+                    component for calling extra attention to featured 
+                    content or information.&quot;,
+            &quot;It uses utility classes for typography and spacing 
+            to space content out within the larger container.&quot;,
+            status = &quot;primary&quot;,
+            href = &quot;http://www.google.fr&quot;
+          ),
+          
+          br(),
+          
+          h4(&quot;Rounded Badges&quot;),
+          fluidRow(
+            bs4Badge(status = &quot;secondary&quot;, &quot;blabla&quot;, rounded = TRUE),
+            bs4Badge(status = &quot;dark&quot;, &quot;blabla&quot;, rounded = TRUE)
+          ),
+          
+          br(),
+          
+          h4(&quot;BS4 list group&quot;),
+          fluidRow(
+            bs4ListGroup(
+              bs4ListGroupItem(
+                type = &quot;basic&quot;,
+                &quot;Cras justo odio&quot;
+              ),
+              bs4ListGroupItem(
+                type = &quot;basic&quot;,
+                &quot;Dapibus ac facilisis in&quot;
+              ),
+              bs4ListGroupItem(
+                type = &quot;basic&quot;,
+                &quot;Morbi leo risus&quot;
+              )
+            ),
+            bs4ListGroup(
+              bs4ListGroupItem(
+                &quot;Cras justo odio&quot;,
+                active = TRUE, 
+                disabled = FALSE, 
+                type = &quot;action&quot;,
+                src = &quot;http://www.google.fr&quot;
+              ),
+              bs4ListGroupItem(
+                active = FALSE, 
+                disabled = FALSE, 
+                type = &quot;action&quot;,
+                &quot;Dapibus ac facilisis in&quot;,
+                src = &quot;http://www.google.fr&quot;
+              ),
+              bs4ListGroupItem(
+                &quot;Morbi leo risus&quot;,
+                active = FALSE, 
+                disabled = TRUE, 
+                type = &quot;action&quot;,
+                src = &quot;http://www.google.fr&quot;
+              )
+            ),
+            bs4ListGroup(
+              bs4ListGroupItem(
+                &quot;Donec id elit non mi porta gravida at eget metus. 
+                Maecenas sed diam eget risus varius blandit.&quot;,
+                active = TRUE, 
+                disabled = FALSE, 
+                type = &quot;heading&quot;,
+                title = &quot;List group item heading&quot;, 
+                subtitle = &quot;3 days ago&quot;, 
+                footer = &quot;Donec id elit non mi porta.&quot;
+              ),
+              bs4ListGroupItem(
+                &quot;Donec id elit non mi porta gravida at eget metus. 
+                Maecenas sed diam eget risus varius blandit.&quot;,
+                active = FALSE, 
+                disabled = FALSE, 
+                type = &quot;heading&quot;,
+                title = &quot;List group item heading&quot;, 
+                subtitle = &quot;3 days ago&quot;, 
+                footer = &quot;Donec id elit non mi porta.&quot;
+              )
+            )
+          )
+        )
+      )
+    ),
+    controlbar = bs4DashControlbar(
+      skin = &quot;light&quot;,
+      title = &quot;My right sidebar&quot;,
+      setSliderColor(sliderId = 1, &quot;black&quot;),
+      sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
+                  min = 0, max = 1000, value = 500
+      ),
+      column(
+        width = 12,
+        align = &quot;center&quot;,
+        radioButtons(
+          &quot;dist&quot;, 
+          &quot;Distribution type:&quot;,
+          c(&quot;Normal&quot; = &quot;norm&quot;,
+            &quot;Uniform&quot; = &quot;unif&quot;,
+            &quot;Log-normal&quot; = &quot;lnorm&quot;,
+            &quot;Exponential&quot; = &quot;exp&quot;)
+        )
+      )
+    ),
+    footer = bs4DashFooter(
+      copyrights = &quot;@DivadNojnarg&quot;,
+      right_text = &quot;2018&quot;
+    ),
+    title = &quot;bs4Dash Showcase&quot;
+  ),
+  server = function(input, output) {
+    
+    output$plot &lt;- renderPlot({
+      hist(rnorm(input$obs))
+    })
+    
+    output$distPlot &lt;- renderPlot({
+      dist &lt;- switch(input$dist,
+                     norm = rnorm,
+                     unif = runif,
+                     lnorm = rlnorm,
+                     exp = rexp,
+                     rnorm)
+      
+      hist(dist(500))
+    })
+    
+    output$plot2 &lt;- renderPlotly({
+      p &lt;- plot_ly(df, x = ~x) %&gt;%
+        add_lines(y = ~y1, name = &quot;A&quot;) %&gt;%
+        add_lines(y = ~y2, name = &quot;B&quot;, visible = F) %&gt;%
+        layout(
+          xaxis = list(domain = c(0.1, 1)),
+          yaxis = list(title = &quot;y&quot;),
+          updatemenus = list(
+            list(
+              y = 0.8,
+              buttons = list(
+                
+                list(method = &quot;restyle&quot;,
+                     args = list(&quot;line.color&quot;, &quot;blue&quot;),
+                     label = &quot;Blue&quot;),
+                
+                list(method = &quot;restyle&quot;,
+                     args = list(&quot;line.color&quot;, &quot;red&quot;),
+                     label = &quot;Red&quot;))),
+            
+            list(
+              y = 0.7,
+              buttons = list(
+                list(method = &quot;restyle&quot;,
+                     args = list(&quot;visible&quot;, list(TRUE, FALSE)),
+                     label = &quot;Sin&quot;),
+                
+                list(method = &quot;restyle&quot;,
+                     args = list(&quot;visible&quot;, list(FALSE, TRUE)),
+                     label = &quot;Cos&quot;)))
+          )
+        )
+    })
+    
+    output$plot3 &lt;- renderPlotly({
+      s &lt;- subplot(
+        plot_ly(x = x, type = &quot;histogram&quot;),
+        plotly_empty(),
+        plot_ly(x = x, y = y, type = &quot;histogram2dcontour&quot;),
+        plot_ly(y = y, type = &quot;histogram&quot;),
+        nrows = 2, heights = c(0.2, 0.8), widths = c(0.8, 0.2), margin = 0,
+        shareX = TRUE, shareY = TRUE, titleX = FALSE, titleY = FALSE
+      )
+      p &lt;- layout(s, showlegend = FALSE)
+    })
+    
+  }
+)
+</code></pre>
+
+      </div>
+
+      <div class="links">
+        
+          &laquo; <a class="basic-alignment left" href="../../blog/rpackages_save/">Save your R packages when updating R version</a>
+        
+        
+      </div>
+    </section>
+    <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+      return;
+      
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'divadnojnarg';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </main>
+        <footer class="row middle-xs center-xs">
+            
+            <div class="col-xs-3 col-md-2"><a href="https://github.com/divadnojnarg">GitHub</a></div>
+            
+            
+            <div class="col-xs-3 col-md-2"><a href="https://linkedin.com/in/david-granjon-88625968">LinkedIn</a></div>
+            
+            
+            <div class="col-xs-3 col-md-2"><a href="https://twitter.com/divadnojnarg">Twitter</a></div>
+            
+            
+            <div class="col-xs-12">
+                
+                Copyright &copy; 2018 Hi, I am David.
+                
+                
+            </div>
+            
+            
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+            
+            <script src="../../scripts/main.js" type="text/javascript"></script>
+            
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+        </footer>
+    </body>
+</html>
+
