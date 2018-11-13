@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade">
         <meta name="generator" content="">
-        <base href="../../">
+        <base href="https://divadnojnarg.github.io">
         <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
         <meta name="author" content="David Granjon">
@@ -30,14 +30,14 @@
         
         <meta property="og:title" content="Extend shinyWidgets: knobInput | Hi, I am David">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="/">
+        <meta property="og:url" content="https://divadnojnarg.github.io">
         
         <meta property="og:description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
         
 
         
 
-        <link rel="canonical" href="../../blog/knobinput/">
+        <link rel="canonical" href="https://divadnojnarg.github.io/blog/knobinput/">
         
         <link rel="stylesheet" href="styles/main.css" type="text/css">
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"> 
@@ -93,7 +93,7 @@
 
         <nav class="row middle-xs center-xs">
             <div class="col-xs-6 col-sm-1 logo">
-                <a href="../../"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+                <a href="https://divadnojnarg.github.io"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
             </div>
             
             <div class="col-xs-3 col-md-2"><h3><a href="../../#blog">Blog</a></h3></div>
@@ -163,12 +163,12 @@ blog post.</p>
 
 <p>The idea is simple:</p>
 
-<ol>
-<li>First, you create the file containing the new widget: <em>input-knob.R</em>,
+<ul>
+<li>First, we create the file containing the new widget: <em>input-knob.R</em>,
 because it is supposed to be a knob (very original). It is widely inspired
 on what you can find on the shiny github R <a href="https://github.com/rstudio/shiny/tree/master/R">folder</a>.
 Below, I quickly describe its content:</li>
-</ol>
+</ul>
 
 <pre><code># Knob Input
 knobInput &lt;- function(inputId, label, value, min = 0, max = 100, step = 1,
@@ -224,6 +224,7 @@ knobInput &lt;- function(inputId, label, value, min = 0, max = 100, step = 1,
   dropNulls &lt;- function(x) {
     x[!vapply(x, is.null, FUN.VALUE = logical(1))]
 }
+
 </code></pre>
 
 <p>First of all, all the options available in jQuery knob are included in the function
@@ -253,11 +254,11 @@ work at the moment). <strong>dropNulls</strong> is defined below but could be wr
 <p>Additionally, your /www folder should contain both <em>jquery.knob.min.js</em> and <em>knob-input-binding.js</em>,
 the later is discussed below.</p>
 
-<ol>
-<li>Then, you need to create the related input-binding. This file should be put in the
+<ul>
+<li>We create the related input-binding. This file should be put in the
 /www folder of the widget. To summarise, the input-binding will make the link between
 shiny and your new widget (see <a href="https://shiny.rstudio.com/articles/building-inputs.html">here</a>).</li>
-</ol>
+</ul>
 
 <pre><code class="language-javascript">
 var exportsKnob = window.Shiny = window.Shiny || {};
@@ -418,8 +419,7 @@ It is just copied and paste from jQuery knob library. Then, we define the input 
 <li>we declare a new variable (not surprisingly &ldquo;knobInputBinding&rdquo;).</li>
 <li>we call the <strong>find</strong> method using the class &ldquo;knob-input&rdquo;, previously defined in our
 <em>input-knob.R</em> file. Crucial step!</li>
-<li>the <strong>initialize</strong> function creates the knob using .knob() (see jQuery knob), where we set
-the value of the widget.</li>
+<li>the <strong>initialize</strong> function creates the knob using .knob() (see jQuery knob), where we set the value of the widget.</li>
 <li>the method <strong>getValue</strong> returns the value of your widget(s).</li>
 <li><strong>subscribe</strong> method: one of the most important feature. Without this part,
 the value of your widget will not be updated in shiny when you change it. We can find
@@ -457,12 +457,11 @@ to set this kind of behavious.</p>
 let&rsquo;s say the user wants to move the knob from 1 to 100. Without rate policy, each change
 from 1 to 100 would be sent to the server, which is a bit ridiculous. Rate policy is called
 when callback has &ldquo;true&rdquo; as argument.</li>
-<li>we register the input binding with the <strong>register</strong> function.</li>
-</ul>
 
-<ol>
-<li>Finally, we create a short demonstration of this widget.</li>
-</ol>
+<li><p>we register the input binding with the <strong>register</strong> function.</p></li>
+
+<li><p>Finally, we create a short demonstration of this widget.</p></li>
+</ul>
 
 <pre><code>
 # knob --------------------------------------------------------------------
@@ -561,10 +560,10 @@ shinyApp(ui = ui, server = server)
 
       <div class="links">
         
-          &laquo; <a class="basic-alignment left" href="../../blog/customsliderinput/">How to customize shiny sliderInput</a>
+          &laquo; <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/customsliderinput/">How to customize shiny sliderInput</a>
         
         
-          <a class="basic-alignment left" href="../../blog/shinycvs/">Make beautiful CVs with shiny and AdminLTE2</a> &raquo;
+          <a class="basic-alignment left" href="https://divadnojnarg.github.io/blog/shinycvs/">Make beautiful CVs with shiny and AdminLTE2</a> &raquo;
         
       </div>
     </section>
