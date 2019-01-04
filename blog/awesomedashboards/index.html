@@ -131,7 +131,7 @@
       <h1> Build awesome dashboards with shiny </h1>
 
       <div class="sub-header">
-        March 2018 · 22 minute read
+        March 2018 · 20 minute read
       </div>
 
       <div class="entry-content">
@@ -1244,134 +1244,6 @@ shinyApp(
 
 <p>To finish this tutorial, I have some suggestions to radically pimp your dashboard design.</p>
 
-<h3 id="ygdashboard">ygdashboard</h3>
-
-<p>A very interesting feature of adminLTE2 is the right sidebar, in which you can
-put custom widgets. Be careful, there seems to be a limit in the number of panels
-(up to 5).</p>
-
-<p><a href="images/right_sidebar_example.png"><img src="images/right_sidebar_example.png" width="200px" height="600px" alt="blank"></a></p>
-
-<p>A package called <a href="https://github.com/gyang274/ygdashboard/tree/master/R">ygdashboard</a>
-integrates this option to enhance shinydashboard. However, you cannot use shinydashboard and
-ygdashboard at the same time: this means that you have to use <code>library(ygdashboard)</code>. In this package, the right sidebar was not implemented in R. Fortunately, I provide the translation:</p>
-
-<pre><code>library(shiny)
-
-dashboardControlbar &lt;- function() {
-  withTags(
-    div(
-      id = &quot;right_sidebar&quot;,
-      # Control Sidebar Open
-      aside(class = &quot;control-sidebar control-sidebar-dark&quot;,
-            
-            # # # # # # # #
-            #
-            # Navigation tabs
-            #
-            # # # # # # # #
-            ul(class = &quot;nav nav-tabs nav-justified control-sidebar-tabs&quot;,
-               # first tabs
-               li(class = &quot;active&quot;,
-                  a(href = &quot;#control-sidebar-first-tab&quot;, `data-toggle` = &quot;tab&quot;,
-                    i(class = &quot;fa fa-sliders&quot;)
-                  )
-               ),
-               # second tabs
-               li(
-                 a(href = &quot;#control-sidebar-second-tab&quot;, `data-toggle` = &quot;tab&quot;,
-                   i(class = &quot;fa fa-map&quot;)
-                 )
-               ),
-               # third tab
-               li(
-                 a(href = &quot;#control-sidebar-third-tab&quot;, `data-toggle` = &quot;tab&quot;,
-                   i(class = &quot;fa fa-paint-brush&quot;)
-                 )
-               )
-            ),
-            
-            # # # # # # # #
-            #
-            # Tab Panels
-            #
-            # # # # # # # # 
-            div(class = &quot;tab-content&quot;,
-                
-                #########################
-                #  First tab content  #
-                #########################
-                div(class = &quot;tab-pane active&quot;, id = &quot;control-sidebar-first-tab&quot;,
-                    h3(class = &quot;control-sidebar-heading&quot;, &quot;Tab 1&quot;),
-                    
-                    # write elements here
-                    sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
-                                min = 0, max = 1000, value = 500
-                    )
-                    
-                ),
-                
-                
-                #########################
-                # Second tab content #
-                #########################
-                div(class = &quot;tab-pane&quot;, id = &quot;control-sidebar-second-tab&quot;, 
-                    h3(class = &quot;control-sidebar-heading&quot;, &quot;Tab 2&quot;),
-                    
-                    # write other elements here
-                    checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE)
-                    
-                    
-                ),
-                
-                #########################
-                # Third tab content #
-                #########################
-                div(class = &quot;tab-pane&quot;, id = &quot;control-sidebar-third-tab&quot;,
-                    
-                    # third tab elements here
-                    radioButtons(&quot;dist&quot;, &quot;Distribution type:&quot;,
-                                 c(&quot;Normal&quot; = &quot;norm&quot;,
-                                   &quot;Uniform&quot; = &quot;unif&quot;,
-                                   &quot;Log-normal&quot; = &quot;lnorm&quot;,
-                                   &quot;Exponential&quot; = &quot;exp&quot;)
-                    )
-                )
-            )
-      ),
-      # control-sidebar
-      # Add the sidebar background. This div must be placed
-      # immediately after the control sidebar
-      div(class = &quot;control-sidebar-bg&quot;, &quot;&quot;)
-    )
-  )
-}
-
-library(ygdashboard)
-
-shinyApp(
- ui = ygdashboard::dashboardPage(
-        skin = &quot;black&quot;,
-        title = &quot;My app with 2 sidebars&quot;,
-        collapse_sidebar = TRUE,
-        ygdashboard::dashboardHeader(),
-        ygdashboard::dashboardSidebar(),
-        ygdashboard::dashboardBody(),
-        dashboardFooter(mainText = &quot;My footer&quot;, subText = &quot;2018&quot;),
-        dashboardControlbar()
-      ),
- server = function(input, output) { }
-)
-
-</code></pre>
-
-<p>The dashboardControlbar function could be improved, depending on your
-need but it is functional as it is now.</p>
-
-<p><a href="images/dashboard_rightsidebar.png"><img src="images/dashboard_rightsidebar.png" width="auto" height="auto" alt="blank"></a></p>
-
-<p>I let you now explore this surprising ygdashboard package!</p>
-
 <h3 id="gentelella-dashboard">gentelella dashboard</h3>
 
 <p>A version very similar to adminLTE2. By chance, a shiny implementation is available
@@ -1481,15 +1353,6 @@ shinyApp(ui, server)
 <p><a href="https://ericrayanderson.shinyapps.io/shinymaterial_dashboard/"><img src="images/material_dashboard.png" width="auto" height="auto" alt="blank"></a></p>
 
 <p><strong>More Updates Coming soon</strong></p>
-
-<h2 id="last-notes">Last Notes</h2>
-
-<p>A new version of adminLTE, namely <a href="https://twitter.com/almsaeedstudio?lang=fr">adminLTE3</a>
-is coming soon, but relies on <a href="https://github.com/rstudio/shiny/issues/1604">boostrap 4</a>
-(which is not natively supported by shiny).
-There exists a package called <a href="https://github.com/nteetor/dull#readme">dull</a>, which
-is work in progress to make possible integrating
-bootstrap 4 elements to shiny. I hope it will work very soon.</p>
 
       </div>
 
