@@ -128,25 +128,6 @@ Enhance your apps with Javascript shinyjs The shinyjs package was designed by De
     </item>
     
     <item>
-      <title>A model Reader</title>
-      <link>https://divadnojnarg.github.io/about-shiny/</link>
-      <pubDate>Wed, 07 Jun 2017 21:48:51 -0700</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/about-shiny/</guid>
-      <description>Introduction All my previous shiny apps are dedicated to special models and features tighly depend on model properties. Thus, came the idea of making a shiny app which will be able to read any 2D model, drawing the phase plane and making a stability analysis. The following app is a first step toward a much more sofisticated one, and is of course still in development. 
-Click here to acces my App.</description>
-    </item>
-    
-    <item>
-      <title>Shiny Apps of Lotka Volterra Models</title>
-      <link>https://divadnojnarg.github.io/about-ecology/</link>
-      <pubDate>Wed, 07 Jun 2017 21:48:51 -0700</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/about-ecology/</guid>
-      <description>Introduction The study of prey-predators interactions is a very exciting field, where a wide variety of models is available. The most famous is obviously that of Lotka-Volterra created in parallel by Vito Volterra and James Lotka (V. Volterra, Nature, 118: 1926). This model contains shortcomings such as the infinite growth of prey, which is not realistic (Malthus growth rate). It is indeed more accurate to use a Verhulst growth function, which takes into consideration competition between preys.</description>
-    </item>
-    
-    <item>
       <title>Upcoming Updates</title>
       <link>https://divadnojnarg.github.io/blog/todolist/</link>
       <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
@@ -176,38 +157,20 @@ add a link to the second scientific article published upload the first shiny app
     </item>
     
     <item>
-      <title>A model of Calcium Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium-homeo/</link>
+      <title>Research</title>
+      <link>https://divadnojnarg.github.io/gallery/research/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/calcium-homeo/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/research/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A model of Calcium and Phosphate Homeostasis</title>
-      <link>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</link>
-      <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modeling in Ecology</title>
-      <link>https://divadnojnarg.github.io/gallery/ecology/</link>
+      <title>Consulting</title>
+      <link>https://divadnojnarg.github.io/gallery/consulting/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/ecology/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shiny App of the Lorenz Model</title>
-      <link>https://divadnojnarg.github.io/gallery/lorenz/</link>
-      <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
-      
-      <guid>https://divadnojnarg.github.io/gallery/lorenz/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/consulting/</guid>
       <description></description>
     </item>
     
@@ -222,21 +185,20 @@ add a link to the second scientific article published upload the first shiny app
     
     <item>
       <title>Teaching Area</title>
-      <link>https://divadnojnarg.github.io/gallery/around_r/</link>
+      <link>https://divadnojnarg.github.io/gallery/teaching/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/around_r/</guid>
+      <guid>https://divadnojnarg.github.io/gallery/teaching/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Some Shiny Apps</title>
-      <link>https://divadnojnarg.github.io/about-lorenz/</link>
+      <link>https://divadnojnarg.github.io/shiny-showcase/</link>
       <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/about-lorenz/</guid>
-      <description>Introduction The purpose of this page is to show some Shiny Apps of the Lorenz model developed with R and the Shiny package as well as other very usefull packages such as shinydashboard, shinyJS, plotly, shinyWidgets, shinycssloaders. Some of these apps are still in development, to improve their design and features.
-1. Solve the Lorenz model for random initial conditions This first app simply enables the user to solve the Lorenz model for random initial conditions, without changing parameters.</description>
+      <guid>https://divadnojnarg.github.io/shiny-showcase/</guid>
+      <description>The Lotka Volterra Model Introduction The study of prey-predators interactions is a very exciting field, where a wide variety of models is available. The most famous is obviously that of Lotka-Volterra created in parallel by Vito Volterra and James Lotka (V. Volterra, Nature, 118: 1926). This model contains shortcomings such as the infinite growth of prey, which is not realistic (Malthus growth rate). It is indeed more accurate to use a Verhulst growth function, which takes into consideration competition between preys.</description>
     </item>
     
   </channel>

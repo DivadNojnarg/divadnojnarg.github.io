@@ -58,16 +58,6 @@
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about-shiny/</loc>
-    <lastmod>2017-06-07T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://divadnojnarg.github.io/about-ecology/</loc>
-    <lastmod>2017-06-07T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://divadnojnarg.github.io/blog/todolist/</loc>
     <lastmod>2017-05-28T00:00:00+00:00</lastmod>
   </url>
@@ -83,22 +73,12 @@
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium-homeo/</loc>
+    <loc>https://divadnojnarg.github.io/gallery/research/</loc>
     <lastmod>2017-05-10T21:45:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/calcium_phosphate_homeo/</loc>
-    <lastmod>2017-05-10T21:45:17-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://divadnojnarg.github.io/gallery/ecology/</loc>
-    <lastmod>2017-05-10T21:35:17-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://divadnojnarg.github.io/gallery/lorenz/</loc>
+    <loc>https://divadnojnarg.github.io/gallery/consulting/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
@@ -108,12 +88,12 @@
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/gallery/around_r/</loc>
+    <loc>https://divadnojnarg.github.io/gallery/teaching/</loc>
     <lastmod>2017-05-10T21:35:17-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://divadnojnarg.github.io/about-lorenz/</loc>
+    <loc>https://divadnojnarg.github.io/shiny-showcase/</loc>
     <lastmod>2017-05-05T21:48:51-07:00</lastmod>
   </url>
   
