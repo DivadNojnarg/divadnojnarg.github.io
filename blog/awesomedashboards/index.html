@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="generator" content="">
-  <base href="../../">
+  <base href="https://divadnojnarg.github.io">
 
   
     <meta name="description" content="PhD in Mathematical Physiology, Renal Physiology, Zurich.">
@@ -33,7 +33,7 @@
 
   <meta property="og:title" content="Build awesome dashboards with shiny | Hi, I am David">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="/">
+  <meta property="og:url" content="https://divadnojnarg.github.io">
 
   
 
@@ -43,7 +43,7 @@
 
   
 
-  <link rel="canonical" href="../../blog/awesomedashboards/">
+  <link rel="canonical" href="https://divadnojnarg.github.io/blog/awesomedashboards/">
 
   
 
@@ -53,7 +53,7 @@
 
   
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
+      <link rel="stylesheet" href="../../styles/highlight/atom-one-light.css">
     
   
 
@@ -109,7 +109,7 @@
 
 <nav class="row middle-xs center-xs">
   <div class="col-xs-6 col-sm-1 logo">
-    <a href="../../#"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
+    <a href="https://divadnojnarg.github.io#"><img src="../../images/fractal-logo.png" alt="Hi, I am David"></a>
   </div>
     
       <div class="col-xs-3 col-sm-2">
@@ -188,7 +188,7 @@ does shiny!</p>
 shiny will generate the corresponding HTML code, to be embeded into an html page.
 Let&rsquo;s have a look at what happens:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
     min = 0, max = 1000, value = 500
   )
@@ -204,7 +204,7 @@ sliderInput(&quot;obs&quot;, &quot;Number of observations:&quot;,
 
 <p>Basically, all that you write in R will be translated in HTML:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -252,7 +252,7 @@ code is written, copy it in the R console to get the corresponding HTML,
 and include this HTML snippet in your full template. I personnaly, prefer seeing the
 code below that the corresponding HTML:</p>
 
-<pre><code>library(shinyWidgets)
+<pre><code class="language-r">library(shinyWidgets)
 prettyCheckboxGroup(
   inputId = &quot;checkgroup2&quot;,
   label = &quot;Click me!&quot;, thick = TRUE,
@@ -311,7 +311,7 @@ on your computer. You can download it from <a href="https://adminlte.io">here</a
 
 <p>Let&rsquo;s start with this very preliminary shinydashboard template:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -432,7 +432,7 @@ to the timeline object:</p>
 
 <p>To include raw HTML code in shiny, you can use the following tips:</p>
 
-<pre><code>HTML(
+<pre><code class="language-r">HTML(
   paste0('
   Your HTML code here
   ')
@@ -441,7 +441,7 @@ to the timeline object:</p>
 
 <p>Let&rsquo;s go back to our shinydashboard and include this HTML code in the body part:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -626,7 +626,7 @@ no idea of the total number).</p>
 
 <p>The converted code will look like that:</p>
 
-<pre><code># col
+<pre><code class="language-r"># col
 tags$div(
   class = &quot;col-md-4&quot;,
   # Widget: user widget style 1
@@ -684,7 +684,7 @@ tags$div(
 
 <p>Having a try with our own basic shinydashboard template:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shinydashboard)
 shinyApp(
   ui = dashboardPage(
@@ -757,7 +757,7 @@ shinyApp(
 your own image that should by in the <strong>/www</strong> directory of your application.
 It would be better if you wrapped this custom R code in your own function like that:</p>
 
-<pre><code>my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
+<pre><code class="language-r">my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
                               sales = NULL, followers = NULL, products = NULL) {
                               
   # check some inputs
@@ -828,7 +828,7 @@ It would be better if you wrapped this custom R code in your own function like t
 <p>where you would have some fields such as username, userposition, sales, followers and products.
 I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code> (lazyness :)).</p>
 
-<pre><code># create your custom box
+<pre><code class="language-r"># create your custom box
 my_tiny_socialbox &lt;- function(username = &quot;Paul&quot;, userposition = &quot;looking for job&quot;,
                               sales = NULL, followers = NULL, products = NULL) {
                               
@@ -932,7 +932,7 @@ that is already available <code>shinydashboard::box</code>.</p>
 
 <p>Let&rsquo;s analyse this function:</p>
 
-<pre><code>box &lt;- function (..., title = NULL, footer = NULL, status = NULL, solidHeader = FALSE, 
+<pre><code class="language-r">box &lt;- function (..., title = NULL, footer = NULL, status = NULL, solidHeader = FALSE, 
 background = NULL, width = 6, height = NULL, collapsible = FALSE, 
 collapsed = FALSE) 
 {
@@ -1008,7 +1008,7 @@ as well as other elements such as badges, is implemented as follow in HTML:</p>
 <p>The box function from shinydashboard package already contains the collapsible button (if the
 collapsible argument is TRUE).</p>
 
-<pre><code>collapseTag &lt;- NULL
+<pre><code class="language-r">collapseTag &lt;- NULL
   if (collapsible) {
     buttonStatus &lt;- status %OR% &quot;default&quot;
     collapseIcon &lt;- if (collapsed) 
@@ -1029,7 +1029,7 @@ and <code>tags$button(class = paste0(&quot;btn btn-box-tool&quot;), `data-widget
 We are just going to add a similar implementation for the closable state (copy this
 code just after the collapseTag):</p>
 
-<pre><code># make our box closable
+<pre><code class="language-r"># make our box closable
   closableTag &lt;- NULL
   if (closable) {
     closableTag &lt;- tags$button(
@@ -1048,7 +1048,7 @@ by adding it the closableTag. Since it could be confusing to add
 the closable tag to the collapsible one, it would even be better if you created a boxToolTag
 for which you would add collapseTag and closableTag such as:</p>
 
-<pre><code>boxToolTag &lt;- NULL
+<pre><code class="language-r">boxToolTag &lt;- NULL
 if (collapsible || closable) {
   boxToolTag &lt;- div(class = &quot;box-tools pull-right&quot;)
 }
@@ -1095,7 +1095,7 @@ adding tags to the boxToolTag?</p>
 
 <p>which gives in R:</p>
 
-<pre><code># we first quickly create the label function
+<pre><code class="language-r"># we first quickly create the label function
 dashboardLabel &lt;- function(..., status = &quot;primary&quot;) {
   stopifnot(!is.null(status))
   validateStatus(status)
@@ -1116,7 +1116,7 @@ boxToolTag &lt;- tagAppendChildren(boxToolTag, labelTag, collapseTag, closableTa
 
 <p>The final code is here:</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shinydashboard)
 
 ##########
@@ -1294,7 +1294,7 @@ any shinydashboard to the semantic design. Besides, you can add any of the
 semantic themes (make either light or dark dashboard), which you cannot do
 with shinydashboard. Amazing!!!</p>
 
-<pre><code>library(shiny)
+<pre><code class="language-r">library(shiny)
 library(shiny.semantic)
 library(semantic.dashboard)
 library(plotly)
@@ -1383,10 +1383,10 @@ shinyApp(ui, server)
 
               <div class="pagination">
                   
-                      <a href="../../blog/shinycvs/">&laquo; Make beautiful CVs with shiny and AdminLTE2</a>
+                      <a href="https://divadnojnarg.github.io/blog/shinycvs/">&laquo; Make beautiful CVs with shiny and AdminLTE2</a>
                   
                   
-                      <a href="../../blog/shinyapp_hotjar/">Track a website usage with hotjar &raquo;</a>
+                      <a href="https://divadnojnarg.github.io/blog/shinyapp_hotjar/">Track a website usage with hotjar &raquo;</a>
                   
               </div>
           </section>
@@ -1440,7 +1440,7 @@ shinyApp(ui, server)
 
     
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="../../scripts/highlight.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
 
