@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Hi, I am David</title>
@@ -49,7 +49,8 @@ Getting started with Xcode  Open Xcode Create a new Xcode Project Select &amp;ld
       <guid>https://divadnojnarg.github.io/blog/rpackages_save/</guid>
       <description>This post is a copy and paste of an r-blogger article.
 However, it is so useful that I keep it here to remember about the process to save and restore all R packages when updating to a newer version of R.
- Before you upgrade, build a temp file with all of your old packages.  tmp &amp;lt;- installed.packages() installedpkgs &amp;lt;- as.vector(tmp[is.na(tmp[,&amp;quot;Priority&amp;quot;]), 1]) save(installedpkgs, file=&amp;quot;installed_old.rda&amp;quot;)   Install the new version of R and let it do it’s thing.</description>
+ Before you upgrade, build a temp file with all of your old packages.
+tmp &amp;lt;- installed.packages() installedpkgs &amp;lt;- as.vector(tmp[is.na(tmp[,&amp;quot;Priority&amp;quot;]), 1]) save(installedpkgs, file=&amp;quot;installed_old.rda&amp;quot;)  Install the new version of R and let it do it’s thing.</description>
     </item>
     
     <item>
@@ -81,7 +82,8 @@ Introduction shinydashboard is without any doubt a great package. Even though bu
       <guid>https://divadnojnarg.github.io/blog/shinycvs/</guid>
       <description>shinyCV  Amazing HTML CVs based upon adminLTE2 template
   https://adminlte.io/themes/AdminLTE ( main theme) Will be released to CRAN as soon as possible  Package Installation library(devtools) install_github(&amp;quot;DivadNojnarg/shinyCV&amp;quot;) library(shinyCV)  Introduction: Basic Workflow This package offers two ways of creating remarkable CVs based on the AdminLTE2 template.
-With the build_shinyCV function  Launch the builder by using:  build_shinyCV()  Fill the form to build your cv step by step and save the current state at any time.</description>
+With the build_shinyCV function  Launch the builder by using:
+build_shinyCV()   Fill the form to build your cv step by step and save the current state at any time.</description>
     </item>
     
     <item>

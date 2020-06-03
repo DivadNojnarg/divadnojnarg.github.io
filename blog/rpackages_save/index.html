@@ -121,7 +121,7 @@
       </div>
     
       <div class="col-xs-3 col-sm-2">
-        <h3><a href="../../cv.pdf">About</a></h3>
+        <h3><a href="../../david_granjon_cv.html">About</a></h3>
       </div>
     
       <div class="col-xs-3 col-sm-2">
@@ -141,7 +141,7 @@
       
         <div class="col-xs-12"><h1><a href="../../#contact">Contact</a></h1></div>
       
-        <div class="col-xs-12"><h1><a href="../../cv.pdf">About</a></h1></div>
+        <div class="col-xs-12"><h1><a href="../../david_granjon_cv.html">About</a></h1></div>
       
         <div class="col-xs-12"><h1><a href="https://rinterface.com">RinteRface</a></h1></div>
       
@@ -166,26 +166,24 @@
 save and restore all R packages when updating to a newer version of R.</p>
 
 <ul>
-<li>Before you upgrade, build a temp file with all of your old packages.</li>
-</ul>
+<li><p>Before you upgrade, build a temp file with all of your old packages.</p>
 
 <pre><code>tmp &lt;- installed.packages()
 installedpkgs &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
 save(installedpkgs, file=&quot;installed_old.rda&quot;)
-</code></pre>
+</code></pre></li>
 
-<ul>
 <li><p>Install the new version of R and let it do it’s thing.</p></li>
 
-<li><p>Once you’ve got the new version up and running, reload the saved packages and re-install them from CRAN.</p></li>
-</ul>
+<li><p>Once you’ve got the new version up and running, reload the saved packages and re-install them from CRAN.</p>
 
 <pre><code>tmp &lt;- installed.packages()
 installedpkgs.new &lt;- as.vector(tmp[is.na(tmp[,&quot;Priority&quot;]), 1])
 missing &lt;- setdiff(installedpkgs, installedpkgs.new)
 install.packages(missing)
 update.packages()
-</code></pre>
+</code></pre></li>
+</ul>
 
 <p>Enjoy!</p>
 
@@ -240,7 +238,7 @@ update.packages()
   
     <div class="col-xs-12">
       
-        Copyright &copy; 2019 Hi, I am David.
+        Copyright &copy; 2020 Hi, I am David.
       
       
     </div>
