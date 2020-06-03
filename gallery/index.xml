@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Galleries on Hi, I am David</title>
-    <link>https://divadnojnarg.github.io/gallery/</link>
+    <link>/gallery/</link>
     <description>Recent content in Galleries on Hi, I am David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 May 2017 21:45:17 -0700</lastBuildDate>
     
-	<atom:link href="https://divadnojnarg.github.io/gallery/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Research</title>
-      <link>https://divadnojnarg.github.io/gallery/research/</link>
+      <link>/gallery/research/</link>
       <pubDate>Wed, 10 May 2017 21:45:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/research/</guid>
+      <guid>/gallery/research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Consulting</title>
-      <link>https://divadnojnarg.github.io/gallery/consulting/</link>
+      <link>/gallery/consulting/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/consulting/</guid>
+      <guid>/gallery/consulting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny Apps Showcase</title>
-      <link>https://divadnojnarg.github.io/gallery/shiny-app/</link>
+      <link>/gallery/shiny-app/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/shiny-app/</guid>
+      <guid>/gallery/shiny-app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching Area</title>
-      <link>https://divadnojnarg.github.io/gallery/teaching/</link>
+      <link>/gallery/teaching/</link>
       <pubDate>Wed, 10 May 2017 21:35:17 -0700</pubDate>
       
-      <guid>https://divadnojnarg.github.io/gallery/teaching/</guid>
+      <guid>/gallery/teaching/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Build awesome dashboards with shiny &middot; David Granjon</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Build awesome dashboards with shiny">
+<meta itemprop="description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package.">
+
+
+<meta itemprop="datePublished" content="2018-03-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="4127">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build awesome dashboards with shiny"/>
+<meta name="twitter:description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package."/>
+
+
+<meta property="og:title" content="Build awesome dashboards with shiny" />
+<meta property="og:description" content="shinydashboardPlus  I recently released shinydashboardPlus on CRAN. Therefore, some of the functions below are now included in the package." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://divadnojnarg.github.io/post/awesomedashboards/" />
+<meta property="article:published_time" content="2018-03-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-03-26T00:00:00+00:00" /><meta property="og:site_name" content="David Granjon" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://divadnojnarg.github.iocss/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://divadnojnarg.github.iocss/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://divadnojnarg.github.iocss/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #3e3e3e;
+  }
+
+  .read-more-link a {
+    border-color: #3e3e3e;
+  }
+
+  .pagination li a {
+    color: #3e3e3e;
+    border: 1px solid #3e3e3e;
+  }
+
+  .pagination li.active a {
+    background-color: #3e3e3e;
+  }
+
+  .pagination li a:hover {
+    background-color: #3e3e3e;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #3e3e3e;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="https://divadnojnarg.github.iocss/custom.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="https://divadnojnarg.github.ioimages/profile.jpeg" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>David Granjon</h1>
+
+      
+      <p class="lead">Blog</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://divadnojnarg.github.io">Home</a>
+        </li>
+        <li>
+          <a href="/about/"> About </a>
+        </li><li>
+          <a href="mailto:dgranjon@ymail.com"> Contact </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://ch.linkedin.com/in/david-granjon-88625968" rel="me" title="Linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/DivadNojnarg" rel="me" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/divadnojnarg" rel="me" title="Twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>Build awesome dashboards with shiny</h1>
+
+  <div class="post-date">
+    <time datetime="2018-03-26T00:00:00Z">Mar 26, 2018</time> · 20 min read
+  </div>
+
+  
+
+<h2 id="shinydashboardplus-img-src-images-shinydashboardplus-final-png-width-200-align-right">shinydashboardPlus <img src="/images/ShinyDashboardPlus_FINAL.png" width=200 align="right" /></h2>
+
+<p>I recently released <strong>shinydashboardPlus</strong> on CRAN. Therefore, some of the functions below are now included in the package. Find out more on <a href="https://github.com/DivadNojnarg/shinydashboardPlus">github</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a> is without any doubt a great package.
+Even though built upon the famous free <a href="https://adminlte.io/themes/AdminLTE/index.html">adminLTE2</a> dashboard template (boostrap 3), most of the dashboard I see almost look the same. In the <strong>shinydashboard</strong>
+package, some adminLTE2 components are not implemented such as the right sidebar, which
+can be extremely useful: contains input, parameters, &hellip; But everything you need is
+hidden under the hood, in the inst/AdminLTE folder (shinydashboard <a href="https://github.com/rstudio/shinydashboard">github</a>).</p>
+
+<p>In the following, I will show you how you could implement any of the adminLTE2 elements,
+when they are not already included in the shinydashboard package.</p>
+
+<p><a href="/images/adminLTE2_dashboard.png"><img src="/images/adminLTE2_dashboard.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h2 id="from-r-to-html">From R to HTML</h2>
+
+<p>Before going deeper in the adminLTE2 features, it is crucial to understand what
+does shiny!</p>
+
+<p>You probably know that when you write a R shiny code, such as <strong>sliderInput</strong>,
+shiny will generate the corresponding HTML code, to be embeded into an html page.
+Let&rsquo;s have a look at what happens:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">sliderInput</span>(<span style="color:#e6db74">&#34;obs&#34;</span>, <span style="color:#e6db74">&#34;Number of observations:&#34;</span>,
+    min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>
+  )</code></pre></div>
+
+<p>If you enter the previous code in the R console, you will see:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group shiny-input-container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;control-label&#34;</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;obs&#34;</span>&gt;Number of observations:&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js-range-slider&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;obs&#34;</span> <span style="color:#a6e22e">data-min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">data-max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000&#34;</span> <span style="color:#a6e22e">data-from</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500&#34;</span> <span style="color:#a6e22e">data-step</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">data-grid</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">data-grid-num</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">data-grid-snap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">data-prettify-separator</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#a6e22e">data-prettify-enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">data-keyboard</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">data-keyboard-step</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.1&#34;</span> <span style="color:#a6e22e">data-data-type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span>/&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>Basically, all that you write in R will be translated in HTML:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(),
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dashboard example&#34;</span>
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) { }
+)</code></pre></div>
+
+<p>The UI code will be translated as shown below:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;skin-blue&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-height: 611px;&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrapper&#34;</span>&gt;
+    &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-header&#34;</span>&gt;
+      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-static-top&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none;&#34;</span>&gt;
+          &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-bars&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+        &lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sidebar-toggle&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;offcanvas&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span>&gt;
+          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sr-only&#34;</span>&gt;Toggle navigation&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-custom-menu&#34;</span>&gt;
+          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span>&gt;&lt;/<span style="color:#f92672">ul</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;/<span style="color:#f92672">nav</span>&gt;
+    &lt;/<span style="color:#f92672">header</span>&gt;
+    &lt;<span style="color:#f92672">aside</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-sidebar&#34;</span> <span style="color:#a6e22e">data-collapsed</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>&gt;
+      &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sidebar&#34;</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt;
+    &lt;/<span style="color:#f92672">aside</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content-wrapper&#34;</span>&gt;
+      &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
+
+<p>In pratice, this is not enough to build beautiful dashboard but it is still a good start.
+With this very simple technic, you will be able to generate any <strong>custom HTML</strong>.
+Moreover, if you are creating a shiny app with an <a href="https://shiny.rstudio.com/articles/templates.html"><strong>HTML template</strong></a>, I find easier to create inputs (slider, checkboxes) writing them first in R. Once all your
+code is written, copy it in the R console to get the corresponding HTML,
+and include this HTML snippet in your full template. I personnaly, prefer seeing the
+code below that the corresponding HTML:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shinyWidgets)
+<span style="color:#a6e22e">prettyCheckboxGroup</span>(
+  inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup2&#34;</span>,
+  label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+  choices <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>),
+  animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>
+)</code></pre></div>
+
+<p>This code is only 7 lines long and very clear. The HTML translation
+is widely less clear:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkgroup2&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group shiny-input-checkboxgroup shiny-input-container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;control-label&#34;</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkgroup2&#34;</span>&gt;Click me!&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shiny-options-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:7px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pretty p-default p-thick p-pulse&#34;</span>&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkgroup2&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Click me !&#34;</span>/&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;state p-info&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">span</span>&gt;Click me !&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:3px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pretty p-default p-thick p-pulse&#34;</span>&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkgroup2&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Me !&#34;</span>/&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;state p-info&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">span</span>&gt;Me !&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:3px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pretty p-default p-thick p-pulse&#34;</span>&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkgroup2&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Or me !&#34;</span>/&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;state p-info&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">span</span>&gt;Or me !&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height:3px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>What to do if you find an interesting HTML object (boostrap 3 compatible)
+that you want to integrate in your shiny app?</p>
+
+<h2 id="from-html-to-r">From HTML to R</h2>
+
+<h3 id="import-html-code-into-shiny">Import HTML code into shiny</h3>
+
+<p>Before going further, make sure that the adminLTE2 source code is available somewhere
+on your computer. You can download it from <a href="https://adminlte.io">here</a> (version 2.4.2).</p>
+
+<p>Let&rsquo;s start with this very preliminary shinydashboard template:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(),
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dashboard example&#34;</span>
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) { }
+)</code></pre></div>
+
+<p>You noticed a timeline element that you really want to include in your shinydashboard.</p>
+
+<p>According to the following screenshot, open the profile.html page with your
+favorite editor (notepad ++, Rstudio, Xcode, &hellip;).</p>
+
+<p><a href="/images/adminLTE2_folder.png"><img src="/images/adminLTE2_folder.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>Go to find, type &ldquo;The timeline&rdquo; and copy the following code, which corresponds
+to the timeline object:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tab-pane&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline&#34;</span>&gt;
+                <span style="color:#75715e">&lt;!-- The timeline --&gt;</span>
+                &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline timeline-inverse&#34;</span>&gt;
+                  <span style="color:#75715e">&lt;!-- timeline time label --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time-label&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-red&#34;</span>&gt;
+                          10 Feb. 2014
+                        &lt;/<span style="color:#f92672">span</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- /.timeline-label --&gt;</span>
+                  <span style="color:#75715e">&lt;!-- timeline item --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span>&gt;
+                    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-envelope bg-blue&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-item&#34;</span>&gt;
+                      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-clock-o&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 12:05&lt;/<span style="color:#f92672">span</span>&gt;
+
+                      &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-header&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Support Team&lt;/<span style="color:#f92672">a</span>&gt; sent you an email&lt;/<span style="color:#f92672">h3</span>&gt;
+
+                      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-body&#34;</span>&gt;
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                        quora plaxo ideeli hulu weebly balihoo...
+                      &lt;/<span style="color:#f92672">div</span>&gt;
+                      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-footer&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary btn-xs&#34;</span>&gt;Read more&lt;/<span style="color:#f92672">a</span>&gt;
+                        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger btn-xs&#34;</span>&gt;Delete&lt;/<span style="color:#f92672">a</span>&gt;
+                      &lt;/<span style="color:#f92672">div</span>&gt;
+                    &lt;/<span style="color:#f92672">div</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- END timeline item --&gt;</span>
+                  <span style="color:#75715e">&lt;!-- timeline item --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span>&gt;
+                    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-user bg-aqua&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-item&#34;</span>&gt;
+                      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-clock-o&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 5 mins ago&lt;/<span style="color:#f92672">span</span>&gt;
+
+                      &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-header no-border&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Sarah Young&lt;/<span style="color:#f92672">a</span>&gt; accepted your friend request
+                      &lt;/<span style="color:#f92672">h3</span>&gt;
+                    &lt;/<span style="color:#f92672">div</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- END timeline item --&gt;</span>
+                  <span style="color:#75715e">&lt;!-- timeline item --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span>&gt;
+                    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-comments bg-yellow&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-item&#34;</span>&gt;
+                      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-clock-o&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 27 mins ago&lt;/<span style="color:#f92672">span</span>&gt;
+
+                      &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-header&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Jay White&lt;/<span style="color:#f92672">a</span>&gt; commented on your post&lt;/<span style="color:#f92672">h3</span>&gt;
+
+                      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-body&#34;</span>&gt;
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      &lt;/<span style="color:#f92672">div</span>&gt;
+                      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-footer&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning btn-flat btn-xs&#34;</span>&gt;View comment&lt;/<span style="color:#f92672">a</span>&gt;
+                      &lt;/<span style="color:#f92672">div</span>&gt;
+                    &lt;/<span style="color:#f92672">div</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- END timeline item --&gt;</span>
+                  <span style="color:#75715e">&lt;!-- timeline time label --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time-label&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-green&#34;</span>&gt;
+                          3 Jan. 2014
+                        &lt;/<span style="color:#f92672">span</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- /.timeline-label --&gt;</span>
+                  <span style="color:#75715e">&lt;!-- timeline item --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span>&gt;
+                    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-camera bg-purple&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-item&#34;</span>&gt;
+                      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;time&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-clock-o&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 2 days ago&lt;/<span style="color:#f92672">span</span>&gt;
+
+                      &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-header&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Mina Lee&lt;/<span style="color:#f92672">a</span>&gt; uploaded new photos&lt;/<span style="color:#f92672">h3</span>&gt;
+
+                      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;timeline-body&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://placehold.it/150x100&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://placehold.it/150x100&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://placehold.it/150x100&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin&#34;</span>&gt;
+                        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://placehold.it/150x100&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;...&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin&#34;</span>&gt;
+                      &lt;/<span style="color:#f92672">div</span>&gt;
+                    &lt;/<span style="color:#f92672">div</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                  <span style="color:#75715e">&lt;!-- END timeline item --&gt;</span>
+                  &lt;<span style="color:#f92672">li</span>&gt;
+                    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-clock-o bg-gray&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+                  &lt;/<span style="color:#f92672">li</span>&gt;
+                &lt;/<span style="color:#f92672">ul</span>&gt;
+              &lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>To include raw HTML code in shiny, you can use the following (unsafe) method:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">HTML</span>(
+  <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">  Your HTML code here
+</span><span style="color:#e6db74">  &#39;</span>)
+)</code></pre></div>
+
+<p>Let&rsquo;s go back to our shinydashboard and include this HTML code in the body part:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(
+      <span style="color:#a6e22e">HTML</span>(
+        <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">          &lt;div class=&#34;tab-pane&#34; id=&#34;timeline&#34;&gt;
+</span><span style="color:#e6db74">                &lt;!-- The timeline --&gt;
+</span><span style="color:#e6db74">                &lt;ul class=&#34;timeline timeline-inverse&#34;&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline time label --&gt;
+</span><span style="color:#e6db74">                  &lt;li class=&#34;time-label&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;span class=&#34;bg-red&#34;&gt;
+</span><span style="color:#e6db74">                          10 Feb. 2014
+</span><span style="color:#e6db74">                        &lt;/span&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- /.timeline-label --&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;li&gt;
+</span><span style="color:#e6db74">                    &lt;i class=&#34;fa fa-envelope bg-blue&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                    &lt;div class=&#34;timeline-item&#34;&gt;
+</span><span style="color:#e6db74">                      &lt;span class=&#34;time&#34;&gt;&lt;i class=&#34;fa fa-clock-o&#34;&gt;&lt;/i&gt; 12:05&lt;/span&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;h3 class=&#34;timeline-header&#34;&gt;&lt;a href=&#34;#&#34;&gt;Support Team&lt;/a&gt; sent you an email&lt;/h3&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;div class=&#34;timeline-body&#34;&gt;
+</span><span style="color:#e6db74">                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+</span><span style="color:#e6db74">                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+</span><span style="color:#e6db74">                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+</span><span style="color:#e6db74">                        quora plaxo ideeli hulu weebly balihoo...
+</span><span style="color:#e6db74">                      &lt;/div&gt;
+</span><span style="color:#e6db74">                      &lt;div class=&#34;timeline-footer&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;a class=&#34;btn btn-primary btn-xs&#34;&gt;Read more&lt;/a&gt;
+</span><span style="color:#e6db74">                        &lt;a class=&#34;btn btn-danger btn-xs&#34;&gt;Delete&lt;/a&gt;
+</span><span style="color:#e6db74">                      &lt;/div&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- END timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;li&gt;
+</span><span style="color:#e6db74">                    &lt;i class=&#34;fa fa-user bg-aqua&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                    &lt;div class=&#34;timeline-item&#34;&gt;
+</span><span style="color:#e6db74">                      &lt;span class=&#34;time&#34;&gt;&lt;i class=&#34;fa fa-clock-o&#34;&gt;&lt;/i&gt; 5 mins ago&lt;/span&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;h3 class=&#34;timeline-header no-border&#34;&gt;&lt;a href=&#34;#&#34;&gt;Sarah Young&lt;/a&gt; accepted your friend request
+</span><span style="color:#e6db74">                      &lt;/h3&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- END timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;li&gt;
+</span><span style="color:#e6db74">                    &lt;i class=&#34;fa fa-comments bg-yellow&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                    &lt;div class=&#34;timeline-item&#34;&gt;
+</span><span style="color:#e6db74">                      &lt;span class=&#34;time&#34;&gt;&lt;i class=&#34;fa fa-clock-o&#34;&gt;&lt;/i&gt; 27 mins ago&lt;/span&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;h3 class=&#34;timeline-header&#34;&gt;&lt;a href=&#34;#&#34;&gt;Jay White&lt;/a&gt; commented on your post&lt;/h3&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;div class=&#34;timeline-body&#34;&gt;
+</span><span style="color:#e6db74">                        Take me to your leader!
+</span><span style="color:#e6db74">                        Switzerland is small and neutral!
+</span><span style="color:#e6db74">                        We are more like Germany, ambitious and misunderstood!
+</span><span style="color:#e6db74">                      &lt;/div&gt;
+</span><span style="color:#e6db74">                      &lt;div class=&#34;timeline-footer&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;a class=&#34;btn btn-warning btn-flat btn-xs&#34;&gt;View comment&lt;/a&gt;
+</span><span style="color:#e6db74">                      &lt;/div&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- END timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline time label --&gt;
+</span><span style="color:#e6db74">                  &lt;li class=&#34;time-label&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;span class=&#34;bg-green&#34;&gt;
+</span><span style="color:#e6db74">                          3 Jan. 2014
+</span><span style="color:#e6db74">                        &lt;/span&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- /.timeline-label --&gt;
+</span><span style="color:#e6db74">                  &lt;!-- timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;li&gt;
+</span><span style="color:#e6db74">                    &lt;i class=&#34;fa fa-camera bg-purple&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                    &lt;div class=&#34;timeline-item&#34;&gt;
+</span><span style="color:#e6db74">                      &lt;span class=&#34;time&#34;&gt;&lt;i class=&#34;fa fa-clock-o&#34;&gt;&lt;/i&gt; 2 days ago&lt;/span&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;h3 class=&#34;timeline-header&#34;&gt;&lt;a href=&#34;#&#34;&gt;Mina Lee&lt;/a&gt; uploaded new photos&lt;/h3&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">                      &lt;div class=&#34;timeline-body&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;img src=&#34;http://placehold.it/150x100&#34; alt=&#34;...&#34; class=&#34;margin&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;img src=&#34;http://placehold.it/150x100&#34; alt=&#34;...&#34; class=&#34;margin&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;img src=&#34;http://placehold.it/150x100&#34; alt=&#34;...&#34; class=&#34;margin&#34;&gt;
+</span><span style="color:#e6db74">                        &lt;img src=&#34;http://placehold.it/150x100&#34; alt=&#34;...&#34; class=&#34;margin&#34;&gt;
+</span><span style="color:#e6db74">                      &lt;/div&gt;
+</span><span style="color:#e6db74">                    &lt;/div&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                  &lt;!-- END timeline item --&gt;
+</span><span style="color:#e6db74">                  &lt;li&gt;
+</span><span style="color:#e6db74">                    &lt;i class=&#34;fa fa-clock-o bg-gray&#34;&gt;&lt;/i&gt;
+</span><span style="color:#e6db74">                  &lt;/li&gt;
+</span><span style="color:#e6db74">                &lt;/ul&gt;
+</span><span style="color:#e6db74">              &lt;/div&gt;
+</span><span style="color:#e6db74">        &#39;</span>)
+      )
+    ),
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dashboard example&#34;</span>
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) { }
+)</code></pre></div>
+
+<p>You should see something like that:</p>
+
+<p><a href="/images/dashboard_timeline.png"><img src="/images/dashboard_timeline.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>Congratulations!!! Actually and in my opinion, if you write a
+shiny app, it is more consistent to write everything in R and not mix HTML and R,
+or at least not too much. Below, I explain you how to translate this HTML code
+in R.</p>
+
+<h3 id="convert-this-code-from-html-to-r">Convert this code from HTML to R</h3>
+
+<p>For this part, I will take the HTML code corresponding to a social box
+from adminLTE2.</p>
+
+<p><a href="/images/socialbox_example.png"><img src="/images/socialbox_example.png" width="400" height="200" alt="blank"></a></p>
+
+<p>The associated HTML is located in the widgets.html file:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- /.col --&gt;</span>
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span>&gt;
+          <span style="color:#75715e">&lt;!-- Widget: user widget style 1 --&gt;</span>
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box box-widget widget-user&#34;</span>&gt;
+            <span style="color:#75715e">&lt;!-- Add the bg color to the header using any of the bg-* classes --&gt;</span>
+            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-user-header bg-aqua-active&#34;</span>&gt;
+              &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-user-username&#34;</span>&gt;Alexander Pierce&lt;/<span style="color:#f92672">h3</span>&gt;
+              &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-user-desc&#34;</span>&gt;Founder &amp;amp; CEO&lt;/<span style="color:#f92672">h5</span>&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;widget-user-image&#34;</span>&gt;
+              &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-circle&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../dist/img/user1-128x128.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;User Avatar&#34;</span>&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box-footer&#34;</span>&gt;
+              &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+                &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>&gt;
+                  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-block&#34;</span>&gt;
+                    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-header&#34;</span>&gt;3,200&lt;/<span style="color:#f92672">h5</span>&gt;
+                    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-text&#34;</span>&gt;SALES&lt;/<span style="color:#f92672">span</span>&gt;
+                  &lt;/<span style="color:#f92672">div</span>&gt;
+                  <span style="color:#75715e">&lt;!-- /.description-block --&gt;</span>
+                &lt;/<span style="color:#f92672">div</span>&gt;
+                <span style="color:#75715e">&lt;!-- /.col --&gt;</span>
+                &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>&gt;
+                  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-block&#34;</span>&gt;
+                    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-header&#34;</span>&gt;13,000&lt;/<span style="color:#f92672">h5</span>&gt;
+                    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-text&#34;</span>&gt;FOLLOWERS&lt;/<span style="color:#f92672">span</span>&gt;
+                  &lt;/<span style="color:#f92672">div</span>&gt;
+                  <span style="color:#75715e">&lt;!-- /.description-block --&gt;</span>
+                &lt;/<span style="color:#f92672">div</span>&gt;
+                <span style="color:#75715e">&lt;!-- /.col --&gt;</span>
+                &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-sm-4&#34;</span>&gt;
+                  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-block&#34;</span>&gt;
+                    &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-header&#34;</span>&gt;35&lt;/<span style="color:#f92672">h5</span>&gt;
+                    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description-text&#34;</span>&gt;PRODUCTS&lt;/<span style="color:#f92672">span</span>&gt;
+                  &lt;/<span style="color:#f92672">div</span>&gt;
+                  <span style="color:#75715e">&lt;!-- /.description-block --&gt;</span>
+                &lt;/<span style="color:#f92672">div</span>&gt;
+                <span style="color:#75715e">&lt;!-- /.col --&gt;</span>
+              &lt;/<span style="color:#f92672">div</span>&gt;
+              <span style="color:#75715e">&lt;!-- /.row --&gt;</span>
+            &lt;/<span style="color:#f92672">div</span>&gt;
+          &lt;/<span style="color:#f92672">div</span>&gt;
+          <span style="color:#75715e">&lt;!-- /.widget-user --&gt;</span>
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        <span style="color:#75715e">&lt;!-- /.col --&gt;</span></code></pre></div>
+
+<p>To convert it into R, we will use the <strong>tags</strong> function from the htmltools package (shiny also includes it).
+Each HTML5 tag will be preceded by tags such as <code>tags$h5(&quot;an example&quot;)</code> or
+<code>tags$div(class = &quot;col-sm-4&quot;)</code>. Anyway,
+if you enter <code>tags$</code> in the console, a list of all valid tags will appear (and I have
+no idea of the total number).</p>
+
+<p>The converted code will look like that:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># col</span>
+tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+  class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-md-4&#34;</span>,
+  <span style="color:#75715e"># Widget: user widget style 1</span>
+  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+    class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box box-widget widget-user&#34;</span>,
+    <span style="color:#75715e"># Add the bg color to the header using any of the bg-* classes</span>
+    <span style="color:#75715e">## Box Header ##</span>
+    tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-header bg-aqua-active&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-username&#34;</span>, <span style="color:#e6db74">&#34;Alexander Pierce&#34;</span>),
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-desc&#34;</span>, <span style="color:#e6db74">&#34;Founder at CEO&#34;</span>)
+    )
+    <span style="color:#75715e">## Box Image ##</span>
+    tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-image&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">img</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;img-circle&#34;</span>, src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;User Avatar&#34;</span>)
+    ),
+    <span style="color:#75715e">## Box Footer ##</span>
+    tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;row&#34;</span>,
+        <span style="color:#75715e"># first column</span>
+        tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;3200&#34;</span>),
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;SALES&#34;</span>)
+          )
+        ),
+        <span style="color:#75715e"># second column</span>
+        tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;13000&#34;</span>),
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;FOLLOWERS&#34;</span>)
+          )
+        ),
+        <span style="color:#75715e"># third column</span>
+        tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;35&#34;</span>),
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;PRODUCTS&#34;</span>)
+          )
+        )
+      )
+    )
+  )
+)</code></pre></div>
+
+<p>Having a try with our own basic shinydashboard template:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(
+      <span style="color:#75715e"># col</span>
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-md-4&#34;</span>,
+        <span style="color:#75715e"># Widget: user widget style 1</span>
+        tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box box-widget widget-user&#34;</span>,
+          <span style="color:#75715e"># Add the bg color to the header using any of the bg-* classes</span>
+          <span style="color:#75715e">## Box Header ##</span>
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-header bg-aqua-active&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-username&#34;</span>, <span style="color:#e6db74">&#34;Alexander Pierce&#34;</span>),
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-desc&#34;</span>, <span style="color:#e6db74">&#34;Founder at CEO&#34;</span>)
+          ),
+          <span style="color:#75715e">## Box Image ##</span>
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-image&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">img</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;img-circle&#34;</span>, src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;User Avatar&#34;</span>)
+          ),
+          <span style="color:#75715e">## Box Footer ##</span>
+          tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>,
+            tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;row&#34;</span>,
+              <span style="color:#75715e"># first column</span>
+              tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+                tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                  class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;3200&#34;</span>),
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;SALES&#34;</span>)
+                )
+              ),
+              <span style="color:#75715e"># second column</span>
+              tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+                tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                  class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;13000&#34;</span>),
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;FOLLOWERS&#34;</span>)
+                )
+              ),
+              <span style="color:#75715e"># third column</span>
+              tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+                tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                  class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, <span style="color:#e6db74">&#34;35&#34;</span>),
+                  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;PRODUCTS&#34;</span>)
+                )
+              )
+            )
+          )
+        )
+      )
+    ),
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dashboard example&#34;</span>
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) { }
+)</code></pre></div>
+
+<p>The profile image is not displayed because I did not provide any source
+<code>tags$img(class = &quot;img-circle&quot;, src = &quot;&quot;, alt = &quot;User Avatar&quot;)</code>. Up to you to pass
+your own image that should by in the <strong>/www</strong> directory of your application.
+It would be better if you wrapped this custom R code in your own function like that:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">my_tiny_socialbox <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Paul&#34;</span>, userposition <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;looking for job&#34;</span>,
+                              sales <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, followers <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, products <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>) {
+                              
+  <span style="color:#75715e"># check some inputs</span>
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(sales))
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(followers))
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(products))
+  
+  <span style="color:#75715e"># the box tags</span>
+  <span style="color:#a6e22e">withTags</span>(
+    <span style="color:#75715e"># col</span>
+    <span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-md-4&#34;</span>,
+      <span style="color:#75715e"># Widget: user widget style 1</span>
+      <span style="color:#a6e22e">div</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box box-widget widget-user&#34;</span>,
+        <span style="color:#75715e"># Add the bg color to the header using any of the bg-* classes</span>
+        <span style="color:#75715e">## Box Header ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-header bg-aqua-active&#34;</span>,
+          <span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-username&#34;</span>, username),
+          <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-desc&#34;</span>, userposition)
+        ),
+        <span style="color:#75715e">## Box Image ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-image&#34;</span>,
+          <span style="color:#a6e22e">img</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;img-circle&#34;</span>, src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;User Avatar&#34;</span>)
+        ),
+        <span style="color:#75715e">## Box Footer ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>,
+          <span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;row&#34;</span>,
+            <span style="color:#75715e"># first column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, sales),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;SALES&#34;</span>)
+              )
+            ),
+            <span style="color:#75715e"># second column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, followers),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;FOLLOWERS&#34;</span>)
+              )
+            ),
+            <span style="color:#75715e"># third column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, products),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;PRODUCTS&#34;</span>)
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+}</code></pre></div>
+
+<p>where you would have some fields such as username, userposition, sales, followers and products.
+I use the <strong>withTags</strong> function that enables me to remove <code>tags$</code> (lazyness :)).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># create your custom box</span>
+my_tiny_socialbox <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Paul&#34;</span>, userposition <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;looking for job&#34;</span>,
+                              sales <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, followers <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, products <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>) {
+                              
+  <span style="color:#75715e"># check some inputs</span>
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(sales))
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(followers))
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#a6e22e">is.numeric</span>(products))
+  
+  <span style="color:#75715e"># the box tags</span>
+  <span style="color:#a6e22e">withTags</span>(
+    <span style="color:#75715e"># col</span>
+    <span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-md-4&#34;</span>,
+      <span style="color:#75715e"># Widget: user widget style 1</span>
+      <span style="color:#a6e22e">div</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box box-widget widget-user&#34;</span>,
+        <span style="color:#75715e"># Add the bg color to the header using any of the bg-* classes</span>
+        <span style="color:#75715e">## Box Header ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-header bg-aqua-active&#34;</span>,
+          <span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-username&#34;</span>, username),
+          <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-desc&#34;</span>, userposition)
+        ),
+        <span style="color:#75715e">## Box Image ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;widget-user-image&#34;</span>,
+          <span style="color:#a6e22e">img</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;img-circle&#34;</span>, src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;User Avatar&#34;</span>)
+        ),
+        <span style="color:#75715e">## Box Footer ##</span>
+        <span style="color:#a6e22e">div</span>(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>,
+          <span style="color:#a6e22e">div</span>(
+            class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;row&#34;</span>,
+            <span style="color:#75715e"># first column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, sales),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;SALES&#34;</span>)
+              )
+            ),
+            <span style="color:#75715e"># second column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, followers),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;FOLLOWERS&#34;</span>)
+              )
+            ),
+            <span style="color:#75715e"># third column</span>
+            <span style="color:#a6e22e">div</span>(
+              class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;col-sm-4 border-right&#34;</span>,
+              <span style="color:#a6e22e">div</span>(
+                class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-block&#34;</span>,
+                <span style="color:#a6e22e">h5</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-header&#34;</span>, products),
+                <span style="color:#a6e22e">span</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;description-text&#34;</span>, <span style="color:#e6db74">&#34;PRODUCTS&#34;</span>)
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+}
+
+<span style="color:#75715e"># launch the dashboard with our simple custom function</span>
+<span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(
+      <span style="color:#a6e22e">my_tiny_socialbox</span>(username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Paul&#34;</span>, userposition <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;looking for job&#34;</span>,
+                        sales <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>, followers <span style="color:#f92672">=</span> <span style="color:#ae81ff">1200</span>, products <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+    ),
+    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dashboard example&#34;</span>
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) { }
+)</code></pre></div>
+
+<p>Congratulations!</p>
+
+<p><a href="/images/dashboard_socialbox.png"><img src="/images/dashboard_socialbox.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>From now, you should be able to integrate any boostrap 3 compatible objects in your
+shinydashboards.</p>
+
+<p>A better example of what you could achieve is <a href="https://dgranjon.shinyapps.io/myshinycv/">here</a></p>
+
+<p><a href="/images/shinyCV_newdesign.png"><img src="/images/shinyCV_newdesign.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="customize-shinydashboard-elements">Customize shinydashboard elements</h3>
+
+<p>In this part, I explain how you could improve the box function
+that is already available <code>shinydashboard::box</code>.</p>
+
+<p>Let&rsquo;s analyse this function:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">box <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function </span>(<span style="color:#66d9ef">...</span>, title <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, footer <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, solidHeader <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, 
+background <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>, height <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, collapsible <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, 
+collapsed <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) 
+{
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;box&#34;</span>
+  <span style="color:#a6e22e">if </span>(solidHeader <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(background)) {
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(boxClass, <span style="color:#e6db74">&#34;box-solid&#34;</span>)
+  }
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(status)) {
+  <span style="color:#a6e22e">validateStatus</span>(status)
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(boxClass, <span style="color:#e6db74">&#34; box-&#34;</span>, status)
+  }
+  <span style="color:#a6e22e">if </span>(collapsible <span style="color:#f92672">&amp;&amp;</span> collapsed) {
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(boxClass, <span style="color:#e6db74">&#34;collapsed-box&#34;</span>)
+  }
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(background)) {
+  <span style="color:#a6e22e">validateColor</span>(background)
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(boxClass, <span style="color:#e6db74">&#34; bg-&#34;</span>, background)
+  }
+  style <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(height)) {
+  style <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;height: &#34;</span>, <span style="color:#a6e22e">validateCssUnit</span>(height))
+  }
+  titleTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(title)) {
+  titleTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-title&#34;</span>, title)
+  }
+  collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(collapsible) {
+  buttonStatus <span style="color:#f92672">&lt;-</span> status <span style="color:#f92672">%OR%</span> <span style="color:#e6db74">&#34;default&#34;</span>
+  collapseIcon <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">if </span>(collapsed) 
+  <span style="color:#e6db74">&#34;plus&#34;</span>
+  else <span style="color:#e6db74">&#34;minus&#34;</span>
+  collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-tools pull-right&#34;</span>, tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>), 
+  `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;collapse&#34;</span>, shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(collapseIcon)))
+  }
+  headerTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(titleTag) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(collapseTag)) {
+  headerTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-header&#34;</span>, titleTag, collapseTag)
+  }
+  <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(width)) 
+  <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;col-sm-&#34;</span>, width), <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> boxClass, style <span style="color:#f92672">=</span> <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(style)) 
+  style, headerTag, <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-body&#34;</span>, <span style="color:#66d9ef">...</span>), <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(footer)) 
+  <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>, footer)))
+}</code></pre></div>
+
+<p>The basic css class is &ldquo;box&rdquo; and stored in the variable boxClass. If you enter other parameters
+such as the box status (choose among primary, success, info, warning, danger), the boxClass
+will be updated so that it could be &ldquo;box-primary&rdquo; if the status is primary. You can control
+other parameters such as the collapsible state, the background color, &hellip;</p>
+
+<p>When I started shiny app development, I noticed that the boxes were not possible to
+close, which can be useful sometimes. From now, let&rsquo;s make it closable!
+Everything you need is already in adminLTE2, we just have to
+reorder things properly. The box toolbox, which contains the collapse and close button
+as well as other elements such as badges, is implemented as follow in HTML:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box-tools pull-right&#34;</span>&gt;
+                &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tooltip&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3 New Messages&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;badge bg-light-blue&#34;</span>&gt;3&lt;/<span style="color:#f92672">span</span>&gt;
+                &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span> <span style="color:#a6e22e">data-widget</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-minus&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+                &lt;/<span style="color:#f92672">button</span>&gt;
+                &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span> <span style="color:#a6e22e">data-widget</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-times&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">button</span>&gt;
+              &lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>Everything is embeded in a &ldquo;box-tools pull-right&rdquo; class. What we actually need is this part:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span> <span style="color:#a6e22e">data-widget</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;remove&#34;</span>&gt;&lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-times&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;/<span style="color:#f92672">button</span>&gt;</code></pre></div>
+
+<p>The box function from shinydashboard package already contains the collapsible button (if the
+collapsible argument is TRUE).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(collapsible) {
+    buttonStatus <span style="color:#f92672">&lt;-</span> status <span style="color:#f92672">%OR%</span> <span style="color:#e6db74">&#34;default&#34;</span>
+    collapseIcon <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">if </span>(collapsed) 
+      <span style="color:#e6db74">&#34;plus&#34;</span>
+    else <span style="color:#e6db74">&#34;minus&#34;</span>
+    collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-tools pull-right&#34;</span>, 
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>), 
+        `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;collapse&#34;</span>, shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(collapseIcon)
+      )
+    )
+  }</code></pre></div>
+
+<p>As in the adminLTE2 HTML snippet, you recognize <code>class = &quot;box-tools pull-right&quot;</code>
+and <code>tags$button(class = paste0(&quot;btn btn-box-tool&quot;), `data-widget` = &quot;collapse&quot;, shiny::icon(collapseIcon))</code>.
+We are just going to add a similar implementation for the closable state (copy this
+code just after the collapseTag):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># make our box closable</span>
+  closableTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(closable) {
+    closableTag <span style="color:#f92672">&lt;-</span> tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>, 
+      `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;remove&#34;</span>, 
+      type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">i</span>(shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;times&#34;</span>))
+    )
+    <span style="color:#75715e"># add the new tag to the collapse tag</span>
+    collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tagAppendChild</span>(collapseTag, closableTag)
+  } </code></pre></div>
+
+<p>Notice that I used <code>tagAppendChild(collapseTag, closableTag)</code> to update the collapseTag
+by adding it the closableTag. Since it could be confusing to add
+the closable tag to the collapsible one, it would even be better if you created a boxToolTag
+for which you would add collapseTag and closableTag such as:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+<span style="color:#a6e22e">if </span>(collapsible <span style="color:#f92672">||</span> closable) {
+  boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-tools pull-right&#34;</span>)
+}
+
+collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(collapsible) {
+    buttonStatus <span style="color:#f92672">&lt;-</span> status <span style="color:#f92672">%OR%</span> <span style="color:#e6db74">&#34;default&#34;</span>
+    collapseIcon <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">if </span>(collapsed) 
+      <span style="color:#e6db74">&#34;plus&#34;</span>
+    else <span style="color:#e6db74">&#34;minus&#34;</span>
+    collapseTag <span style="color:#f92672">&lt;-</span> tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+        class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>), 
+        `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;collapse&#34;</span>, shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(collapseIcon)
+      )
+    )
+  }
+  
+  <span style="color:#75715e"># make our box closable</span>
+  closableTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(closable) {
+    closableTag <span style="color:#f92672">&lt;-</span> tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>, 
+      `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;remove&#34;</span>, 
+      type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">i</span>(shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;times&#34;</span>))
+    )
+  } 
+
+boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tagAppendChildren</span>(boxToolTag, collapseTag, closableTag)</code></pre></div>
+
+<p>Finally, do not forget to replace <strong>collapseTag</strong> by <strong>boxToolTag</strong> in the box <strong>headerTag</strong>
+<code>headerTag &lt;- div(class = &quot;box-header&quot;, titleTag, collapseTag)</code> (the final code is at the end
+of this section). Besides, you should add the closable argument to the argument list
+(closable = TRUE by default).</p>
+
+<p>I have a good (or bad) new for you: this was just the warm-up! What do you think about
+adding tags to the boxToolTag?</p>
+
+<p>This is very simple: the HTML code is here:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;label label-danger&#34;</span>&gt;UI Design&lt;/<span style="color:#f92672">span</span>&gt;</code></pre></div>
+
+<p>which gives in R:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># we first quickly create the label function</span>
+dashboardLabel <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>) {
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(status))
+  <span style="color:#a6e22e">validateStatus</span>(status)
+  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(
+    class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;label&#34;</span>, <span style="color:#e6db74">&#34; label-&#34;</span>, status),
+    <span style="color:#66d9ef">...</span>
+  )
+}
+
+<span style="color:#75715e"># add it after closableTag</span>
+labelTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dashboardLabel</span>(<span style="color:#e6db74">&#34;My Label&#34;</span>, status <span style="color:#f92672">=</span> label_status)
+
+boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tagAppendChildren</span>(boxToolTag, labelTag, collapseTag, closableTag)</code></pre></div>
+
+<p>You should also add the label_status argument to the argument list of the box function!</p>
+
+<p>The final code is here:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shinydashboard)
+
+<span style="color:#75715e">##########</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># useful functions</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">##########</span>
+validateColor <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(color) {
+  <span style="color:#a6e22e">if </span>(color <span style="color:#f92672">%in%</span> validColors) {
+    <span style="color:#a6e22e">return</span>(<span style="color:#66d9ef">TRUE</span>)
+  }
+  
+  <span style="color:#a6e22e">stop</span>(<span style="color:#e6db74">&#34;Invalid color: &#34;</span>, color, <span style="color:#e6db74">&#34;. Valid colors are: &#34;</span>,
+       <span style="color:#a6e22e">paste</span>(validColors, collapse <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;, &#34;</span>), <span style="color:#e6db74">&#34;.&#34;</span>)
+}
+
+validStatuses <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;primary&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>, <span style="color:#e6db74">&#34;info&#34;</span>, <span style="color:#e6db74">&#34;warning&#34;</span>, <span style="color:#e6db74">&#34;danger&#34;</span>)
+
+validateStatus <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(status) {
+  
+  <span style="color:#a6e22e">if </span>(status <span style="color:#f92672">%in%</span> validStatuses) {
+    <span style="color:#a6e22e">return</span>(<span style="color:#66d9ef">TRUE</span>)
+  }
+  
+  <span style="color:#a6e22e">stop</span>(<span style="color:#e6db74">&#34;Invalid status: &#34;</span>, status, <span style="color:#e6db74">&#34;. Valid statuses are: &#34;</span>,
+       <span style="color:#a6e22e">paste</span>(validStatuses, collapse <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;, &#34;</span>), <span style="color:#e6db74">&#34;.&#34;</span>)
+}
+
+<span style="color:#e6db74">&#34;%OR%&#34;</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(a, b) <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(a)) a else b
+
+
+<span style="color:#75715e"># we first quickly create the label function</span>
+dashboardLabel <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>) {
+  <span style="color:#a6e22e">stopifnot</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(status))
+  <span style="color:#a6e22e">validateStatus</span>(status)
+  tags<span style="color:#f92672">$</span><span style="color:#a6e22e">span</span>(
+    class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;label&#34;</span>, <span style="color:#e6db74">&#34; label-&#34;</span>, status),
+    <span style="color:#66d9ef">...</span>
+  )
+}
+
+
+<span style="color:#75715e">##########</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># box code</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">##########</span>
+box <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function </span>(<span style="color:#66d9ef">...</span>, title <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, footer <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, solidHeader <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, 
+                 background <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>, height <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, collapsible <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, 
+                 collapsed <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, closable <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, label_status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>) 
+{
+  boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;box&#34;</span>
+  <span style="color:#a6e22e">if </span>(solidHeader <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(background)) {
+    boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(boxClass, <span style="color:#e6db74">&#34;box-solid&#34;</span>)
+  }
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(status)) {
+    <span style="color:#a6e22e">validateStatus</span>(status)
+    boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(boxClass, <span style="color:#e6db74">&#34; box-&#34;</span>, status)
+  }
+  <span style="color:#a6e22e">if </span>(collapsible <span style="color:#f92672">&amp;&amp;</span> collapsed) {
+    boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(boxClass, <span style="color:#e6db74">&#34;collapsed-box&#34;</span>)
+  }
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(background)) {
+    <span style="color:#a6e22e">validateColor</span>(background)
+    boxClass <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(boxClass, <span style="color:#e6db74">&#34; bg-&#34;</span>, background)
+  }
+  style <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(height)) {
+    style <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;height: &#34;</span>, <span style="color:#a6e22e">validateCssUnit</span>(height))
+  }
+  titleTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(title)) {
+    titleTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">h3</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-title&#34;</span>, title)
+  }
+  
+  <span style="color:#75715e"># the new boxtool section</span>
+  boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(collapsible <span style="color:#f92672">||</span> closable) {
+    boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-tools pull-right&#34;</span>)
+  }
+  
+  collapseTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(collapsible) {
+    buttonStatus <span style="color:#f92672">&lt;-</span> status <span style="color:#f92672">%OR%</span> <span style="color:#e6db74">&#34;default&#34;</span>
+    collapseIcon <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">if </span>(collapsed) 
+      <span style="color:#e6db74">&#34;plus&#34;</span>
+    else <span style="color:#e6db74">&#34;minus&#34;</span>
+    collapseTag <span style="color:#f92672">&lt;-</span> tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>), 
+      `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;collapse&#34;</span>, shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(collapseIcon)
+    )
+  }
+  
+  closableTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(closable) {
+    closableTag <span style="color:#f92672">&lt;-</span> tags<span style="color:#f92672">$</span><span style="color:#a6e22e">button</span>(
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn btn-box-tool&#34;</span>, 
+      `data-widget` <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;remove&#34;</span>, 
+      type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button&#34;</span>,
+      tags<span style="color:#f92672">$</span><span style="color:#a6e22e">i</span>(shiny<span style="color:#f92672">::</span><span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;times&#34;</span>))
+    )
+  } 
+  
+  labelTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dashboardLabel</span>(<span style="color:#e6db74">&#34;My Label&#34;</span>, status <span style="color:#f92672">=</span> label_status)
+  
+  <span style="color:#75715e"># update boxToolTag</span>
+  boxToolTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tagAppendChildren</span>(boxToolTag, labelTag, collapseTag, closableTag)
+  
+  headerTag <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(titleTag) <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(collapseTag)) {
+    <span style="color:#75715e"># replace by boxToolTag</span>
+    headerTag <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-header&#34;</span>, titleTag, boxToolTag)
+  }
+  <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(width)) 
+    <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;col-sm-&#34;</span>, width), <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> boxClass, style <span style="color:#f92672">=</span> <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(style)) 
+      style, headerTag, <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-body&#34;</span>, <span style="color:#66d9ef">...</span>), <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(footer)) 
+        <span style="color:#a6e22e">div</span>(class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;box-footer&#34;</span>, footer)))
+}
+
+
+<span style="color:#75715e">##########</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># test our box</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">##########</span>
+<span style="color:#a6e22e">shinyApp</span>(
+  ui <span style="color:#f92672">=</span> <span style="color:#a6e22e">dashboardPage</span>(
+    <span style="color:#a6e22e">dashboardHeader</span>(),
+    <span style="color:#a6e22e">dashboardSidebar</span>(),
+    <span style="color:#a6e22e">dashboardBody</span>(
+      <span style="color:#a6e22e">fluidRow</span>(
+        <span style="color:#a6e22e">box</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histogram box title&#34;</span>, closable <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, label_status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>,
+            status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;warning&#34;</span>, solidHeader <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, collapsible <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+            <span style="color:#a6e22e">p</span>(<span style="color:#e6db74">&#34;Box Content&#34;</span>)
+        )
+      )
+    )
+  ),
+  server <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(input, output) {}
+)</code></pre></div>
+
+<p>Here is the result.</p>
+
+<p><a href="/images/custom_box.png"><img src="/images/custom_box.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>I wish you a nice customization :)</p>
+
+<h2 id="some-improved-version-of-shinydashboard">Some improved version of shinydashboard</h2>
+
+<p>To finish this tutorial, I have some suggestions to radically pimp your dashboard design.</p>
+
+<h3 id="gentelella-dashboard">gentelella dashboard</h3>
+
+<p>A version very similar to adminLTE2. By chance, a shiny implementation is available
+<a href="http://code.markedmondson.me/gentelellaShiny/">here</a>, developed by <a href="https://github.com/MarkEdmondson1234">Mark Edmonson</a>.</p>
+
+<p><a href="/images/shiny_gentelella.png"><img src="/images/shiny_gentelella.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p>This template looks really promising! Below a demonstration of an app I am currently developing
+for an external project (it is unfortunately in French).</p>
+
+<p><a href="http://130.60.24.205/shinyLove/"><img src="/images/gentelella_app.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="semantic-dashboards">Semantic dashboards</h3>
+
+<p>Recently released on CRAN by the <a href="https://appsilondatascience.com">Appsilon</a>
+data science group, this upcoming package
+seems a very interesting alternative to shinydashboard. It relies on the semantic UI
+library, for wich <a href="https://demo.appsilondatascience.com/shiny-semantic-components/">shiny.semantic</a> is also available.
+<a href="https://appsilondatascience.com/blog/rstats/2018/04/23/semanticdashboard.html">Semantic dashboard</a> looks very
+clear but terribly efficient. What I really enjoy is that you only need to change
+<code>library(shinydashboard)</code> to <code>library(semantic.dashboard)</code> in order to convert any shinydashboard to the semantic design. Besides, you can add any of the
+semantic themes (make either light or dark dashboard), which you cannot do
+with shinydashboard. Amazing!!!</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(shiny)
+<span style="color:#a6e22e">library</span>(shiny.semantic)
+<span style="color:#a6e22e">library</span>(semantic.dashboard)
+<span style="color:#a6e22e">library</span>(plotly)
+<span style="color:#a6e22e">library</span>(DT)
+
+ui <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dashboardPage</span>(
+  <span style="color:#a6e22e">dashboardHeader</span>(<span style="color:#a6e22e">dropdownMenuOutput</span>(<span style="color:#e6db74">&#34;dropdown&#34;</span>),
+                  <span style="color:#a6e22e">dropdownMenu</span>(type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;notifications&#34;</span>,
+                               <span style="color:#a6e22e">taskItem</span>(<span style="color:#e6db74">&#34;Project progress...&#34;</span>, <span style="color:#ae81ff">50.777</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>)),
+                  <span style="color:#a6e22e">dropdownMenu</span>(icon <span style="color:#f92672">=</span> <span style="color:#a6e22e">uiicon</span>(<span style="color:#e6db74">&#34;red warning sign&#34;</span>),
+                               <span style="color:#a6e22e">notificationItem</span>(<span style="color:#e6db74">&#34;This is an important notification!&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>))),
+  <span style="color:#a6e22e">dashboardSidebar</span>(side <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;left&#34;</span>,
+                   <span style="color:#a6e22e">sidebarMenu</span>(
+                     <span style="color:#a6e22e">menuItem</span>(tabName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_tab&#34;</span>, text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My plot&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;home&#34;</span>)),
+                     <span style="color:#a6e22e">menuItem</span>(tabName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;table_tab&#34;</span>, text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My table&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;smile&#34;</span>)))),
+  <span style="color:#a6e22e">dashboardBody</span>(
+    <span style="color:#a6e22e">tabItems</span>(
+      <span style="color:#a6e22e">tabItem</span>(tabName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_tab&#34;</span>,
+              <span style="color:#a6e22e">fluidRow</span>(
+                <span style="color:#a6e22e">valueBox</span>(<span style="color:#e6db74">&#34;Unread Mail&#34;</span>, <span style="color:#ae81ff">44</span>, <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;mail&#34;</span>), color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>)),
+              <span style="color:#a6e22e">fluidRow</span>(
+                <span style="color:#a6e22e">box</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sample box&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>,
+                    <span style="color:#a6e22e">selectInput</span>(inputId <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;variable1&#34;</span>, choices <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(mtcars),
+                                label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select first variable&#34;</span>, selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mpg&#34;</span>),
+                    <span style="color:#a6e22e">selectInput</span>(inputId <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;variable2&#34;</span>, choices <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(mtcars),
+                                label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select second variable&#34;</span>, selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cyl&#34;</span>),
+                    <span style="color:#a6e22e">plotlyOutput</span>(<span style="color:#e6db74">&#34;mtcars_plot&#34;</span>)),
+                <span style="color:#a6e22e">tabBox</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sample box&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>,
+                       collapsible <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+                       tabs <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+                         <span style="color:#a6e22e">list</span>(menu <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;First Tab&#34;</span>, content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Some text...&#34;</span>),
+                         <span style="color:#a6e22e">list</span>(menu <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Second Tab&#34;</span>, content <span style="color:#f92672">=</span> <span style="color:#a6e22e">plotlyOutput</span>(<span style="color:#e6db74">&#34;mtcars_plot2&#34;</span>))
+                       )))),
+      <span style="color:#a6e22e">tabItem</span>(tabName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;table_tab&#34;</span>,
+              <span style="color:#a6e22e">fluidRow</span>(
+                <span style="color:#a6e22e">valueBox</span>(<span style="color:#e6db74">&#34;Unread Mail&#34;</span>, <span style="color:#ae81ff">144</span>, <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;mail&#34;</span>), color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;small&#34;</span>),
+                <span style="color:#a6e22e">valueBox</span>(<span style="color:#e6db74">&#34;Spam&#34;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;mail&#34;</span>), color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;small&#34;</span>),
+                <span style="color:#a6e22e">valueBox</span>(<span style="color:#e6db74">&#34;Readed Mail&#34;</span>, <span style="color:#ae81ff">666</span>, <span style="color:#a6e22e">icon</span>(<span style="color:#e6db74">&#34;mail&#34;</span>), color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;green&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;small&#34;</span>)
+              ),
+              <span style="color:#a6e22e">fluidRow</span>(
+                <span style="color:#a6e22e">box</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Classic box&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, ribbon <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+                    title_side <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;top left&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,
+                    tags<span style="color:#f92672">$</span><span style="color:#a6e22e">div</span>(
+                      <span style="color:#a6e22e">dataTableOutput</span>(<span style="color:#e6db74">&#34;mtcars_table&#34;</span>)
+                      , style <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(<span style="color:#e6db74">&#34;color:&#34;</span>, semantic_palette[[<span style="color:#e6db74">&#34;blue&#34;</span>]], <span style="color:#e6db74">&#34;;&#34;</span>))
+                ))))
+  ), theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;slate&#34;</span>
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(input, output) {
+  
+  output<span style="color:#f92672">$</span>mtcars_plot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderPlotly</span>(<span style="color:#a6e22e">plot_ly</span>(mtcars, x <span style="color:#f92672">=</span> <span style="color:#f92672">~</span> mtcars[ , input<span style="color:#f92672">$</span>variable1],
+                                             y <span style="color:#f92672">=</span> <span style="color:#f92672">~</span> mtcars[ , input<span style="color:#f92672">$</span>variable2],
+                                             type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;scatter&#34;</span>, mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;markers&#34;</span>)
+  )
+  output<span style="color:#f92672">$</span>mtcars_plot2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderPlotly</span>(<span style="color:#a6e22e">plot_ly</span>(mtcars, x <span style="color:#f92672">=</span> <span style="color:#f92672">~</span> mtcars[ , input<span style="color:#f92672">$</span>variable1],
+                                              y <span style="color:#f92672">=</span> <span style="color:#f92672">~</span> mtcars[ , input<span style="color:#f92672">$</span>variable2],
+                                              type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;scatter&#34;</span>, mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;markers&#34;</span>))
+  
+  output<span style="color:#f92672">$</span>mtcars_table <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderDataTable</span>(mtcars, options <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(dom <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;t&#39;</span>))
+  
+  output<span style="color:#f92672">$</span>dropdown <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderDropdownMenu</span>({
+    <span style="color:#a6e22e">dropdownMenu</span>(<span style="color:#a6e22e">messageItem</span>(<span style="color:#e6db74">&#34;User&#34;</span>, <span style="color:#e6db74">&#34;Test message&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;teal&#34;</span>, style <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;min-width: 200px&#34;</span>),
+                 <span style="color:#a6e22e">messageItem</span>(<span style="color:#e6db74">&#34;Users&#34;</span>, <span style="color:#e6db74">&#34;Test message&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;teal&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;users&#34;</span>),
+                 <span style="color:#a6e22e">messageItem</span>(<span style="color:#e6db74">&#34;See this&#34;</span>, <span style="color:#e6db74">&#34;Another test&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;warning&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>))
+  })
+}
+
+<span style="color:#a6e22e">shinyApp</span>(ui, server)</code></pre></div>
+
+<p>The result below ;)</p>
+
+<p><a href="semantic_app.png"><img src="/images/semantic_app.png" width="auto" height="auto" alt="blank"></a></p>
+
+<h3 id="material-dashboards">Material dashboards</h3>
+
+<p>Material design to build shiny dashboards. Download shinymaterial from <a href="https://github.com/ericrayanderson/shinymaterial">here</a>. A dashboard example is available
+<a href="https://github.com/ericrayanderson/shinymaterial_dashboard">here</a>.</p>
+
+<p><a href="https://ericrayanderson.shinyapps.io/shinymaterial_dashboard/"><img src="/images/material_dashboard.png" width="auto" height="auto" alt="blank"></a></p>
+
+<p><strong>More Updates Coming soon</strong></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy; David Granjon 2020
+    ·
+    
+    
+    ·
+    Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>
